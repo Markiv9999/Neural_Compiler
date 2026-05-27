@@ -1,0 +1,2086 @@
+python SearchGPTAIversion8.py --dataset fineweb --tokenizer auto --samples-per-epoch 100000 --val-samples 20000 --fineweb-max-tokens 300000000 --batch-size 512
+--grad-accum-steps 1 --epochs 1000
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Using cached FineWeb token memmap: /mnt/c/Users/vikra/Documents/April2026/Projects/Neural Physics Compiler/SearchGPT_gpu/Antigravity/fineweb_cache/fineweb_sample-10BT_gpt2_300000000_tokens.uint16.bin (300,000,000 tokens)
+------------------------------------------------------------------------------------------
+[v4] Total model parameters = 30,227,328
+[v4] Params added by routing_edge_weights = 7,680; by routing_biases = 16,384; combined new routing params = 24,064
+[v4] Per-edge routing weights added: [(8, 2, 32), (8, 2, 40), (8, 2, 48), (8, 2, 56), (8, 2, 64), (8, 2, 72), (8, 2, 80), (8, 2, 88)], routing_biases (8, 8, 2, 128), LN pre-norm enabled, transformer-style residual enabled.
+------------------------------------------------------------------------------------------
+DATASET=fineweb, TOKENIZER=gpt2, VOCAB_SIZE=50,257, TOKENS=300,000,000, DATA_PATH=/mnt/c/Users/vikra/Documents/April2026/Projects/Neural Physics Compiler/SearchGPT_gpu/Antigravity/fineweb_cache/fineweb_sample-10BT_gpt2_300000000_tokens.uint16.bin
+TRAIN_WINDOWS_PER_EPOCH=100,000, VAL_WINDOWS_PER_EPOCH=20,000
+HF_CACHE_DIR=/mnt/c/Users/vikra/Documents/April2026/Projects/Neural Physics Compiler/SearchGPT_gpu/Antigravity/fineweb_cache
+MICRO_BATCH_SIZE=512, GRAD_ACCUM_STEPS=1, EFFECTIVE_BATCH_SIZE=512, AMP=False
+BLOCK_SIZE=128, NUM_LAYERS=8, BREADTH=8, EMBED_DIM=128, BATCH_SIZE=512, LR_CONTINUOUS=0.0060, LR_STRUCTURAL=0.0300 , LR_CONTINUOUS_DECAY=0.0, LR_STRUCTURAL_DECAY=0.0, GRAD_CLIP_NORM=1.0
+torch.compile: tracing graph... done in 120ssed
+------------------------------------------------------------------------------------------
+Neuro-Symbolic Search Space Confirmed.
+Hardware Compute Node Status: cuda
+------------------------------------------------------------------------------------------
+Epoch 01/1000 | CE Loss: 28.3877 | VAL CE LOSS: 17.7047 | Topology Entropy: 0.6014 | Temp: 2.000 | GradNorm: 4154.230 [CLIPPED]
+   -> L0_N0 Leading Path: 'arcsin' (9.8% confidence)
+Epoch 02/1000 | CE Loss: 13.0355 | VAL CE LOSS: 11.5246 | Topology Entropy: 0.5513 | Temp: 2.000 | GradNorm: 35.268 [CLIPPED]
+   -> L0_N0 Leading Path: 'arcsin' (12.2% confidence)
+Epoch 03/1000 | CE Loss: 10.1587 | VAL CE LOSS: 8.9425 | Topology Entropy: 0.5282 | Temp: 2.000 | GradNorm: 4.759 [CLIPPED]
+   -> L0_N0 Leading Path: 'sin' (18.2% confidence)
+Epoch 04/1000 | CE Loss: 8.3782 | VAL CE LOSS: 8.1500 | Topology Entropy: 0.5295 | Temp: 2.000 | GradNorm: 1.938 [CLIPPED]
+   -> L0_N0 Leading Path: 'sin' (21.7% confidence)
+Epoch 05/1000 | CE Loss: 7.9156 | VAL CE LOSS: 7.9173 | Topology Entropy: 0.5284 | Temp: 2.000 | GradNorm: 1.630 [CLIPPED]
+   -> L0_N0 Leading Path: 'arcsin' (27.4% confidence)
+Epoch 06/1000 | CE Loss: 7.7898 | VAL CE LOSS: 7.8860 | Topology Entropy: 0.5352 | Temp: 2.000 | GradNorm: 0.814 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (27.5% confidence)
+Epoch 07/1000 | CE Loss: 7.7821 | VAL CE LOSS: 7.8689 | Topology Entropy: 0.5421 | Temp: 2.000 | GradNorm: 0.856 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (43.1% confidence)
+Epoch 08/1000 | CE Loss: 7.7440 | VAL CE LOSS: 7.8286 | Topology Entropy: 0.5505 | Temp: 2.000 | GradNorm: 0.699 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (41.6% confidence)
+Epoch 09/1000 | CE Loss: 7.7226 | VAL CE LOSS: 7.8344 | Topology Entropy: 0.5566 | Temp: 2.000 | GradNorm: 0.704 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (52.7% confidence)
+Epoch 10/1000 | CE Loss: 7.7267 | VAL CE LOSS: 7.8055 | Topology Entropy: 0.5622 | Temp: 2.000 | GradNorm: 0.948 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (54.0% confidence)
+Epoch 11/1000 | CE Loss: 7.6963 | VAL CE LOSS: 7.7877 | Topology Entropy: 0.5620 | Temp: 2.000 | GradNorm: 0.523 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (58.3% confidence)
+Epoch 12/1000 | CE Loss: 7.6637 | VAL CE LOSS: 7.7594 | Topology Entropy: 0.5639 | Temp: 2.000 | GradNorm: 0.712 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (55.6% confidence)
+Epoch 13/1000 | CE Loss: 7.5223 | VAL CE LOSS: 7.5692 | Topology Entropy: 0.5640 | Temp: 2.000 | GradNorm: 0.794 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (73.4% confidence)
+Epoch 14/1000 | CE Loss: 7.3849 | VAL CE LOSS: 7.4442 | Topology Entropy: 0.5681 | Temp: 2.000 | GradNorm: 0.926 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (73.7% confidence)
+Epoch 15/1000 | CE Loss: 7.2977 | VAL CE LOSS: 7.3486 | Topology Entropy: 0.5714 | Temp: 2.000 | GradNorm: 0.592 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (73.1% confidence)
+Epoch 16/1000 | CE Loss: 7.1963 | VAL CE LOSS: 7.2644 | Topology Entropy: 0.5741 | Temp: 2.000 | GradNorm: 0.474 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (76.7% confidence)
+Epoch 17/1000 | CE Loss: 7.1187 | VAL CE LOSS: 7.2106 | Topology Entropy: 0.5762 | Temp: 2.000 | GradNorm: 0.649 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (76.8% confidence)
+Epoch 18/1000 | CE Loss: 7.0447 | VAL CE LOSS: 7.1306 | Topology Entropy: 0.5787 | Temp: 2.000 | GradNorm: 0.658 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (73.8% confidence)
+Epoch 19/1000 | CE Loss: 7.0012 | VAL CE LOSS: 7.0950 | Topology Entropy: 0.5789 | Temp: 2.000 | GradNorm: 0.689 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (76.4% confidence)
+Epoch 20/1000 | CE Loss: 6.9291 | VAL CE LOSS: 7.0454 | Topology Entropy: 0.5817 | Temp: 2.000 | GradNorm: 0.583 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (74.6% confidence)
+Epoch 21/1000 | CE Loss: 6.9135 | VAL CE LOSS: 7.0173 | Topology Entropy: 0.5834 | Temp: 2.000 | GradNorm: 1.737 [CLIPPED]
+   -> L0_N0 Leading Path: 'arcsin' (66.2% confidence)
+Epoch 22/1000 | CE Loss: 6.8531 | VAL CE LOSS: 6.9678 | Topology Entropy: 0.5865 | Temp: 2.000 | GradNorm: 0.579 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (65.9% confidence)
+Epoch 23/1000 | CE Loss: 6.8184 | VAL CE LOSS: 6.9374 | Topology Entropy: 0.5856 | Temp: 2.000 | GradNorm: 1.017 [CLIPPED]
+   -> L0_N0 Leading Path: 'arcsin' (65.5% confidence)
+Epoch 24/1000 | CE Loss: 6.8134 | VAL CE LOSS: 6.9078 | Topology Entropy: 0.5860 | Temp: 2.000 | GradNorm: 1.102 [CLIPPED]
+   -> L0_N0 Leading Path: 'arcsin' (50.0% confidence)
+Epoch 25/1000 | CE Loss: 6.7644 | VAL CE LOSS: 6.8648 | Topology Entropy: 0.5890 | Temp: 2.000 | GradNorm: 0.484 [ok]
+   -> L0_N0 Leading Path: 'arcsin' (42.0% confidence)
+Epoch 26/1000 | CE Loss: 6.7118 | VAL CE LOSS: 6.8511 | Topology Entropy: 0.5906 | Temp: 2.000 | GradNorm: 0.378 [ok]
+   -> L0_N0 Leading Path: 'identity' (34.7% confidence)
+Epoch 27/1000 | CE Loss: 6.6990 | VAL CE LOSS: 6.8097 | Topology Entropy: 0.5899 | Temp: 2.000 | GradNorm: 0.515 [ok]
+   -> L0_N0 Leading Path: 'identity' (53.5% confidence)
+Epoch 28/1000 | CE Loss: 6.6939 | VAL CE LOSS: 6.8009 | Topology Entropy: 0.5919 | Temp: 2.000 | GradNorm: 0.702 [ok]
+   -> L0_N0 Leading Path: 'identity' (66.9% confidence)
+Epoch 29/1000 | CE Loss: 6.6826 | VAL CE LOSS: 6.7825 | Topology Entropy: 0.5943 | Temp: 2.000 | GradNorm: 0.530 [ok]
+   -> L0_N0 Leading Path: 'identity' (63.3% confidence)
+Epoch 30/1000 | CE Loss: 6.6536 | VAL CE LOSS: 6.7479 | Topology Entropy: 0.5943 | Temp: 2.000 | GradNorm: 5.699 [CLIPPED]
+   -> L0_N0 Leading Path: 'identity' (65.2% confidence)
+Epoch 31/1000 | CE Loss: 6.5963 | VAL CE LOSS: 6.7165 | Topology Entropy: 0.5954 | Temp: 2.000 | GradNorm: 0.484 [ok]
+   -> L0_N0 Leading Path: 'identity' (64.0% confidence)
+Epoch 32/1000 | CE Loss: 6.5847 | VAL CE LOSS: 6.7048 | Topology Entropy: 0.5970 | Temp: 2.000 | GradNorm: 1.206 [CLIPPED]
+   -> L0_N0 Leading Path: 'identity' (61.7% confidence)
+Epoch 33/1000 | CE Loss: 6.5644 | VAL CE LOSS: 6.6790 | Topology Entropy: 0.5951 | Temp: 2.000 | GradNorm: 0.404 [ok]
+   -> L0_N0 Leading Path: 'identity' (47.3% confidence)
+Epoch 34/1000 | CE Loss: 6.5747 | VAL CE LOSS: 6.6704 | Topology Entropy: 0.5966 | Temp: 2.000 | GradNorm: 0.641 [ok]
+   -> L0_N0 Leading Path: 'identity' (49.9% confidence)
+Epoch 35/1000 | CE Loss: 6.5544 | VAL CE LOSS: 6.6487 | Topology Entropy: 0.5980 | Temp: 2.000 | GradNorm: 0.680 [ok]
+   -> L0_N0 Leading Path: 'identity' (56.9% confidence)
+Epoch 36/1000 | CE Loss: 6.5225 | VAL CE LOSS: 6.6497 | Topology Entropy: 0.5981 | Temp: 2.000 | GradNorm: 0.849 [ok]
+   -> L0_N0 Leading Path: 'identity' (59.3% confidence)
+Epoch 37/1000 | CE Loss: 6.5125 | VAL CE LOSS: 6.6302 | Topology Entropy: 0.5992 | Temp: 2.000 | GradNorm: 0.509 [ok]
+   -> L0_N0 Leading Path: 'identity' (54.6% confidence)
+Epoch 38/1000 | CE Loss: 6.4672 | VAL CE LOSS: 6.6049 | Topology Entropy: 0.6015 | Temp: 2.000 | GradNorm: 1.474 [CLIPPED]
+   -> L0_N0 Leading Path: 'identity' (49.6% confidence)
+Epoch 39/1000 | CE Loss: 6.4762 | VAL CE LOSS: 6.5796 | Topology Entropy: 0.6001 | Temp: 2.000 | GradNorm: 0.637 [ok]
+   -> L0_N0 Leading Path: 'identity' (48.9% confidence)
+Epoch 40/1000 | CE Loss: 6.4410 | VAL CE LOSS: 6.5669 | Topology Entropy: 0.6008 | Temp: 2.000 | GradNorm: 0.463 [ok]
+   -> L0_N0 Leading Path: 'tanh' (52.1% confidence)
+Epoch 41/1000 | CE Loss: 6.4558 | VAL CE LOSS: 6.5566 | Topology Entropy: 0.6017 | Temp: 2.000 | GradNorm: 0.919 [ok]
+   -> L0_N0 Leading Path: 'tanh' (65.0% confidence)
+Epoch 42/1000 | CE Loss: 6.4133 | VAL CE LOSS: 6.5361 | Topology Entropy: 0.6022 | Temp: 2.000 | GradNorm: 1.349 [CLIPPED]
+   -> L0_N0 Leading Path: 'tanh' (63.2% confidence)
+Epoch 43/1000 | CE Loss: 6.3966 | VAL CE LOSS: 6.5270 | Topology Entropy: 0.6015 | Temp: 2.000 | GradNorm: 0.606 [ok]
+   -> L0_N0 Leading Path: 'tanh' (62.3% confidence)
+Epoch 44/1000 | CE Loss: 6.3742 | VAL CE LOSS: 6.5056 | Topology Entropy: 0.6041 | Temp: 2.000 | GradNorm: 0.593 [ok]
+   -> L0_N0 Leading Path: 'tanh' (68.3% confidence)
+Epoch 45/1000 | CE Loss: 6.3633 | VAL CE LOSS: 6.4990 | Topology Entropy: 0.6054 | Temp: 2.000 | GradNorm: 0.341 [ok]
+   -> L0_N0 Leading Path: 'tanh' (73.7% confidence)
+Epoch 46/1000 | CE Loss: 6.3634 | VAL CE LOSS: 6.4798 | Topology Entropy: 0.6072 | Temp: 2.000 | GradNorm: 0.437 [ok]
+   -> L0_N0 Leading Path: 'tanh' (76.5% confidence)
+Epoch 47/1000 | CE Loss: 6.3353 | VAL CE LOSS: 6.4710 | Topology Entropy: 0.6051 | Temp: 2.000 | GradNorm: 0.380 [ok]
+   -> L0_N0 Leading Path: 'tanh' (77.5% confidence)
+Epoch 48/1000 | CE Loss: 6.3274 | VAL CE LOSS: 6.4504 | Topology Entropy: 0.6033 | Temp: 2.000 | GradNorm: 0.462 [ok]
+   -> L0_N0 Leading Path: 'tanh' (74.8% confidence)
+Epoch 49/1000 | CE Loss: 6.3158 | VAL CE LOSS: 6.4387 | Topology Entropy: 0.6029 | Temp: 2.000 | GradNorm: 0.550 [ok]
+   -> L0_N0 Leading Path: 'tanh' (76.4% confidence)
+Epoch 50/1000 | CE Loss: 6.3029 | VAL CE LOSS: 6.4175 | Topology Entropy: 0.6043 | Temp: 2.000 | GradNorm: 0.809 [ok]
+   -> L0_N0 Leading Path: 'tanh' (83.1% confidence)
+Epoch 51/1000 | CE Loss: 6.2892 | VAL CE LOSS: 6.4432 | Topology Entropy: 0.6028 | Temp: 2.000 | GradNorm: 0.596 [ok]
+   -> L0_N0 Leading Path: 'tanh' (79.3% confidence)
+Epoch 52/1000 | CE Loss: 6.2713 | VAL CE LOSS: 6.4083 | Topology Entropy: 0.6020 | Temp: 2.000 | GradNorm: 0.684 [ok]
+   -> L0_N0 Leading Path: 'tanh' (83.6% confidence)
+Epoch 53/1000 | CE Loss: 6.2667 | VAL CE LOSS: 6.4035 | Topology Entropy: 0.6022 | Temp: 2.000 | GradNorm: 0.399 [ok]
+   -> L0_N0 Leading Path: 'tanh' (84.2% confidence)
+Epoch 54/1000 | CE Loss: 6.2361 | VAL CE LOSS: 6.3759 | Topology Entropy: 0.6038 | Temp: 2.000 | GradNorm: 0.515 [ok]
+   -> L0_N0 Leading Path: 'tanh' (81.5% confidence)
+Epoch 55/1000 | CE Loss: 6.2417 | VAL CE LOSS: 6.3681 | Topology Entropy: 0.6050 | Temp: 2.000 | GradNorm: 0.355 [ok]
+   -> L0_N0 Leading Path: 'tanh' (76.8% confidence)
+Epoch 56/1000 | CE Loss: 6.2188 | VAL CE LOSS: 6.3563 | Topology Entropy: 0.6043 | Temp: 2.000 | GradNorm: 0.456 [ok]
+   -> L0_N0 Leading Path: 'tanh' (83.6% confidence)
+Epoch 57/1000 | CE Loss: 6.2127 | VAL CE LOSS: 6.3496 | Topology Entropy: 0.6013 | Temp: 2.000 | GradNorm: 0.433 [ok]
+   -> L0_N0 Leading Path: 'tanh' (83.9% confidence)
+Epoch 58/1000 | CE Loss: 6.2002 | VAL CE LOSS: 6.3405 | Topology Entropy: 0.6029 | Temp: 2.000 | GradNorm: 0.375 [ok]
+   -> L0_N0 Leading Path: 'tanh' (82.9% confidence)
+Epoch 59/1000 | CE Loss: 6.2004 | VAL CE LOSS: 6.3341 | Topology Entropy: 0.6047 | Temp: 2.000 | GradNorm: 0.352 [ok]
+   -> L0_N0 Leading Path: 'tanh' (75.8% confidence)
+Epoch 60/1000 | CE Loss: 6.1979 | VAL CE LOSS: 6.3176 | Topology Entropy: 0.6045 | Temp: 2.000 | GradNorm: 0.573 [ok]
+   -> L0_N0 Leading Path: 'tanh' (83.5% confidence)
+Epoch 61/1000 | CE Loss: 6.1728 | VAL CE LOSS: 6.3014 | Topology Entropy: 0.6021 | Temp: 2.000 | GradNorm: 0.536 [ok]
+   -> L0_N0 Leading Path: 'tanh' (78.6% confidence)
+Epoch 62/1000 | CE Loss: 6.1599 | VAL CE LOSS: 6.2948 | Topology Entropy: 0.6029 | Temp: 2.000 | GradNorm: 0.470 [ok]
+   -> L0_N0 Leading Path: 'tanh' (85.5% confidence)
+Epoch 63/1000 | CE Loss: 6.1518 | VAL CE LOSS: 6.2804 | Topology Entropy: 0.6043 | Temp: 2.000 | GradNorm: 0.432 [ok]
+   -> L0_N0 Leading Path: 'tanh' (83.8% confidence)
+Epoch 64/1000 | CE Loss: 6.1446 | VAL CE LOSS: 6.2744 | Topology Entropy: 0.6049 | Temp: 2.000 | GradNorm: 0.498 [ok]
+   -> L0_N0 Leading Path: 'tanh' (82.9% confidence)
+Epoch 65/1000 | CE Loss: 6.1254 | VAL CE LOSS: 6.2637 | Topology Entropy: 0.6019 | Temp: 2.000 | GradNorm: 0.421 [ok]
+   -> L0_N0 Leading Path: 'tanh' (80.9% confidence)
+Epoch 66/1000 | CE Loss: 6.1278 | VAL CE LOSS: 6.2583 | Topology Entropy: 0.6021 | Temp: 2.000 | GradNorm: 0.605 [ok]
+   -> L0_N0 Leading Path: 'tanh' (78.3% confidence)
+Epoch 67/1000 | CE Loss: 6.1388 | VAL CE LOSS: 6.2453 | Topology Entropy: 0.6006 | Temp: 2.000 | GradNorm: 0.348 [ok]
+   -> L0_N0 Leading Path: 'tanh' (75.0% confidence)
+Epoch 68/1000 | CE Loss: 6.1167 | VAL CE LOSS: 6.2393 | Topology Entropy: 0.6035 | Temp: 2.000 | GradNorm: 0.297 [ok]
+   -> L0_N0 Leading Path: 'tanh' (72.7% confidence)
+Epoch 69/1000 | CE Loss: 6.0999 | VAL CE LOSS: 6.2248 | Topology Entropy: 0.6016 | Temp: 2.000 | GradNorm: 0.365 [ok]
+   -> L0_N0 Leading Path: 'tanh' (71.9% confidence)
+Epoch 70/1000 | CE Loss: 6.1059 | VAL CE LOSS: 6.2606 | Topology Entropy: 0.6029 | Temp: 2.000 | GradNorm: 0.390 [ok]
+   -> L0_N0 Leading Path: 'tanh' (75.7% confidence)
+Epoch 71/1000 | CE Loss: 6.0457 | VAL CE LOSS: 6.2125 | Topology Entropy: 0.6037 | Temp: 2.000 | GradNorm: 0.440 [ok]
+   -> L0_N0 Leading Path: 'tanh' (78.0% confidence)
+Epoch 72/1000 | CE Loss: 6.0749 | VAL CE LOSS: 6.1954 | Topology Entropy: 0.6037 | Temp: 2.000 | GradNorm: 0.420 [ok]
+   -> L0_N0 Leading Path: 'tanh' (76.5% confidence)
+Epoch 73/1000 | CE Loss: 6.0498 | VAL CE LOSS: 6.1841 | Topology Entropy: 0.6041 | Temp: 2.000 | GradNorm: 0.864 [ok]
+   -> L0_N0 Leading Path: 'tanh' (78.7% confidence)
+Epoch 74/1000 | CE Loss: 6.0677 | VAL CE LOSS: 6.1795 | Topology Entropy: 0.6014 | Temp: 2.000 | GradNorm: 0.618 [ok]
+   -> L0_N0 Leading Path: 'tanh' (74.6% confidence)
+Epoch 75/1000 | CE Loss: 6.0412 | VAL CE LOSS: 6.1708 | Topology Entropy: 0.6019 | Temp: 2.000 | GradNorm: 0.749 [ok]
+   -> L0_N0 Leading Path: 'tanh' (73.8% confidence)
+Epoch 76/1000 | CE Loss: 6.0340 | VAL CE LOSS: 6.1478 | Topology Entropy: 0.6037 | Temp: 2.000 | GradNorm: 0.403 [ok]
+   -> L0_N0 Leading Path: 'tanh' (67.7% confidence)
+Epoch 77/1000 | CE Loss: 6.0166 | VAL CE LOSS: 6.1490 | Topology Entropy: 0.5998 | Temp: 2.000 | GradNorm: 0.721 [ok]
+   -> L0_N0 Leading Path: 'tanh' (72.4% confidence)
+Epoch 78/1000 | CE Loss: 6.0451 | VAL CE LOSS: 6.1515 | Topology Entropy: 0.6032 | Temp: 2.000 | GradNorm: 0.384 [ok]
+   -> L0_N0 Leading Path: 'tanh' (66.9% confidence)
+Epoch 79/1000 | CE Loss: 6.0112 | VAL CE LOSS: 6.1308 | Topology Entropy: 0.6004 | Temp: 2.000 | GradNorm: 0.453 [ok]
+   -> L0_N0 Leading Path: 'tanh' (61.2% confidence)
+Epoch 80/1000 | CE Loss: 6.0114 | VAL CE LOSS: 6.1288 | Topology Entropy: 0.6025 | Temp: 2.000 | GradNorm: 0.487 [ok]
+   -> L0_N0 Leading Path: 'tanh' (70.8% confidence)
+Epoch 81/1000 | CE Loss: 5.9991 | VAL CE LOSS: 6.1156 | Topology Entropy: 0.6045 | Temp: 2.000 | GradNorm: 0.454 [ok]
+   -> L0_N0 Leading Path: 'tanh' (78.8% confidence)
+Epoch 82/1000 | CE Loss: 5.9991 | VAL CE LOSS: 6.1140 | Topology Entropy: 0.6047 | Temp: 2.000 | GradNorm: 2.093 [CLIPPED]
+   -> L0_N0 Leading Path: 'tanh' (77.7% confidence)
+Epoch 83/1000 | CE Loss: 5.9970 | VAL CE LOSS: 6.1130 | Topology Entropy: 0.6001 | Temp: 2.000 | GradNorm: 0.586 [ok]
+   -> L0_N0 Leading Path: 'tanh' (81.7% confidence)
+Epoch 84/1000 | CE Loss: 5.9777 | VAL CE LOSS: 6.0956 | Topology Entropy: 0.6027 | Temp: 2.000 | GradNorm: 0.608 [ok]
+   -> L0_N0 Leading Path: 'tanh' (81.8% confidence)
+Epoch 85/1000 | CE Loss: 5.9530 | VAL CE LOSS: 6.0938 | Topology Entropy: 0.6039 | Temp: 2.000 | GradNorm: 0.817 [ok]
+   -> L0_N0 Leading Path: 'tanh' (65.4% confidence)
+Epoch 86/1000 | CE Loss: 5.9652 | VAL CE LOSS: 6.0760 | Topology Entropy: 0.6034 | Temp: 2.000 | GradNorm: 0.480 [ok]
+   -> L0_N0 Leading Path: 'tanh' (63.6% confidence)
+Epoch 87/1000 | CE Loss: 5.9635 | VAL CE LOSS: 6.0724 | Topology Entropy: 0.6022 | Temp: 2.000 | GradNorm: 0.685 [ok]
+   -> L0_N0 Leading Path: 'tanh' (68.1% confidence)
+Epoch 88/1000 | CE Loss: 5.9493 | VAL CE LOSS: 6.0656 | Topology Entropy: 0.6027 | Temp: 2.000 | GradNorm: 0.388 [ok]
+   -> L0_N0 Leading Path: 'tanh' (62.6% confidence)
+Epoch 89/1000 | CE Loss: 5.9568 | VAL CE LOSS: 6.0663 | Topology Entropy: 0.6011 | Temp: 2.000 | GradNorm: 0.386 [ok]
+   -> L0_N0 Leading Path: 'tanh' (58.6% confidence)
+Epoch 90/1000 | CE Loss: 5.9454 | VAL CE LOSS: 6.0662 | Topology Entropy: 0.5975 | Temp: 2.000 | GradNorm: 0.487 [ok]
+   -> L0_N0 Leading Path: 'tanh' (54.8% confidence)
+Epoch 91/1000 | CE Loss: 5.9402 | VAL CE LOSS: 6.0659 | Topology Entropy: 0.5973 | Temp: 2.000 | GradNorm: 0.506 [ok]
+   -> L0_N0 Leading Path: 'tanh' (53.7% confidence)
+Epoch 92/1000 | CE Loss: 5.9415 | VAL CE LOSS: 6.0487 | Topology Entropy: 0.5980 | Temp: 2.000 | GradNorm: 0.739 [ok]
+   -> L0_N0 Leading Path: 'tanh' (61.2% confidence)
+Epoch 93/1000 | CE Loss: 5.9167 | VAL CE LOSS: 6.0387 | Topology Entropy: 0.5993 | Temp: 2.000 | GradNorm: 0.536 [ok]
+   -> L0_N0 Leading Path: 'tanh' (45.0% confidence)
+Epoch 94/1000 | CE Loss: 5.9045 | VAL CE LOSS: 6.0445 | Topology Entropy: 0.6006 | Temp: 2.000 | GradNorm: 0.598 [ok]
+   -> L0_N0 Leading Path: 'tanh' (44.4% confidence)
+Epoch 95/1000 | CE Loss: 5.9059 | VAL CE LOSS: 6.0310 | Topology Entropy: 0.5966 | Temp: 2.000 | GradNorm: 0.784 [ok]
+   -> L0_N0 Leading Path: 'tanh' (39.3% confidence)
+Epoch 96/1000 | CE Loss: 5.9284 | VAL CE LOSS: 6.0305 | Topology Entropy: 0.5985 | Temp: 2.000 | GradNorm: 0.662 [ok]
+   -> L0_N0 Leading Path: 'tanh' (30.2% confidence)
+Epoch 97/1000 | CE Loss: 5.9091 | VAL CE LOSS: 6.0202 | Topology Entropy: 0.5982 | Temp: 2.000 | GradNorm: 1.198 [CLIPPED]
+   -> L0_N0 Leading Path: 'tanh' (39.1% confidence)
+Epoch 98/1000 | CE Loss: 5.9180 | VAL CE LOSS: 6.0109 | Topology Entropy: 0.5986 | Temp: 2.000 | GradNorm: 0.557 [ok]
+   -> L0_N0 Leading Path: 'fourier_mix' (26.3% confidence)
+Epoch 99/1000 | CE Loss: 5.8925 | VAL CE LOSS: 6.0122 | Topology Entropy: 0.5974 | Temp: 2.000 | GradNorm: 0.371 [ok]
+   -> L0_N0 Leading Path: 'fourier_mix' (35.3% confidence)
+Epoch 100/1000 | CE Loss: 5.8929 | VAL CE LOSS: 6.0030 | Topology Entropy: 0.5977 | Temp: 2.000 | GradNorm: 0.354 [ok]
+   -> L0_N0 Leading Path: 'affine_tanh' (31.8% confidence)
+Epoch 101/1000 | CE Loss: 5.9005 | VAL CE LOSS: 6.0119 | Topology Entropy: 0.5952 | Temp: 2.000 | GradNorm: 0.307 [ok]
+   -> L0_N0 Leading Path: 'affine_tanh' (39.2% confidence)
+Epoch 102/1000 | CE Loss: 5.8823 | VAL CE LOSS: 6.0020 | Topology Entropy: 0.5966 | Temp: 2.000 | GradNorm: 19.198 [CLIPPED]
+   -> L0_N0 Leading Path: 'affine_tanh' (21.6% confidence)
+Epoch 103/1000 | CE Loss: 5.9029 | VAL CE LOSS: 5.9943 | Topology Entropy: 0.5984 | Temp: 2.000 | GradNorm: 0.410 [ok]
+   -> L0_N0 Leading Path: 'affine_tanh' (21.6% confidence)
+Epoch 104/1000 | CE Loss: 5.8696 | VAL CE LOSS: 5.9831 | Topology Entropy: 0.5985 | Temp: 2.000 | GradNorm: 0.528 [ok]
+   -> L0_N0 Leading Path: 'tanh' (22.4% confidence)
+Epoch 105/1000 | CE Loss: 5.8645 | VAL CE LOSS: 5.9720 | Topology Entropy: 0.5973 | Temp: 2.000 | GradNorm: 0.452 [ok]
+   -> L0_N0 Leading Path: 'affine_tanh' (25.2% confidence)
+Epoch 106/1000 | CE Loss: 5.8564 | VAL CE LOSS: 5.9685 | Topology Entropy: 0.5972 | Temp: 2.000 | GradNorm: 0.521 [ok]
+   -> L0_N0 Leading Path: 'affine_tanh' (27.5% confidence)
+Epoch 107/1000 | CE Loss: 5.8703 | VAL CE LOSS: 5.9656 | Topology Entropy: 0.5973 | Temp: 2.000 | GradNorm: 0.379 [ok]
+   -> L0_N0 Leading Path: 'affine_tanh' (32.5% confidence)
+Epoch 108/1000 | CE Loss: 5.8532 | VAL CE LOSS: 5.9860 | Topology Entropy: 0.5970 | Temp: 2.000 | GradNorm: 0.535 [ok]
+   -> L0_N0 Leading Path: 'tanh' (36.9% confidence)
+Epoch 109/1000 | CE Loss: 5.8616 | VAL CE LOSS: 5.9605 | Topology Entropy: 0.5960 | Temp: 2.000 | GradNorm: 0.900 [ok]
+   -> L0_N0 Leading Path: 'tanh' (50.1% confidence)
+Epoch 110/1000 | CE Loss: 5.8336 | VAL CE LOSS: 5.9637 | Topology Entropy: 0.5963 | Temp: 2.000 | GradNorm: 0.399 [ok]
+   -> L0_N0 Leading Path: 'tanh' (56.1% confidence)
+Epoch 111/1000 | CE Loss: 5.8348 | VAL CE LOSS: 5.9479 | Topology Entropy: 0.5962 | Temp: 2.000 | GradNorm: 0.340 [ok]
+   -> L0_N0 Leading Path: 'tanh' (59.1% confidence)
+Epoch 112/1000 | CE Loss: 5.8434 | VAL CE LOSS: 5.9443 | Topology Entropy: 0.5924 | Temp: 2.000 | GradNorm: 0.414 [ok]
+   -> L0_N0 Leading Path: 'tanh' (51.9% confidence)
+Epoch 113/1000 | CE Loss: 5.8200 | VAL CE LOSS: 5.9457 | Topology Entropy: 0.5906 | Temp: 2.000 | GradNorm: 1.101 [CLIPPED]
+   -> L0_N0 Leading Path: 'tanh' (55.0% confidence)
+Epoch 114/1000 | CE Loss: 5.8416 | VAL CE LOSS: 5.9372 | Topology Entropy: 0.5908 | Temp: 2.000 | GradNorm: 0.421 [ok]
+   -> L0_N0 Leading Path: 'tanh' (64.7% confidence)
+Epoch 115/1000 | CE Loss: 5.8126 | VAL CE LOSS: 5.9176 | Topology Entropy: 0.5928 | Temp: 2.000 | GradNorm: 0.528 [ok]
+   -> L0_N0 Leading Path: 'tanh' (69.0% confidence)
+Epoch 116/1000 | CE Loss: 5.8006 | VAL CE LOSS: 5.9442 | Topology Entropy: 0.5920 | Temp: 2.000 | GradNorm: 1.658 [CLIPPED]
+   -> L0_N0 Leading Path: 'tanh' (68.0% confidence)
+Epoch 117/1000 | CE Loss: 5.8063 | VAL CE LOSS: 5.9128 | Topology Entropy: 0.5933 | Temp: 2.000 | GradNorm: 0.455 [ok]
+   -> L0_N0 Leading Path: 'tanh' (58.9% confidence)
+Epoch 118/1000 | CE Loss: 5.8097 | VAL CE LOSS: 5.9000 | Topology Entropy: 0.5935 | Temp: 2.000 | GradNorm: 0.408 [ok]
+   -> L0_N0 Leading Path: 'tanh' (44.3% confidence)
+Epoch 119/1000 | CE Loss: 5.7999 | VAL CE LOSS: 5.9098 | Topology Entropy: 0.5914 | Temp: 2.000 | GradNorm: 0.657 [ok]
+   -> L0_N0 Leading Path: 'tanh' (47.8% confidence)
+Epoch 120/1000 | CE Loss: 5.8166 | VAL CE LOSS: 5.9401 | Topology Entropy: 0.5926 | Temp: 2.000 | GradNorm: 0.450 [ok]
+   -> L0_N0 Leading Path: 'tanh' (45.8% confidence)
+Epoch 121/1000 | CE Loss: 5.7947 | VAL CE LOSS: 5.8964 | Topology Entropy: 0.5924 | Temp: 2.000 | GradNorm: 0.554 [ok]
+   -> L0_N0 Leading Path: 'tanh' (43.6% confidence)
+Epoch 122/1000 | CE Loss: 5.7813 | VAL CE LOSS: 5.9045 | Topology Entropy: 0.5912 | Temp: 2.000 | GradNorm: 1.138 [CLIPPED]
+   -> L0_N0 Leading Path: 'tanh' (53.5% confidence)
+Epoch 123/1000 | CE Loss: 5.7825 | VAL CE LOSS: 5.8932 | Topology Entropy: 0.5898 | Temp: 2.000 | GradNorm: 0.371 [ok]
+   -> L0_N0 Leading Path: 'tanh' (50.6% confidence)
+Epoch 124/1000 | CE Loss: 5.7694 | VAL CE LOSS: 5.8884 | Topology Entropy: 0.5908 | Temp: 2.000 | GradNorm: 0.421 [ok]
+   -> L0_N0 Leading Path: 'tanh' (52.4% confidence)
+Epoch 125/1000 | CE Loss: 5.7705 | VAL CE LOSS: 5.8918 | Topology Entropy: 0.5925 | Temp: 2.000 | GradNorm: 0.384 [ok]
+   -> L0_N0 Leading Path: 'tanh' (44.8% confidence)
+Epoch 126/1000 | CE Loss: 5.7691 | VAL CE LOSS: 5.8836 | Topology Entropy: 0.5911 | Temp: 2.000 | GradNorm: 0.454 [ok]
+   -> L0_N0 Leading Path: 'tanh' (36.9% confidence)
+Epoch 127/1000 | CE Loss: 5.7681 | VAL CE LOSS: 5.8826 | Topology Entropy: 0.5883 | Temp: 2.000 | GradNorm: 0.487 [ok]
+   -> L0_N0 Leading Path: 'tanh' (35.0% confidence)
+Epoch 128/1000 | CE Loss: 5.7689 | VAL CE LOSS: 5.8720 | Topology Entropy: 0.5845 | Temp: 2.000 | GradNorm: 0.458 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (39.6% confidence)
+Epoch 129/1000 | CE Loss: 5.7921 | VAL CE LOSS: 5.8704 | Topology Entropy: 0.5858 | Temp: 2.000 | GradNorm: 0.402 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (79.7% confidence)
+Epoch 130/1000 | CE Loss: 5.7850 | VAL CE LOSS: 5.8703 | Topology Entropy: 0.5800 | Temp: 2.000 | GradNorm: 0.483 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (63.4% confidence)
+Epoch 131/1000 | CE Loss: 5.7673 | VAL CE LOSS: 5.8623 | Topology Entropy: 0.5807 | Temp: 2.000 | GradNorm: 0.662 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (51.8% confidence)
+Epoch 132/1000 | CE Loss: 5.7426 | VAL CE LOSS: 5.8573 | Topology Entropy: 0.5840 | Temp: 2.000 | GradNorm: 0.369 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (59.4% confidence)
+Epoch 133/1000 | CE Loss: 5.7696 | VAL CE LOSS: 5.8494 | Topology Entropy: 0.5793 | Temp: 2.000 | GradNorm: 0.461 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (53.9% confidence)
+Epoch 134/1000 | CE Loss: 5.7473 | VAL CE LOSS: 5.8509 | Topology Entropy: 0.5811 | Temp: 2.000 | GradNorm: 1.876 [CLIPPED]
+   -> L0_N0 Leading Path: 'affine_sqrt' (40.6% confidence)
+Epoch 135/1000 | CE Loss: 5.7550 | VAL CE LOSS: 5.8801 | Topology Entropy: 0.5820 | Temp: 2.000 | GradNorm: 0.469 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (34.1% confidence)
+Epoch 136/1000 | CE Loss: 5.7563 | VAL CE LOSS: 5.8527 | Topology Entropy: 0.5806 | Temp: 2.000 | GradNorm: 0.417 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (39.9% confidence)
+Epoch 137/1000 | CE Loss: 5.7425 | VAL CE LOSS: 5.8449 | Topology Entropy: 0.5838 | Temp: 2.000 | GradNorm: 0.486 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (37.6% confidence)
+Epoch 138/1000 | CE Loss: 5.7418 | VAL CE LOSS: 5.8384 | Topology Entropy: 0.5853 | Temp: 2.000 | GradNorm: 0.360 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (43.9% confidence)
+Epoch 139/1000 | CE Loss: 5.7247 | VAL CE LOSS: 5.8366 | Topology Entropy: 0.5854 | Temp: 2.000 | GradNorm: 0.525 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (63.1% confidence)
+Epoch 140/1000 | CE Loss: 5.7301 | VAL CE LOSS: 5.8282 | Topology Entropy: 0.5843 | Temp: 2.000 | GradNorm: 0.571 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (61.6% confidence)
+Epoch 141/1000 | CE Loss: 5.7298 | VAL CE LOSS: 5.8222 | Topology Entropy: 0.5853 | Temp: 2.000 | GradNorm: 0.330 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (82.2% confidence)
+Epoch 142/1000 | CE Loss: 5.7186 | VAL CE LOSS: 5.8210 | Topology Entropy: 0.5832 | Temp: 2.000 | GradNorm: 0.392 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (80.8% confidence)
+Epoch 143/1000 | CE Loss: 5.6959 | VAL CE LOSS: 5.8177 | Topology Entropy: 0.5849 | Temp: 2.000 | GradNorm: 0.442 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (71.5% confidence)
+Epoch 144/1000 | CE Loss: 5.7275 | VAL CE LOSS: 5.8096 | Topology Entropy: 0.5851 | Temp: 2.000 | GradNorm: 0.652 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (73.4% confidence)
+Epoch 145/1000 | CE Loss: 5.7263 | VAL CE LOSS: 5.8113 | Topology Entropy: 0.5830 | Temp: 2.000 | GradNorm: 0.761 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (69.6% confidence)
+Epoch 146/1000 | CE Loss: 5.7056 | VAL CE LOSS: 5.8042 | Topology Entropy: 0.5850 | Temp: 2.000 | GradNorm: 0.294 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (69.1% confidence)
+Epoch 147/1000 | CE Loss: 5.7265 | VAL CE LOSS: 5.8008 | Topology Entropy: 0.5798 | Temp: 2.000 | GradNorm: 0.327 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (74.4% confidence)
+Epoch 148/1000 | CE Loss: 5.7043 | VAL CE LOSS: 5.8050 | Topology Entropy: 0.5826 | Temp: 2.000 | GradNorm: 0.718 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (71.7% confidence)
+Epoch 149/1000 | CE Loss: 5.7103 | VAL CE LOSS: 5.7963 | Topology Entropy: 0.5834 | Temp: 2.000 | GradNorm: 0.341 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (54.9% confidence)
+Epoch 150/1000 | CE Loss: 5.7044 | VAL CE LOSS: 5.8004 | Topology Entropy: 0.5815 | Temp: 2.000 | GradNorm: 0.460 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (58.2% confidence)
+Epoch 151/1000 | CE Loss: 5.7219 | VAL CE LOSS: 5.8020 | Topology Entropy: 0.5824 | Temp: 2.000 | GradNorm: 0.439 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (61.8% confidence)
+Epoch 152/1000 | CE Loss: 5.6990 | VAL CE LOSS: 5.7987 | Topology Entropy: 0.5769 | Temp: 2.000 | GradNorm: 0.593 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (68.1% confidence)
+Epoch 153/1000 | CE Loss: 5.6924 | VAL CE LOSS: 5.7873 | Topology Entropy: 0.5792 | Temp: 2.000 | GradNorm: 0.356 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (66.4% confidence)
+Epoch 154/1000 | CE Loss: 5.6755 | VAL CE LOSS: 5.7848 | Topology Entropy: 0.5822 | Temp: 2.000 | GradNorm: 0.528 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (69.7% confidence)
+Epoch 155/1000 | CE Loss: 5.6980 | VAL CE LOSS: 5.7825 | Topology Entropy: 0.5802 | Temp: 2.000 | GradNorm: 0.358 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (71.2% confidence)
+Epoch 156/1000 | CE Loss: 5.6764 | VAL CE LOSS: 5.7884 | Topology Entropy: 0.5809 | Temp: 2.000 | GradNorm: 0.331 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (70.0% confidence)
+Epoch 157/1000 | CE Loss: 5.6695 | VAL CE LOSS: 5.7672 | Topology Entropy: 0.5814 | Temp: 2.000 | GradNorm: 0.322 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (65.2% confidence)
+Epoch 158/1000 | CE Loss: 5.6782 | VAL CE LOSS: 5.7706 | Topology Entropy: 0.5790 | Temp: 2.000 | GradNorm: 0.397 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (65.6% confidence)
+Epoch 159/1000 | CE Loss: 5.6910 | VAL CE LOSS: 5.7691 | Topology Entropy: 0.5781 | Temp: 2.000 | GradNorm: 0.488 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (63.4% confidence)
+Epoch 160/1000 | CE Loss: 5.6699 | VAL CE LOSS: 5.7697 | Topology Entropy: 0.5712 | Temp: 2.000 | GradNorm: 0.612 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (73.3% confidence)
+Epoch 161/1000 | CE Loss: 5.6717 | VAL CE LOSS: 5.7681 | Topology Entropy: 0.5778 | Temp: 2.000 | GradNorm: 0.398 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (75.5% confidence)
+Epoch 162/1000 | CE Loss: 5.6612 | VAL CE LOSS: 5.7653 | Topology Entropy: 0.5790 | Temp: 2.000 | GradNorm: 0.354 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (71.2% confidence)
+Epoch 163/1000 | CE Loss: 5.6717 | VAL CE LOSS: 5.7576 | Topology Entropy: 0.5810 | Temp: 2.000 | GradNorm: 0.737 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (70.5% confidence)
+Epoch 164/1000 | CE Loss: 5.6573 | VAL CE LOSS: 5.7496 | Topology Entropy: 0.5813 | Temp: 2.000 | GradNorm: 0.473 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (79.6% confidence)
+Epoch 165/1000 | CE Loss: 5.6651 | VAL CE LOSS: 5.7464 | Topology Entropy: 0.5833 | Temp: 2.000 | GradNorm: 0.651 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (78.9% confidence)
+Epoch 166/1000 | CE Loss: 5.6670 | VAL CE LOSS: 5.7477 | Topology Entropy: 0.5809 | Temp: 2.000 | GradNorm: 0.640 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (74.1% confidence)
+Epoch 167/1000 | CE Loss: 5.6590 | VAL CE LOSS: 5.7478 | Topology Entropy: 0.5822 | Temp: 2.000 | GradNorm: 0.428 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (73.2% confidence)
+Epoch 168/1000 | CE Loss: 5.6634 | VAL CE LOSS: 5.7307 | Topology Entropy: 0.5831 | Temp: 2.000 | GradNorm: 0.754 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (78.5% confidence)
+Epoch 169/1000 | CE Loss: 5.6658 | VAL CE LOSS: 5.7283 | Topology Entropy: 0.5824 | Temp: 2.000 | GradNorm: 0.347 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (83.4% confidence)
+Epoch 170/1000 | CE Loss: 5.6598 | VAL CE LOSS: 5.7326 | Topology Entropy: 0.5814 | Temp: 2.000 | GradNorm: 0.634 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (73.2% confidence)
+Epoch 171/1000 | CE Loss: 5.6350 | VAL CE LOSS: 5.7309 | Topology Entropy: 0.5803 | Temp: 2.000 | GradNorm: 0.534 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (77.7% confidence)
+Epoch 172/1000 | CE Loss: 5.6573 | VAL CE LOSS: 5.7288 | Topology Entropy: 0.5800 | Temp: 2.000 | GradNorm: 0.388 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (80.9% confidence)
+Epoch 173/1000 | CE Loss: 5.6378 | VAL CE LOSS: 5.7260 | Topology Entropy: 0.5801 | Temp: 2.000 | GradNorm: 0.408 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (84.3% confidence)
+Epoch 174/1000 | CE Loss: 5.6492 | VAL CE LOSS: 5.7286 | Topology Entropy: 0.5811 | Temp: 2.000 | GradNorm: 0.638 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (86.4% confidence)
+Epoch 175/1000 | CE Loss: 5.6499 | VAL CE LOSS: 5.7257 | Topology Entropy: 0.5772 | Temp: 2.000 | GradNorm: 0.690 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (80.2% confidence)
+Epoch 176/1000 | CE Loss: 5.6368 | VAL CE LOSS: 5.7251 | Topology Entropy: 0.5786 | Temp: 2.000 | GradNorm: 0.396 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (83.9% confidence)
+Epoch 177/1000 | CE Loss: 5.6382 | VAL CE LOSS: 5.7143 | Topology Entropy: 0.5815 | Temp: 2.000 | GradNorm: 0.878 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (88.0% confidence)
+Epoch 178/1000 | CE Loss: 5.6224 | VAL CE LOSS: 5.7200 | Topology Entropy: 0.5815 | Temp: 2.000 | GradNorm: 0.398 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (88.7% confidence)
+Epoch 179/1000 | CE Loss: 5.6240 | VAL CE LOSS: 5.7257 | Topology Entropy: 0.5802 | Temp: 2.000 | GradNorm: 0.441 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (93.8% confidence)
+Epoch 180/1000 | CE Loss: 5.6134 | VAL CE LOSS: 5.7092 | Topology Entropy: 0.5790 | Temp: 2.000 | GradNorm: 0.417 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (92.9% confidence)
+Epoch 181/1000 | CE Loss: 5.6342 | VAL CE LOSS: 5.7439 | Topology Entropy: 0.5785 | Temp: 2.000 | GradNorm: 0.375 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (93.4% confidence)
+Epoch 182/1000 | CE Loss: 5.6410 | VAL CE LOSS: 5.7099 | Topology Entropy: 0.5803 | Temp: 2.000 | GradNorm: 0.404 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (94.0% confidence)
+Epoch 183/1000 | CE Loss: 5.6238 | VAL CE LOSS: 5.7035 | Topology Entropy: 0.5803 | Temp: 2.000 | GradNorm: 0.339 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (92.7% confidence)
+Epoch 184/1000 | CE Loss: 5.6175 | VAL CE LOSS: 5.7084 | Topology Entropy: 0.5803 | Temp: 2.000 | GradNorm: 0.738 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (90.6% confidence)
+Epoch 185/1000 | CE Loss: 5.6200 | VAL CE LOSS: 5.7106 | Topology Entropy: 0.5770 | Temp: 2.000 | GradNorm: 0.448 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (87.5% confidence)
+Epoch 186/1000 | CE Loss: 5.6152 | VAL CE LOSS: 5.6859 | Topology Entropy: 0.5788 | Temp: 2.000 | GradNorm: 0.408 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (93.6% confidence)
+Epoch 187/1000 | CE Loss: 5.6152 | VAL CE LOSS: 5.6918 | Topology Entropy: 0.5787 | Temp: 2.000 | GradNorm: 0.705 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (92.4% confidence)
+Epoch 188/1000 | CE Loss: 5.6092 | VAL CE LOSS: 5.6868 | Topology Entropy: 0.5783 | Temp: 2.000 | GradNorm: 0.392 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (93.0% confidence)
+Epoch 189/1000 | CE Loss: 5.6089 | VAL CE LOSS: 5.6830 | Topology Entropy: 0.5765 | Temp: 2.000 | GradNorm: 0.529 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (94.2% confidence)
+Epoch 190/1000 | CE Loss: 5.6160 | VAL CE LOSS: 5.6771 | Topology Entropy: 0.5766 | Temp: 2.000 | GradNorm: 1.122 [CLIPPED]
+   -> L0_N0 Leading Path: 'affine_sqrt' (92.2% confidence)
+Epoch 191/1000 | CE Loss: 5.6109 | VAL CE LOSS: 5.6798 | Topology Entropy: 0.5775 | Temp: 2.000 | GradNorm: 0.465 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (93.2% confidence)
+Epoch 192/1000 | CE Loss: 5.5786 | VAL CE LOSS: 5.6751 | Topology Entropy: 0.5785 | Temp: 2.000 | GradNorm: 0.519 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (92.9% confidence)
+Epoch 193/1000 | CE Loss: 5.6100 | VAL CE LOSS: 5.6853 | Topology Entropy: 0.5772 | Temp: 2.000 | GradNorm: 0.282 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (90.8% confidence)
+Epoch 194/1000 | CE Loss: 5.6067 | VAL CE LOSS: 5.6687 | Topology Entropy: 0.5781 | Temp: 2.000 | GradNorm: 0.581 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (92.0% confidence)
+Epoch 195/1000 | CE Loss: 5.5952 | VAL CE LOSS: 5.6768 | Topology Entropy: 0.5759 | Temp: 2.000 | GradNorm: 0.348 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (91.4% confidence)
+Epoch 196/1000 | CE Loss: 5.6061 | VAL CE LOSS: 5.6693 | Topology Entropy: 0.5766 | Temp: 2.000 | GradNorm: 0.491 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (92.2% confidence)
+Epoch 197/1000 | CE Loss: 5.6060 | VAL CE LOSS: 5.6684 | Topology Entropy: 0.5752 | Temp: 2.000 | GradNorm: 1.139 [CLIPPED]
+   -> L0_N0 Leading Path: 'affine_sqrt' (91.3% confidence)
+Epoch 198/1000 | CE Loss: 5.5839 | VAL CE LOSS: 5.6571 | Topology Entropy: 0.5738 | Temp: 2.000 | GradNorm: 0.373 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (91.3% confidence)
+Epoch 199/1000 | CE Loss: 5.6056 | VAL CE LOSS: 5.6581 | Topology Entropy: 0.5729 | Temp: 2.000 | GradNorm: 0.911 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (93.7% confidence)
+Epoch 200/1000 | CE Loss: 5.5835 | VAL CE LOSS: 5.6733 | Topology Entropy: 0.5615 | Temp: 2.000 | GradNorm: 0.299 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (92.6% confidence)
+Epoch 201/1000 | CE Loss: 5.5803 | VAL CE LOSS: 5.6459 | Topology Entropy: 0.5683 | Temp: 2.000 | GradNorm: 1.333 [CLIPPED]
+   -> L0_N0 Leading Path: 'affine_sqrt' (89.7% confidence)
+Epoch 202/1000 | CE Loss: 5.5897 | VAL CE LOSS: 5.6562 | Topology Entropy: 0.5700 | Temp: 2.000 | GradNorm: 0.462 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (86.4% confidence)
+Epoch 203/1000 | CE Loss: 5.6170 | VAL CE LOSS: 5.6607 | Topology Entropy: 0.5653 | Temp: 2.000 | GradNorm: 0.682 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (90.0% confidence)
+Epoch 204/1000 | CE Loss: 5.5801 | VAL CE LOSS: 5.6867 | Topology Entropy: 0.5676 | Temp: 2.000 | GradNorm: 0.565 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (88.9% confidence)
+Epoch 205/1000 | CE Loss: 5.5786 | VAL CE LOSS: 5.6479 | Topology Entropy: 0.5670 | Temp: 2.000 | GradNorm: 0.581 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (93.2% confidence)
+Epoch 206/1000 | CE Loss: 5.5822 | VAL CE LOSS: 5.6469 | Topology Entropy: 0.5688 | Temp: 2.000 | GradNorm: 0.466 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (89.6% confidence)
+Epoch 207/1000 | CE Loss: 5.5865 | VAL CE LOSS: 5.6846 | Topology Entropy: 0.5685 | Temp: 2.000 | GradNorm: 0.321 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (90.2% confidence)
+Epoch 208/1000 | CE Loss: 5.5765 | VAL CE LOSS: 5.6532 | Topology Entropy: 0.5692 | Temp: 2.000 | GradNorm: 0.418 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (90.1% confidence)
+Epoch 209/1000 | CE Loss: 5.5908 | VAL CE LOSS: 5.6452 | Topology Entropy: 0.5688 | Temp: 2.000 | GradNorm: 0.525 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (91.7% confidence)
+Epoch 210/1000 | CE Loss: 5.5617 | VAL CE LOSS: 5.6451 | Topology Entropy: 0.5660 | Temp: 2.000 | GradNorm: 0.374 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (90.4% confidence)
+Epoch 211/1000 | CE Loss: 5.5813 | VAL CE LOSS: 5.6458 | Topology Entropy: 0.5697 | Temp: 2.000 | GradNorm: 0.386 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (88.7% confidence)
+Epoch 212/1000 | CE Loss: 5.5610 | VAL CE LOSS: 5.6438 | Topology Entropy: 0.5690 | Temp: 2.000 | GradNorm: 0.382 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (89.6% confidence)
+Epoch 213/1000 | CE Loss: 5.5660 | VAL CE LOSS: 5.6440 | Topology Entropy: 0.5690 | Temp: 2.000 | GradNorm: 0.720 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (89.4% confidence)
+Epoch 214/1000 | CE Loss: 5.5674 | VAL CE LOSS: 5.6394 | Topology Entropy: 0.5713 | Temp: 2.000 | GradNorm: 0.360 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (90.4% confidence)
+Epoch 215/1000 | CE Loss: 5.5708 | VAL CE LOSS: 5.6390 | Topology Entropy: 0.5711 | Temp: 2.000 | GradNorm: 0.923 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (94.4% confidence)
+Epoch 216/1000 | CE Loss: 5.5747 | VAL CE LOSS: 5.6381 | Topology Entropy: 0.5713 | Temp: 2.000 | GradNorm: 1.587 [CLIPPED]
+   -> L0_N0 Leading Path: 'affine_sqrt' (92.6% confidence)
+Epoch 217/1000 | CE Loss: 5.5483 | VAL CE LOSS: 5.6338 | Topology Entropy: 0.5701 | Temp: 2.000 | GradNorm: 0.493 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (83.2% confidence)
+Epoch 218/1000 | CE Loss: 5.5771 | VAL CE LOSS: 5.6359 | Topology Entropy: 0.5701 | Temp: 2.000 | GradNorm: 0.741 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (88.3% confidence)
+Epoch 219/1000 | CE Loss: 5.5824 | VAL CE LOSS: 5.6307 | Topology Entropy: 0.5666 | Temp: 2.000 | GradNorm: 0.531 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (91.8% confidence)
+Epoch 220/1000 | CE Loss: 5.5489 | VAL CE LOSS: 5.6210 | Topology Entropy: 0.5694 | Temp: 2.000 | GradNorm: 1.171 [CLIPPED]
+   -> L0_N0 Leading Path: 'affine_sqrt' (93.5% confidence)
+Epoch 221/1000 | CE Loss: 5.5528 | VAL CE LOSS: 5.6218 | Topology Entropy: 0.5697 | Temp: 2.000 | GradNorm: 0.407 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (91.4% confidence)
+Epoch 222/1000 | CE Loss: 5.5466 | VAL CE LOSS: 5.6410 | Topology Entropy: 0.5718 | Temp: 2.000 | GradNorm: 0.387 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (89.9% confidence)
+Epoch 223/1000 | CE Loss: 5.5411 | VAL CE LOSS: 5.6313 | Topology Entropy: 0.5723 | Temp: 2.000 | GradNorm: 0.459 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (86.4% confidence)
+Epoch 224/1000 | CE Loss: 5.5462 | VAL CE LOSS: 5.6274 | Topology Entropy: 0.5711 | Temp: 2.000 | GradNorm: 0.518 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (88.4% confidence)
+Epoch 225/1000 | CE Loss: 5.5467 | VAL CE LOSS: 5.6421 | Topology Entropy: 0.5701 | Temp: 2.000 | GradNorm: 0.375 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (90.6% confidence)
+Epoch 226/1000 | CE Loss: 5.5518 | VAL CE LOSS: 5.6301 | Topology Entropy: 0.5715 | Temp: 2.000 | GradNorm: 0.392 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (92.5% confidence)
+Epoch 227/1000 | CE Loss: 5.5242 | VAL CE LOSS: 5.6348 | Topology Entropy: 0.5725 | Temp: 2.000 | GradNorm: 0.488 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (94.1% confidence)
+Epoch 228/1000 | CE Loss: 5.5506 | VAL CE LOSS: 5.6238 | Topology Entropy: 0.5709 | Temp: 2.000 | GradNorm: 0.524 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (90.0% confidence)
+Epoch 229/1000 | CE Loss: 5.5436 | VAL CE LOSS: 5.6216 | Topology Entropy: 0.5714 | Temp: 2.000 | GradNorm: 0.341 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (88.4% confidence)
+Epoch 230/1000 | CE Loss: 5.5333 | VAL CE LOSS: 5.6121 | Topology Entropy: 0.5649 | Temp: 2.000 | GradNorm: 0.765 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (85.1% confidence)
+Epoch 231/1000 | CE Loss: 5.5469 | VAL CE LOSS: 5.6063 | Topology Entropy: 0.5669 | Temp: 2.000 | GradNorm: 0.361 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (88.5% confidence)
+Epoch 232/1000 | CE Loss: 5.5330 | VAL CE LOSS: 5.6116 | Topology Entropy: 0.5679 | Temp: 2.000 | GradNorm: 0.512 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (86.4% confidence)
+Epoch 233/1000 | CE Loss: 5.5430 | VAL CE LOSS: 5.6235 | Topology Entropy: 0.5620 | Temp: 2.000 | GradNorm: 0.352 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (80.4% confidence)
+Epoch 234/1000 | CE Loss: 5.5506 | VAL CE LOSS: 5.6137 | Topology Entropy: 0.5639 | Temp: 2.000 | GradNorm: 2.136 [CLIPPED]
+   -> L0_N0 Leading Path: 'affine_sqrt' (84.8% confidence)
+Epoch 235/1000 | CE Loss: 5.5491 | VAL CE LOSS: 5.6090 | Topology Entropy: 0.5648 | Temp: 2.000 | GradNorm: 1.889 [CLIPPED]
+   -> L0_N0 Leading Path: 'affine_sqrt' (86.1% confidence)
+Epoch 236/1000 | CE Loss: 5.5465 | VAL CE LOSS: 5.6067 | Topology Entropy: 0.5648 | Temp: 2.000 | GradNorm: 0.659 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (84.2% confidence)
+Epoch 237/1000 | CE Loss: 5.5527 | VAL CE LOSS: 5.6169 | Topology Entropy: 0.5660 | Temp: 2.000 | GradNorm: 0.351 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (85.4% confidence)
+Epoch 238/1000 | CE Loss: 5.5339 | VAL CE LOSS: 5.6094 | Topology Entropy: 0.5661 | Temp: 2.000 | GradNorm: 0.302 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (87.1% confidence)
+Epoch 239/1000 | CE Loss: 5.5389 | VAL CE LOSS: 5.6004 | Topology Entropy: 0.5657 | Temp: 2.000 | GradNorm: 0.433 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (75.6% confidence)
+Epoch 240/1000 | CE Loss: 5.5271 | VAL CE LOSS: 5.6091 | Topology Entropy: 0.5629 | Temp: 2.000 | GradNorm: 0.354 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (88.9% confidence)
+Epoch 241/1000 | CE Loss: 5.5306 | VAL CE LOSS: 5.6482 | Topology Entropy: 0.5578 | Temp: 2.000 | GradNorm: 0.314 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (88.4% confidence)
+Epoch 242/1000 | CE Loss: 5.5184 | VAL CE LOSS: 5.5993 | Topology Entropy: 0.5606 | Temp: 2.000 | GradNorm: 0.740 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (89.4% confidence)
+Epoch 243/1000 | CE Loss: 5.5378 | VAL CE LOSS: 5.6031 | Topology Entropy: 0.5620 | Temp: 2.000 | GradNorm: 0.369 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (78.2% confidence)
+Epoch 244/1000 | CE Loss: 5.5084 | VAL CE LOSS: 5.5991 | Topology Entropy: 0.5651 | Temp: 2.000 | GradNorm: 0.799 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (81.5% confidence)
+Epoch 245/1000 | CE Loss: 5.5360 | VAL CE LOSS: 5.6024 | Topology Entropy: 0.5635 | Temp: 2.000 | GradNorm: 0.398 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (85.3% confidence)
+Epoch 246/1000 | CE Loss: 5.5278 | VAL CE LOSS: 5.5909 | Topology Entropy: 0.5636 | Temp: 2.000 | GradNorm: 0.742 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (84.0% confidence)
+Epoch 247/1000 | CE Loss: 5.5244 | VAL CE LOSS: 5.5971 | Topology Entropy: 0.5628 | Temp: 2.000 | GradNorm: 0.421 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (82.9% confidence)
+Epoch 248/1000 | CE Loss: 5.4968 | VAL CE LOSS: 5.5975 | Topology Entropy: 0.5628 | Temp: 2.000 | GradNorm: 0.373 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (85.5% confidence)
+Epoch 249/1000 | CE Loss: 5.5029 | VAL CE LOSS: 5.5892 | Topology Entropy: 0.5615 | Temp: 2.000 | GradNorm: 0.526 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (79.6% confidence)
+Epoch 250/1000 | CE Loss: 5.5130 | VAL CE LOSS: 5.5805 | Topology Entropy: 0.5589 | Temp: 2.000 | GradNorm: 0.380 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (79.1% confidence)
+Epoch 251/1000 | CE Loss: 5.5172 | VAL CE LOSS: 5.5842 | Topology Entropy: 0.5498 | Temp: 2.000 | GradNorm: 0.405 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (77.2% confidence)
+Epoch 252/1000 | CE Loss: 5.5172 | VAL CE LOSS: 5.5817 | Topology Entropy: 0.5572 | Temp: 2.000 | GradNorm: 0.484 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (65.3% confidence)
+Epoch 253/1000 | CE Loss: 5.5185 | VAL CE LOSS: 5.5801 | Topology Entropy: 0.5568 | Temp: 2.000 | GradNorm: 0.320 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (70.6% confidence)
+Epoch 254/1000 | CE Loss: 5.5199 | VAL CE LOSS: 5.5758 | Topology Entropy: 0.5587 | Temp: 2.000 | GradNorm: 0.364 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (81.0% confidence)
+Epoch 255/1000 | CE Loss: 5.5147 | VAL CE LOSS: 5.5752 | Topology Entropy: 0.5586 | Temp: 2.000 | GradNorm: 0.888 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (76.4% confidence)
+Epoch 256/1000 | CE Loss: 5.5194 | VAL CE LOSS: 5.5793 | Topology Entropy: 0.5575 | Temp: 2.000 | GradNorm: 0.308 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (70.3% confidence)
+Epoch 257/1000 | CE Loss: 5.5064 | VAL CE LOSS: 5.5751 | Topology Entropy: 0.5522 | Temp: 2.000 | GradNorm: 0.579 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (63.8% confidence)
+Epoch 258/1000 | CE Loss: 5.4972 | VAL CE LOSS: 5.5792 | Topology Entropy: 0.5551 | Temp: 2.000 | GradNorm: 0.372 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (69.1% confidence)
+Epoch 259/1000 | CE Loss: 5.5357 | VAL CE LOSS: 5.5754 | Topology Entropy: 0.5520 | Temp: 2.000 | GradNorm: 0.367 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (72.0% confidence)
+Epoch 260/1000 | CE Loss: 5.5120 | VAL CE LOSS: 5.5797 | Topology Entropy: 0.5507 | Temp: 2.000 | GradNorm: 0.317 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (80.1% confidence)
+Epoch 261/1000 | CE Loss: 5.5281 | VAL CE LOSS: 5.5613 | Topology Entropy: 0.5549 | Temp: 2.000 | GradNorm: 0.513 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (73.6% confidence)
+Epoch 262/1000 | CE Loss: 5.5205 | VAL CE LOSS: 5.5690 | Topology Entropy: 0.5544 | Temp: 2.000 | GradNorm: 0.423 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (79.7% confidence)
+Epoch 263/1000 | CE Loss: 5.4965 | VAL CE LOSS: 5.5628 | Topology Entropy: 0.5554 | Temp: 2.000 | GradNorm: 0.421 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (75.4% confidence)
+Epoch 264/1000 | CE Loss: 5.5098 | VAL CE LOSS: 5.5620 | Topology Entropy: 0.5546 | Temp: 2.000 | GradNorm: 0.371 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (75.9% confidence)
+Epoch 265/1000 | CE Loss: 5.5006 | VAL CE LOSS: 5.5642 | Topology Entropy: 0.5558 | Temp: 2.000 | GradNorm: 0.426 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (73.2% confidence)
+Epoch 266/1000 | CE Loss: 5.5130 | VAL CE LOSS: 5.5694 | Topology Entropy: 0.5507 | Temp: 2.000 | GradNorm: 0.340 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (76.0% confidence)
+Epoch 267/1000 | CE Loss: 5.4793 | VAL CE LOSS: 5.5737 | Topology Entropy: 0.5522 | Temp: 2.000 | GradNorm: 0.388 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (67.7% confidence)
+Epoch 268/1000 | CE Loss: 5.5013 | VAL CE LOSS: 5.5701 | Topology Entropy: 0.5536 | Temp: 2.000 | GradNorm: 0.426 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (68.4% confidence)
+Epoch 269/1000 | CE Loss: 5.4889 | VAL CE LOSS: 5.5828 | Topology Entropy: 0.5567 | Temp: 2.000 | GradNorm: 0.666 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (76.3% confidence)
+Epoch 270/1000 | CE Loss: 5.4890 | VAL CE LOSS: 5.5597 | Topology Entropy: 0.5555 | Temp: 2.000 | GradNorm: 0.276 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (70.4% confidence)
+Epoch 271/1000 | CE Loss: 5.4832 | VAL CE LOSS: 5.5697 | Topology Entropy: 0.5573 | Temp: 2.000 | GradNorm: 0.347 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (60.6% confidence)
+Epoch 272/1000 | CE Loss: 5.4943 | VAL CE LOSS: 5.5588 | Topology Entropy: 0.5568 | Temp: 2.000 | GradNorm: 0.952 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (39.8% confidence)
+Epoch 273/1000 | CE Loss: 5.4827 | VAL CE LOSS: 5.5550 | Topology Entropy: 0.5570 | Temp: 2.000 | GradNorm: 0.342 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (35.3% confidence)
+Epoch 274/1000 | CE Loss: 5.4871 | VAL CE LOSS: 5.5765 | Topology Entropy: 0.5544 | Temp: 2.000 | GradNorm: 0.907 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (38.9% confidence)
+Epoch 275/1000 | CE Loss: 5.4805 | VAL CE LOSS: 5.5529 | Topology Entropy: 0.5539 | Temp: 2.000 | GradNorm: 0.500 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (35.7% confidence)
+Epoch 276/1000 | CE Loss: 5.4886 | VAL CE LOSS: 5.5473 | Topology Entropy: 0.5541 | Temp: 2.000 | GradNorm: 0.631 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (42.0% confidence)
+Epoch 277/1000 | CE Loss: 5.4724 | VAL CE LOSS: 5.5511 | Topology Entropy: 0.5511 | Temp: 2.000 | GradNorm: 0.373 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (30.2% confidence)
+Epoch 278/1000 | CE Loss: 5.4865 | VAL CE LOSS: 5.5503 | Topology Entropy: 0.5522 | Temp: 2.000 | GradNorm: 0.461 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (32.7% confidence)
+Epoch 279/1000 | CE Loss: 5.4774 | VAL CE LOSS: 5.5462 | Topology Entropy: 0.5537 | Temp: 2.000 | GradNorm: 0.317 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (37.0% confidence)
+Epoch 280/1000 | CE Loss: 5.4802 | VAL CE LOSS: 5.5513 | Topology Entropy: 0.5499 | Temp: 2.000 | GradNorm: 0.423 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (43.1% confidence)
+Epoch 281/1000 | CE Loss: 5.4859 | VAL CE LOSS: 5.5415 | Topology Entropy: 0.5529 | Temp: 2.000 | GradNorm: 0.383 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (30.3% confidence)
+Epoch 282/1000 | CE Loss: 5.4712 | VAL CE LOSS: 5.5482 | Topology Entropy: 0.5527 | Temp: 2.000 | GradNorm: 0.485 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (39.1% confidence)
+Epoch 283/1000 | CE Loss: 5.4733 | VAL CE LOSS: 5.5576 | Topology Entropy: 0.5527 | Temp: 2.000 | GradNorm: 0.312 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (38.0% confidence)
+Epoch 284/1000 | CE Loss: 5.4865 | VAL CE LOSS: 5.5481 | Topology Entropy: 0.5511 | Temp: 2.000 | GradNorm: 0.407 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (35.2% confidence)
+Epoch 285/1000 | CE Loss: 5.4544 | VAL CE LOSS: 5.5433 | Topology Entropy: 0.5517 | Temp: 2.000 | GradNorm: 0.290 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (46.5% confidence)
+Epoch 286/1000 | CE Loss: 5.4900 | VAL CE LOSS: 5.5328 | Topology Entropy: 0.5534 | Temp: 2.000 | GradNorm: 0.560 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (38.1% confidence)
+Epoch 287/1000 | CE Loss: 5.4967 | VAL CE LOSS: 5.5441 | Topology Entropy: 0.5441 | Temp: 2.000 | GradNorm: 0.554 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (60.3% confidence)
+Epoch 288/1000 | CE Loss: 5.4682 | VAL CE LOSS: 5.5418 | Topology Entropy: 0.5491 | Temp: 2.000 | GradNorm: 0.486 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (57.1% confidence)
+Epoch 289/1000 | CE Loss: 5.4758 | VAL CE LOSS: 5.5351 | Topology Entropy: 0.5505 | Temp: 2.000 | GradNorm: 0.459 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (44.8% confidence)
+Epoch 290/1000 | CE Loss: 5.4704 | VAL CE LOSS: 5.5331 | Topology Entropy: 0.5471 | Temp: 2.000 | GradNorm: 0.318 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (39.4% confidence)
+Epoch 291/1000 | CE Loss: 5.4691 | VAL CE LOSS: 5.5358 | Topology Entropy: 0.5486 | Temp: 2.000 | GradNorm: 0.624 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (33.9% confidence)
+Epoch 292/1000 | CE Loss: 5.4549 | VAL CE LOSS: 5.5340 | Topology Entropy: 0.5487 | Temp: 2.000 | GradNorm: 0.318 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (39.4% confidence)
+Epoch 293/1000 | CE Loss: 5.4625 | VAL CE LOSS: 5.5215 | Topology Entropy: 0.5523 | Temp: 2.000 | GradNorm: 0.454 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (47.0% confidence)
+Epoch 294/1000 | CE Loss: 5.4830 | VAL CE LOSS: 5.5280 | Topology Entropy: 0.5474 | Temp: 2.000 | GradNorm: 0.507 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (52.8% confidence)
+Epoch 295/1000 | CE Loss: 5.4717 | VAL CE LOSS: 5.5288 | Topology Entropy: 0.5481 | Temp: 2.000 | GradNorm: 0.465 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (51.8% confidence)
+Epoch 296/1000 | CE Loss: 5.4658 | VAL CE LOSS: 5.5444 | Topology Entropy: 0.5515 | Temp: 2.000 | GradNorm: 0.343 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (60.6% confidence)
+Epoch 297/1000 | CE Loss: 5.4604 | VAL CE LOSS: 5.5242 | Topology Entropy: 0.5524 | Temp: 2.000 | GradNorm: 0.342 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (45.0% confidence)
+Epoch 298/1000 | CE Loss: 5.4416 | VAL CE LOSS: 5.5220 | Topology Entropy: 0.5507 | Temp: 2.000 | GradNorm: 1.110 [CLIPPED]
+   -> L0_N0 Leading Path: 'affine_gelu' (35.7% confidence)
+Epoch 299/1000 | CE Loss: 5.4715 | VAL CE LOSS: 5.5267 | Topology Entropy: 0.5530 | Temp: 2.000 | GradNorm: 0.319 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (40.5% confidence)
+Epoch 300/1000 | CE Loss: 5.4584 | VAL CE LOSS: 5.5234 | Topology Entropy: 0.5521 | Temp: 2.000 | GradNorm: 0.307 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (43.7% confidence)
+Epoch 301/1000 | CE Loss: 5.4646 | VAL CE LOSS: 5.5218 | Topology Entropy: 0.5545 | Temp: 2.000 | GradNorm: 1.090 [CLIPPED]
+   -> L0_N0 Leading Path: 'affine_gelu' (42.1% confidence)
+Epoch 302/1000 | CE Loss: 5.4625 | VAL CE LOSS: 5.5179 | Topology Entropy: 0.5516 | Temp: 2.000 | GradNorm: 0.574 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (53.4% confidence)
+Epoch 303/1000 | CE Loss: 5.4549 | VAL CE LOSS: 5.5301 | Topology Entropy: 0.5477 | Temp: 2.000 | GradNorm: 0.281 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (40.2% confidence)
+Epoch 304/1000 | CE Loss: 5.4625 | VAL CE LOSS: 5.5227 | Topology Entropy: 0.5510 | Temp: 2.000 | GradNorm: 0.612 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (49.2% confidence)
+Epoch 305/1000 | CE Loss: 5.4498 | VAL CE LOSS: 5.5081 | Topology Entropy: 0.5507 | Temp: 2.000 | GradNorm: 0.514 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (33.7% confidence)
+Epoch 306/1000 | CE Loss: 5.4447 | VAL CE LOSS: 5.5124 | Topology Entropy: 0.5502 | Temp: 2.000 | GradNorm: 0.771 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (30.8% confidence)
+Epoch 307/1000 | CE Loss: 5.4527 | VAL CE LOSS: 5.5079 | Topology Entropy: 0.5524 | Temp: 2.000 | GradNorm: 0.595 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (38.1% confidence)
+Epoch 308/1000 | CE Loss: 5.4534 | VAL CE LOSS: 5.5181 | Topology Entropy: 0.5482 | Temp: 2.000 | GradNorm: 0.374 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (31.9% confidence)
+Epoch 309/1000 | CE Loss: 5.4644 | VAL CE LOSS: 5.5204 | Topology Entropy: 0.5433 | Temp: 2.000 | GradNorm: 0.500 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (30.5% confidence)
+Epoch 310/1000 | CE Loss: 5.4450 | VAL CE LOSS: 5.5112 | Topology Entropy: 0.5458 | Temp: 2.000 | GradNorm: 0.527 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (48.4% confidence)
+Epoch 311/1000 | CE Loss: 5.4522 | VAL CE LOSS: 5.5056 | Topology Entropy: 0.5407 | Temp: 2.000 | GradNorm: 0.417 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (38.3% confidence)
+Epoch 312/1000 | CE Loss: 5.4565 | VAL CE LOSS: 5.5129 | Topology Entropy: 0.5453 | Temp: 2.000 | GradNorm: 0.325 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (44.3% confidence)
+Epoch 313/1000 | CE Loss: 5.4349 | VAL CE LOSS: 5.5105 | Topology Entropy: 0.5477 | Temp: 2.000 | GradNorm: 0.372 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (57.7% confidence)
+Epoch 314/1000 | CE Loss: 5.4425 | VAL CE LOSS: 5.5191 | Topology Entropy: 0.5437 | Temp: 2.000 | GradNorm: 0.315 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (57.7% confidence)
+Epoch 315/1000 | CE Loss: 5.4651 | VAL CE LOSS: 5.5175 | Topology Entropy: 0.5469 | Temp: 2.000 | GradNorm: 0.398 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (47.2% confidence)
+Epoch 316/1000 | CE Loss: 5.4525 | VAL CE LOSS: 5.5222 | Topology Entropy: 0.5477 | Temp: 2.000 | GradNorm: 0.300 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (35.6% confidence)
+Epoch 317/1000 | CE Loss: 5.4371 | VAL CE LOSS: 5.5138 | Topology Entropy: 0.5469 | Temp: 2.000 | GradNorm: 0.494 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (41.4% confidence)
+Epoch 318/1000 | CE Loss: 5.4382 | VAL CE LOSS: 5.5190 | Topology Entropy: 0.5482 | Temp: 2.000 | GradNorm: 0.677 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (64.2% confidence)
+Epoch 319/1000 | CE Loss: 5.4295 | VAL CE LOSS: 5.5087 | Topology Entropy: 0.5495 | Temp: 2.000 | GradNorm: 0.412 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (60.3% confidence)
+Epoch 320/1000 | CE Loss: 5.4522 | VAL CE LOSS: 5.5123 | Topology Entropy: 0.5468 | Temp: 2.000 | GradNorm: 0.463 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (55.4% confidence)
+Epoch 321/1000 | CE Loss: 5.4273 | VAL CE LOSS: 5.5084 | Topology Entropy: 0.5467 | Temp: 2.000 | GradNorm: 0.303 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (47.3% confidence)
+Epoch 322/1000 | CE Loss: 5.4224 | VAL CE LOSS: 5.4994 | Topology Entropy: 0.5480 | Temp: 2.000 | GradNorm: 0.291 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (42.2% confidence)
+Epoch 323/1000 | CE Loss: 5.4474 | VAL CE LOSS: 5.5009 | Topology Entropy: 0.5450 | Temp: 2.000 | GradNorm: 0.788 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (38.3% confidence)
+Epoch 324/1000 | CE Loss: 5.4465 | VAL CE LOSS: 5.5069 | Topology Entropy: 0.5473 | Temp: 2.000 | GradNorm: 0.305 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (41.0% confidence)
+Epoch 325/1000 | CE Loss: 5.4459 | VAL CE LOSS: 5.5037 | Topology Entropy: 0.5384 | Temp: 2.000 | GradNorm: 0.453 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (36.6% confidence)
+Epoch 326/1000 | CE Loss: 5.4391 | VAL CE LOSS: 5.5086 | Topology Entropy: 0.5413 | Temp: 2.000 | GradNorm: 0.378 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (42.0% confidence)
+Epoch 327/1000 | CE Loss: 5.4428 | VAL CE LOSS: 5.5106 | Topology Entropy: 0.5382 | Temp: 2.000 | GradNorm: 0.387 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (38.7% confidence)
+Epoch 328/1000 | CE Loss: 5.4395 | VAL CE LOSS: 5.4953 | Topology Entropy: 0.5370 | Temp: 2.000 | GradNorm: 0.470 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (33.8% confidence)
+Epoch 329/1000 | CE Loss: 5.4464 | VAL CE LOSS: 5.4998 | Topology Entropy: 0.5413 | Temp: 2.000 | GradNorm: 0.464 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (35.8% confidence)
+Epoch 330/1000 | CE Loss: 5.4391 | VAL CE LOSS: 5.4984 | Topology Entropy: 0.5393 | Temp: 2.000 | GradNorm: 0.525 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (29.8% confidence)
+Epoch 331/1000 | CE Loss: 5.4426 | VAL CE LOSS: 5.5052 | Topology Entropy: 0.5433 | Temp: 2.000 | GradNorm: 0.615 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (28.3% confidence)
+Epoch 332/1000 | CE Loss: 5.4274 | VAL CE LOSS: 5.4873 | Topology Entropy: 0.5431 | Temp: 2.000 | GradNorm: 0.461 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (41.6% confidence)
+Epoch 333/1000 | CE Loss: 5.4158 | VAL CE LOSS: 5.4825 | Topology Entropy: 0.5429 | Temp: 2.000 | GradNorm: 0.740 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (42.5% confidence)
+Epoch 334/1000 | CE Loss: 5.4215 | VAL CE LOSS: 5.4882 | Topology Entropy: 0.5454 | Temp: 2.000 | GradNorm: 0.381 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (37.8% confidence)
+Epoch 335/1000 | CE Loss: 5.4277 | VAL CE LOSS: 5.4992 | Topology Entropy: 0.5453 | Temp: 2.000 | GradNorm: 0.653 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (33.7% confidence)
+Epoch 336/1000 | CE Loss: 5.4191 | VAL CE LOSS: 5.4811 | Topology Entropy: 0.5469 | Temp: 2.000 | GradNorm: 0.395 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (26.7% confidence)
+Epoch 337/1000 | CE Loss: 5.4389 | VAL CE LOSS: 5.4904 | Topology Entropy: 0.5466 | Temp: 2.000 | GradNorm: 0.337 [ok]
+   -> L0_N0 Leading Path: 'affine_sqrt' (32.2% confidence)
+Epoch 338/1000 | CE Loss: 5.4179 | VAL CE LOSS: 5.4843 | Topology Entropy: 0.5482 | Temp: 2.000 | GradNorm: 0.880 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (30.1% confidence)
+Epoch 339/1000 | CE Loss: 5.4167 | VAL CE LOSS: 5.4852 | Topology Entropy: 0.5439 | Temp: 2.000 | GradNorm: 0.270 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (43.5% confidence)
+Epoch 340/1000 | CE Loss: 5.4415 | VAL CE LOSS: 5.4851 | Topology Entropy: 0.5456 | Temp: 2.000 | GradNorm: 0.578 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (34.9% confidence)
+Epoch 341/1000 | CE Loss: 5.4259 | VAL CE LOSS: 5.4828 | Topology Entropy: 0.5432 | Temp: 2.000 | GradNorm: 0.844 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (40.1% confidence)
+Epoch 342/1000 | CE Loss: 5.4181 | VAL CE LOSS: 5.4683 | Topology Entropy: 0.5441 | Temp: 2.000 | GradNorm: 0.549 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (39.5% confidence)
+Epoch 343/1000 | CE Loss: 5.4283 | VAL CE LOSS: 5.4667 | Topology Entropy: 0.5459 | Temp: 2.000 | GradNorm: 0.298 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (35.9% confidence)
+Epoch 344/1000 | CE Loss: 5.4254 | VAL CE LOSS: 5.4738 | Topology Entropy: 0.5444 | Temp: 2.000 | GradNorm: 0.343 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (32.5% confidence)
+Epoch 345/1000 | CE Loss: 5.4238 | VAL CE LOSS: 5.4690 | Topology Entropy: 0.5461 | Temp: 2.000 | GradNorm: 0.287 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (37.9% confidence)
+Epoch 346/1000 | CE Loss: 5.4194 | VAL CE LOSS: 5.4721 | Topology Entropy: 0.5319 | Temp: 2.000 | GradNorm: 0.856 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (35.4% confidence)
+Epoch 347/1000 | CE Loss: 5.4153 | VAL CE LOSS: 5.4725 | Topology Entropy: 0.5384 | Temp: 2.000 | GradNorm: 0.387 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (36.1% confidence)
+Epoch 348/1000 | CE Loss: 5.4288 | VAL CE LOSS: 5.4695 | Topology Entropy: 0.5414 | Temp: 2.000 | GradNorm: 0.335 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.2% confidence)
+Epoch 349/1000 | CE Loss: 5.4060 | VAL CE LOSS: 5.4683 | Topology Entropy: 0.5431 | Temp: 2.000 | GradNorm: 0.487 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (35.8% confidence)
+Epoch 350/1000 | CE Loss: 5.4025 | VAL CE LOSS: 5.4750 | Topology Entropy: 0.5450 | Temp: 2.000 | GradNorm: 0.396 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (39.4% confidence)
+Epoch 351/1000 | CE Loss: 5.4089 | VAL CE LOSS: 5.4737 | Topology Entropy: 0.5425 | Temp: 2.000 | GradNorm: 0.342 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (35.5% confidence)
+Epoch 352/1000 | CE Loss: 5.4092 | VAL CE LOSS: 5.4728 | Topology Entropy: 0.5421 | Temp: 2.000 | GradNorm: 0.423 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (53.8% confidence)
+Epoch 353/1000 | CE Loss: 5.4063 | VAL CE LOSS: 5.4665 | Topology Entropy: 0.5448 | Temp: 2.000 | GradNorm: 0.658 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (38.2% confidence)
+Epoch 354/1000 | CE Loss: 5.4001 | VAL CE LOSS: 5.4721 | Topology Entropy: 0.5442 | Temp: 2.000 | GradNorm: 0.798 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (41.6% confidence)
+Epoch 355/1000 | CE Loss: 5.4094 | VAL CE LOSS: 5.4649 | Topology Entropy: 0.5424 | Temp: 2.000 | GradNorm: 0.825 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (31.9% confidence)
+Epoch 356/1000 | CE Loss: 5.4136 | VAL CE LOSS: 5.4686 | Topology Entropy: 0.5415 | Temp: 2.000 | GradNorm: 0.348 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (38.8% confidence)
+Epoch 357/1000 | CE Loss: 5.3973 | VAL CE LOSS: 5.4650 | Topology Entropy: 0.5438 | Temp: 2.000 | GradNorm: 0.308 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (37.4% confidence)
+Epoch 358/1000 | CE Loss: 5.4303 | VAL CE LOSS: 5.4707 | Topology Entropy: 0.5418 | Temp: 2.000 | GradNorm: 0.305 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (36.2% confidence)
+Epoch 359/1000 | CE Loss: 5.4018 | VAL CE LOSS: 5.4643 | Topology Entropy: 0.5423 | Temp: 2.000 | GradNorm: 0.336 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (35.4% confidence)
+Epoch 360/1000 | CE Loss: 5.3803 | VAL CE LOSS: 5.4682 | Topology Entropy: 0.5344 | Temp: 2.000 | GradNorm: 0.674 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (38.6% confidence)
+Epoch 361/1000 | CE Loss: 5.4169 | VAL CE LOSS: 5.4768 | Topology Entropy: 0.5305 | Temp: 2.000 | GradNorm: 0.325 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (33.9% confidence)
+Epoch 362/1000 | CE Loss: 5.3957 | VAL CE LOSS: 5.4732 | Topology Entropy: 0.5370 | Temp: 2.000 | GradNorm: 0.516 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (46.9% confidence)
+Epoch 363/1000 | CE Loss: 5.3790 | VAL CE LOSS: 5.4727 | Topology Entropy: 0.5348 | Temp: 2.000 | GradNorm: 0.315 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (38.1% confidence)
+Epoch 364/1000 | CE Loss: 5.4471 | VAL CE LOSS: 5.4658 | Topology Entropy: 0.5369 | Temp: 2.000 | GradNorm: 0.451 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (36.3% confidence)
+Epoch 365/1000 | CE Loss: 5.3956 | VAL CE LOSS: 5.4632 | Topology Entropy: 0.5374 | Temp: 2.000 | GradNorm: 0.486 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (36.9% confidence)
+Epoch 366/1000 | CE Loss: 5.3894 | VAL CE LOSS: 5.4682 | Topology Entropy: 0.5392 | Temp: 2.000 | GradNorm: 0.445 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (48.3% confidence)
+Epoch 367/1000 | CE Loss: 5.3983 | VAL CE LOSS: 5.4644 | Topology Entropy: 0.5381 | Temp: 2.000 | GradNorm: 0.482 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (46.4% confidence)
+Epoch 368/1000 | CE Loss: 5.3995 | VAL CE LOSS: 5.4772 | Topology Entropy: 0.5277 | Temp: 2.000 | GradNorm: 0.876 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (33.2% confidence)
+Epoch 369/1000 | CE Loss: 5.4043 | VAL CE LOSS: 5.4655 | Topology Entropy: 0.5292 | Temp: 2.000 | GradNorm: 0.421 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.3% confidence)
+Epoch 370/1000 | CE Loss: 5.3927 | VAL CE LOSS: 5.4700 | Topology Entropy: 0.5356 | Temp: 2.000 | GradNorm: 0.648 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (42.0% confidence)
+Epoch 371/1000 | CE Loss: 5.3937 | VAL CE LOSS: 5.4615 | Topology Entropy: 0.5335 | Temp: 2.000 | GradNorm: 0.647 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (45.7% confidence)
+Epoch 372/1000 | CE Loss: 5.4138 | VAL CE LOSS: 5.4631 | Topology Entropy: 0.5362 | Temp: 2.000 | GradNorm: 0.312 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (32.9% confidence)
+Epoch 373/1000 | CE Loss: 5.3972 | VAL CE LOSS: 5.4556 | Topology Entropy: 0.5342 | Temp: 2.000 | GradNorm: 0.337 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (43.5% confidence)
+Epoch 374/1000 | CE Loss: 5.4045 | VAL CE LOSS: 5.4570 | Topology Entropy: 0.5300 | Temp: 2.000 | GradNorm: 0.326 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (39.1% confidence)
+Epoch 375/1000 | CE Loss: 5.3895 | VAL CE LOSS: 5.4522 | Topology Entropy: 0.5320 | Temp: 2.000 | GradNorm: 0.623 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.7% confidence)
+Epoch 376/1000 | CE Loss: 5.4071 | VAL CE LOSS: 5.4669 | Topology Entropy: 0.5269 | Temp: 2.000 | GradNorm: 0.505 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (39.2% confidence)
+Epoch 377/1000 | CE Loss: 5.3747 | VAL CE LOSS: 5.4573 | Topology Entropy: 0.5343 | Temp: 2.000 | GradNorm: 0.795 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (39.0% confidence)
+Epoch 378/1000 | CE Loss: 5.3835 | VAL CE LOSS: 5.4707 | Topology Entropy: 0.5311 | Temp: 2.000 | GradNorm: 0.360 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (38.9% confidence)
+Epoch 379/1000 | CE Loss: 5.3993 | VAL CE LOSS: 5.4746 | Topology Entropy: 0.5358 | Temp: 2.000 | GradNorm: 0.320 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (36.8% confidence)
+Epoch 380/1000 | CE Loss: 5.3954 | VAL CE LOSS: 5.4612 | Topology Entropy: 0.5347 | Temp: 2.000 | GradNorm: 0.521 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (38.4% confidence)
+Epoch 381/1000 | CE Loss: 5.3929 | VAL CE LOSS: 5.4641 | Topology Entropy: 0.5341 | Temp: 2.000 | GradNorm: 0.343 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (39.0% confidence)
+Epoch 382/1000 | CE Loss: 5.3859 | VAL CE LOSS: 5.4599 | Topology Entropy: 0.5324 | Temp: 2.000 | GradNorm: 0.676 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (32.4% confidence)
+Epoch 383/1000 | CE Loss: 5.3712 | VAL CE LOSS: 5.4532 | Topology Entropy: 0.5325 | Temp: 2.000 | GradNorm: 0.733 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (33.0% confidence)
+Epoch 384/1000 | CE Loss: 5.3851 | VAL CE LOSS: 5.4601 | Topology Entropy: 0.5287 | Temp: 2.000 | GradNorm: 0.323 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (39.4% confidence)
+Epoch 385/1000 | CE Loss: 5.3635 | VAL CE LOSS: 5.4566 | Topology Entropy: 0.5322 | Temp: 2.000 | GradNorm: 0.916 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (40.5% confidence)
+Epoch 386/1000 | CE Loss: 5.3985 | VAL CE LOSS: 5.4524 | Topology Entropy: 0.5333 | Temp: 2.000 | GradNorm: 0.480 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (34.6% confidence)
+Epoch 387/1000 | CE Loss: 5.3930 | VAL CE LOSS: 5.4512 | Topology Entropy: 0.5306 | Temp: 2.000 | GradNorm: 0.403 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.1% confidence)
+Epoch 388/1000 | CE Loss: 5.3722 | VAL CE LOSS: 5.4540 | Topology Entropy: 0.5345 | Temp: 2.000 | GradNorm: 0.348 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (47.6% confidence)
+Epoch 389/1000 | CE Loss: 5.3683 | VAL CE LOSS: 5.4499 | Topology Entropy: 0.5327 | Temp: 2.000 | GradNorm: 0.261 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (43.8% confidence)
+Epoch 390/1000 | CE Loss: 5.3701 | VAL CE LOSS: 5.4484 | Topology Entropy: 0.5309 | Temp: 2.000 | GradNorm: 0.576 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (47.7% confidence)
+Epoch 391/1000 | CE Loss: 5.3791 | VAL CE LOSS: 5.4470 | Topology Entropy: 0.5226 | Temp: 2.000 | GradNorm: 0.344 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (36.6% confidence)
+Epoch 392/1000 | CE Loss: 5.3753 | VAL CE LOSS: 5.4455 | Topology Entropy: 0.5285 | Temp: 2.000 | GradNorm: 0.529 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (33.5% confidence)
+Epoch 393/1000 | CE Loss: 5.3705 | VAL CE LOSS: 5.4388 | Topology Entropy: 0.5316 | Temp: 2.000 | GradNorm: 0.507 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (38.5% confidence)
+Epoch 394/1000 | CE Loss: 5.3771 | VAL CE LOSS: 5.4461 | Topology Entropy: 0.5281 | Temp: 2.000 | GradNorm: 0.684 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (45.2% confidence)
+Epoch 395/1000 | CE Loss: 5.3812 | VAL CE LOSS: 5.4537 | Topology Entropy: 0.5309 | Temp: 2.000 | GradNorm: 0.907 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (33.3% confidence)
+Epoch 396/1000 | CE Loss: 5.3832 | VAL CE LOSS: 5.4479 | Topology Entropy: 0.5299 | Temp: 2.000 | GradNorm: 0.459 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (43.4% confidence)
+Epoch 397/1000 | CE Loss: 5.3888 | VAL CE LOSS: 5.4433 | Topology Entropy: 0.5284 | Temp: 2.000 | GradNorm: 0.395 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (46.9% confidence)
+Epoch 398/1000 | CE Loss: 5.3751 | VAL CE LOSS: 5.4476 | Topology Entropy: 0.5316 | Temp: 2.000 | GradNorm: 0.596 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (42.0% confidence)
+Epoch 399/1000 | CE Loss: 5.3615 | VAL CE LOSS: 5.4433 | Topology Entropy: 0.5284 | Temp: 2.000 | GradNorm: 0.285 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (39.2% confidence)
+Epoch 400/1000 | CE Loss: 5.3661 | VAL CE LOSS: 5.4373 | Topology Entropy: 0.5332 | Temp: 2.000 | GradNorm: 0.335 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.6% confidence)
+Epoch 401/1000 | CE Loss: 5.3625 | VAL CE LOSS: 5.4337 | Topology Entropy: 0.5334 | Temp: 2.000 | GradNorm: 0.637 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.4% confidence)
+Epoch 402/1000 | CE Loss: 5.3924 | VAL CE LOSS: 5.4373 | Topology Entropy: 0.5303 | Temp: 2.000 | GradNorm: 0.555 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (45.6% confidence)
+Epoch 403/1000 | CE Loss: 5.3694 | VAL CE LOSS: 5.4347 | Topology Entropy: 0.5259 | Temp: 2.000 | GradNorm: 0.815 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (37.0% confidence)
+Epoch 404/1000 | CE Loss: 5.3729 | VAL CE LOSS: 5.4321 | Topology Entropy: 0.5284 | Temp: 2.000 | GradNorm: 0.438 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (32.1% confidence)
+Epoch 405/1000 | CE Loss: 5.3673 | VAL CE LOSS: 5.4704 | Topology Entropy: 0.5306 | Temp: 2.000 | GradNorm: 0.730 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (40.7% confidence)
+Epoch 406/1000 | CE Loss: 5.3749 | VAL CE LOSS: 5.4294 | Topology Entropy: 0.5309 | Temp: 2.000 | GradNorm: 0.444 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (35.9% confidence)
+Epoch 407/1000 | CE Loss: 5.3817 | VAL CE LOSS: 5.4347 | Topology Entropy: 0.5312 | Temp: 2.000 | GradNorm: 0.325 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (53.1% confidence)
+Epoch 408/1000 | CE Loss: 5.3726 | VAL CE LOSS: 5.4260 | Topology Entropy: 0.5275 | Temp: 2.000 | GradNorm: 0.514 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.8% confidence)
+Epoch 409/1000 | CE Loss: 5.3673 | VAL CE LOSS: 5.4277 | Topology Entropy: 0.5293 | Temp: 2.000 | GradNorm: 0.669 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (34.4% confidence)
+Epoch 410/1000 | CE Loss: 5.3861 | VAL CE LOSS: 5.4303 | Topology Entropy: 0.5307 | Temp: 2.000 | GradNorm: 0.326 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (46.7% confidence)
+Epoch 411/1000 | CE Loss: 5.3741 | VAL CE LOSS: 5.4244 | Topology Entropy: 0.5285 | Temp: 2.000 | GradNorm: 0.287 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (48.1% confidence)
+Epoch 412/1000 | CE Loss: 5.3705 | VAL CE LOSS: 5.4266 | Topology Entropy: 0.5292 | Temp: 2.000 | GradNorm: 0.324 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.3% confidence)
+Epoch 413/1000 | CE Loss: 5.3717 | VAL CE LOSS: 5.4265 | Topology Entropy: 0.5293 | Temp: 2.000 | GradNorm: 0.517 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (40.9% confidence)
+Epoch 414/1000 | CE Loss: 5.3603 | VAL CE LOSS: 5.4326 | Topology Entropy: 0.5264 | Temp: 2.000 | GradNorm: 0.270 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (39.5% confidence)
+Epoch 415/1000 | CE Loss: 5.3612 | VAL CE LOSS: 5.4223 | Topology Entropy: 0.5285 | Temp: 2.000 | GradNorm: 0.490 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.5% confidence)
+Epoch 416/1000 | CE Loss: 5.3725 | VAL CE LOSS: 5.4329 | Topology Entropy: 0.5298 | Temp: 2.000 | GradNorm: 0.655 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (37.8% confidence)
+Epoch 417/1000 | CE Loss: 5.3759 | VAL CE LOSS: 5.4230 | Topology Entropy: 0.5242 | Temp: 2.000 | GradNorm: 0.321 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (43.9% confidence)
+Epoch 418/1000 | CE Loss: 5.3613 | VAL CE LOSS: 5.4212 | Topology Entropy: 0.5285 | Temp: 2.000 | GradNorm: 0.406 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (48.2% confidence)
+Epoch 419/1000 | CE Loss: 5.3624 | VAL CE LOSS: 5.4322 | Topology Entropy: 0.5258 | Temp: 2.000 | GradNorm: 0.444 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (42.5% confidence)
+Epoch 420/1000 | CE Loss: 5.3510 | VAL CE LOSS: 5.4187 | Topology Entropy: 0.5278 | Temp: 2.000 | GradNorm: 0.445 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.6% confidence)
+Epoch 421/1000 | CE Loss: 5.3723 | VAL CE LOSS: 5.4191 | Topology Entropy: 0.5295 | Temp: 2.000 | GradNorm: 0.318 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.7% confidence)
+Epoch 422/1000 | CE Loss: 5.3767 | VAL CE LOSS: 5.4205 | Topology Entropy: 0.5307 | Temp: 2.000 | GradNorm: 0.271 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (43.9% confidence)
+Epoch 423/1000 | CE Loss: 5.3801 | VAL CE LOSS: 5.4131 | Topology Entropy: 0.5313 | Temp: 2.000 | GradNorm: 0.291 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (37.9% confidence)
+DAIOEpoch 424/1000 | CE Loss: 5.3529 | VAL CE LOSS: 5.4126 | Topology Entropy: 0.5304 | Temp: 2.000 | GradNorm: 0.361 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.7% confidence)
+Epoch 425/1000 | CE Loss: 5.3525 | VAL CE LOSS: 5.4197 | Topology Entropy: 0.5278 | Temp: 2.000 | GradNorm: 0.670 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.2% confidence)
+Epoch 426/1000 | CE Loss: 5.3641 | VAL CE LOSS: 5.4195 | Topology Entropy: 0.5292 | Temp: 2.000 | GradNorm: 0.398 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.3% confidence)
+Epoch 427/1000 | CE Loss: 5.3480 | VAL CE LOSS: 5.4167 | Topology Entropy: 0.5277 | Temp: 2.000 | GradNorm: 0.669 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (41.5% confidence)
+Epoch 428/1000 | CE Loss: 5.3610 | VAL CE LOSS: 5.4172 | Topology Entropy: 0.5201 | Temp: 2.000 | GradNorm: 0.614 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (41.0% confidence)
+Epoch 429/1000 | CE Loss: 5.3672 | VAL CE LOSS: 5.4079 | Topology Entropy: 0.5227 | Temp: 2.000 | GradNorm: 0.348 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (39.1% confidence)
+Epoch 430/1000 | CE Loss: 5.3423 | VAL CE LOSS: 5.4186 | Topology Entropy: 0.5212 | Temp: 2.000 | GradNorm: 0.583 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (40.0% confidence)
+Epoch 431/1000 | CE Loss: 5.3727 | VAL CE LOSS: 5.4168 | Topology Entropy: 0.5197 | Temp: 2.000 | GradNorm: 0.382 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (36.5% confidence)
+Epoch 432/1000 | CE Loss: 5.3645 | VAL CE LOSS: 5.4191 | Topology Entropy: 0.5224 | Temp: 2.000 | GradNorm: 0.636 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (45.5% confidence)
+Epoch 433/1000 | CE Loss: 5.3446 | VAL CE LOSS: 5.4177 | Topology Entropy: 0.5236 | Temp: 2.000 | GradNorm: 0.480 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (36.5% confidence)
+Epoch 434/1000 | CE Loss: 5.3504 | VAL CE LOSS: 5.4053 | Topology Entropy: 0.5249 | Temp: 2.000 | GradNorm: 0.337 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (34.9% confidence)
+Epoch 435/1000 | CE Loss: 5.3625 | VAL CE LOSS: 5.4044 | Topology Entropy: 0.5273 | Temp: 2.000 | GradNorm: 0.786 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.8% confidence)
+Epoch 436/1000 | CE Loss: 5.3326 | VAL CE LOSS: 5.4114 | Topology Entropy: 0.5293 | Temp: 2.000 | GradNorm: 0.467 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (39.6% confidence)
+Epoch 437/1000 | CE Loss: 5.3595 | VAL CE LOSS: 5.4101 | Topology Entropy: 0.5272 | Temp: 2.000 | GradNorm: 0.333 [ok]
+   -> L0_N0 Leading Path: 'affine_relu' (35.4% confidence)
+Epoch 438/1000 | CE Loss: 5.3585 | VAL CE LOSS: 5.4007 | Topology Entropy: 0.5252 | Temp: 2.000 | GradNorm: 0.456 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (48.1% confidence)
+Epoch 439/1000 | CE Loss: 5.3559 | VAL CE LOSS: 5.4056 | Topology Entropy: 0.5243 | Temp: 2.000 | GradNorm: 0.579 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (33.9% confidence)
+Epoch 440/1000 | CE Loss: 5.3304 | VAL CE LOSS: 5.4054 | Topology Entropy: 0.5256 | Temp: 2.000 | GradNorm: 0.286 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.0% confidence)
+Epoch 441/1000 | CE Loss: 5.3748 | VAL CE LOSS: 5.4150 | Topology Entropy: 0.5281 | Temp: 2.000 | GradNorm: 0.380 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.7% confidence)
+Epoch 442/1000 | CE Loss: 5.3414 | VAL CE LOSS: 5.4056 | Topology Entropy: 0.5254 | Temp: 2.000 | GradNorm: 0.463 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.9% confidence)
+Epoch 443/1000 | CE Loss: 5.3580 | VAL CE LOSS: 5.4135 | Topology Entropy: 0.5194 | Temp: 2.000 | GradNorm: 0.312 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.4% confidence)
+Epoch 444/1000 | CE Loss: 5.3689 | VAL CE LOSS: 5.3940 | Topology Entropy: 0.5241 | Temp: 2.000 | GradNorm: 0.325 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (47.8% confidence)
+Epoch 445/1000 | CE Loss: 5.3250 | VAL CE LOSS: 5.4000 | Topology Entropy: 0.5250 | Temp: 2.000 | GradNorm: 0.412 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (30.7% confidence)
+Epoch 446/1000 | CE Loss: 5.3591 | VAL CE LOSS: 5.3988 | Topology Entropy: 0.5245 | Temp: 2.000 | GradNorm: 0.295 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (40.4% confidence)
+Epoch 447/1000 | CE Loss: 5.3459 | VAL CE LOSS: 5.4025 | Topology Entropy: 0.5265 | Temp: 2.000 | GradNorm: 0.508 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (33.0% confidence)
+Epoch 448/1000 | CE Loss: 5.3352 | VAL CE LOSS: 5.4027 | Topology Entropy: 0.5134 | Temp: 2.000 | GradNorm: 0.796 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (41.9% confidence)
+Epoch 449/1000 | CE Loss: 5.3680 | VAL CE LOSS: 5.3974 | Topology Entropy: 0.5182 | Temp: 2.000 | GradNorm: 0.338 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (42.3% confidence)
+Epoch 450/1000 | CE Loss: 5.3706 | VAL CE LOSS: 5.4037 | Topology Entropy: 0.5219 | Temp: 2.000 | GradNorm: 0.329 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (37.2% confidence)
+Epoch 451/1000 | CE Loss: 5.3449 | VAL CE LOSS: 5.3983 | Topology Entropy: 0.5240 | Temp: 2.000 | GradNorm: 0.571 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (33.8% confidence)
+Epoch 452/1000 | CE Loss: 5.3334 | VAL CE LOSS: 5.4102 | Topology Entropy: 0.5213 | Temp: 2.000 | GradNorm: 0.386 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (45.5% confidence)
+Epoch 453/1000 | CE Loss: 5.3454 | VAL CE LOSS: 5.4074 | Topology Entropy: 0.5192 | Temp: 2.000 | GradNorm: 0.278 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (39.9% confidence)
+Epoch 454/1000 | CE Loss: 5.3485 | VAL CE LOSS: 5.4065 | Topology Entropy: 0.5206 | Temp: 2.000 | GradNorm: 0.515 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.2% confidence)
+Epoch 455/1000 | CE Loss: 5.3335 | VAL CE LOSS: 5.4011 | Topology Entropy: 0.5212 | Temp: 2.000 | GradNorm: 0.701 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.3% confidence)
+Epoch 456/1000 | CE Loss: 5.3450 | VAL CE LOSS: 5.4023 | Topology Entropy: 0.5195 | Temp: 2.000 | GradNorm: 0.627 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.8% confidence)
+Epoch 457/1000 | CE Loss: 5.3584 | VAL CE LOSS: 5.3966 | Topology Entropy: 0.5241 | Temp: 2.000 | GradNorm: 0.482 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.5% confidence)
+Epoch 458/1000 | CE Loss: 5.3388 | VAL CE LOSS: 5.3999 | Topology Entropy: 0.5264 | Temp: 2.000 | GradNorm: 0.333 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (42.6% confidence)
+Epoch 459/1000 | CE Loss: 5.3277 | VAL CE LOSS: 5.3964 | Topology Entropy: 0.5187 | Temp: 2.000 | GradNorm: 0.566 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (35.9% confidence)
+Epoch 460/1000 | CE Loss: 5.3532 | VAL CE LOSS: 5.3976 | Topology Entropy: 0.5233 | Temp: 2.000 | GradNorm: 0.656 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.4% confidence)
+Epoch 461/1000 | CE Loss: 5.3406 | VAL CE LOSS: 5.4031 | Topology Entropy: 0.5223 | Temp: 2.000 | GradNorm: 0.499 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (46.1% confidence)
+Epoch 462/1000 | CE Loss: 5.3320 | VAL CE LOSS: 5.3953 | Topology Entropy: 0.5235 | Temp: 2.000 | GradNorm: 0.295 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (42.7% confidence)
+Epoch 463/1000 | CE Loss: 5.3489 | VAL CE LOSS: 5.3931 | Topology Entropy: 0.5229 | Temp: 2.000 | GradNorm: 0.640 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.2% confidence)
+Epoch 464/1000 | CE Loss: 5.3276 | VAL CE LOSS: 5.3937 | Topology Entropy: 0.5220 | Temp: 2.000 | GradNorm: 0.372 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (75.8% confidence)
+Epoch 465/1000 | CE Loss: 5.3248 | VAL CE LOSS: 5.3919 | Topology Entropy: 0.5211 | Temp: 2.000 | GradNorm: 0.257 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (58.2% confidence)
+Epoch 466/1000 | CE Loss: 5.3361 | VAL CE LOSS: 5.3834 | Topology Entropy: 0.5148 | Temp: 2.000 | GradNorm: 0.392 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.7% confidence)
+Epoch 467/1000 | CE Loss: 5.3300 | VAL CE LOSS: 5.3903 | Topology Entropy: 0.5154 | Temp: 2.000 | GradNorm: 0.309 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (46.3% confidence)
+Epoch 468/1000 | CE Loss: 5.3197 | VAL CE LOSS: 5.3883 | Topology Entropy: 0.5183 | Temp: 2.000 | GradNorm: 0.777 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.3% confidence)
+Epoch 469/1000 | CE Loss: 5.3539 | VAL CE LOSS: 5.3866 | Topology Entropy: 0.5214 | Temp: 2.000 | GradNorm: 0.878 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.3% confidence)
+Epoch 470/1000 | CE Loss: 5.3222 | VAL CE LOSS: 5.3806 | Topology Entropy: 0.5198 | Temp: 2.000 | GradNorm: 0.682 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (54.8% confidence)
+Epoch 471/1000 | CE Loss: 5.3226 | VAL CE LOSS: 5.3855 | Topology Entropy: 0.5211 | Temp: 2.000 | GradNorm: 0.422 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.7% confidence)
+Epoch 472/1000 | CE Loss: 5.3290 | VAL CE LOSS: 5.3931 | Topology Entropy: 0.5170 | Temp: 2.000 | GradNorm: 0.713 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.1% confidence)
+Epoch 473/1000 | CE Loss: 5.3257 | VAL CE LOSS: 5.3910 | Topology Entropy: 0.5190 | Temp: 2.000 | GradNorm: 0.461 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.6% confidence)
+Epoch 474/1000 | CE Loss: 5.3424 | VAL CE LOSS: 5.3794 | Topology Entropy: 0.5218 | Temp: 2.000 | GradNorm: 0.383 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.8% confidence)
+Epoch 475/1000 | CE Loss: 5.3167 | VAL CE LOSS: 5.3780 | Topology Entropy: 0.5200 | Temp: 2.000 | GradNorm: 0.327 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (48.5% confidence)
+Epoch 476/1000 | CE Loss: 5.3321 | VAL CE LOSS: 5.3846 | Topology Entropy: 0.5140 | Temp: 2.000 | GradNorm: 0.586 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (40.4% confidence)
+Epoch 477/1000 | CE Loss: 5.3265 | VAL CE LOSS: 5.3777 | Topology Entropy: 0.5157 | Temp: 2.000 | GradNorm: 0.295 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (30.4% confidence)
+Epoch 478/1000 | CE Loss: 5.3145 | VAL CE LOSS: 5.3802 | Topology Entropy: 0.5151 | Temp: 2.000 | GradNorm: 0.289 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (37.3% confidence)
+Epoch 479/1000 | CE Loss: 5.3353 | VAL CE LOSS: 5.3854 | Topology Entropy: 0.5137 | Temp: 2.000 | GradNorm: 0.481 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (40.4% confidence)
+Epoch 480/1000 | CE Loss: 5.3335 | VAL CE LOSS: 5.3801 | Topology Entropy: 0.5119 | Temp: 2.000 | GradNorm: 0.358 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (37.6% confidence)
+Epoch 481/1000 | CE Loss: 5.3238 | VAL CE LOSS: 5.3827 | Topology Entropy: 0.5188 | Temp: 2.000 | GradNorm: 0.421 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (33.7% confidence)
+Epoch 482/1000 | CE Loss: 5.3480 | VAL CE LOSS: 5.3722 | Topology Entropy: 0.5208 | Temp: 2.000 | GradNorm: 0.322 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (36.1% confidence)
+Epoch 483/1000 | CE Loss: 5.3292 | VAL CE LOSS: 5.3714 | Topology Entropy: 0.5155 | Temp: 2.000 | GradNorm: 0.393 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (41.2% confidence)
+Epoch 484/1000 | CE Loss: 5.3429 | VAL CE LOSS: 5.3722 | Topology Entropy: 0.5219 | Temp: 2.000 | GradNorm: 0.625 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (39.3% confidence)
+Epoch 485/1000 | CE Loss: 5.3296 | VAL CE LOSS: 5.3753 | Topology Entropy: 0.5227 | Temp: 2.000 | GradNorm: 0.337 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (31.8% confidence)
+Epoch 486/1000 | CE Loss: 5.3235 | VAL CE LOSS: 5.3757 | Topology Entropy: 0.5208 | Temp: 2.000 | GradNorm: 0.393 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (40.0% confidence)
+Epoch 487/1000 | CE Loss: 5.3361 | VAL CE LOSS: 5.3768 | Topology Entropy: 0.5201 | Temp: 2.000 | GradNorm: 0.493 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.8% confidence)
+Epoch 488/1000 | CE Loss: 5.3197 | VAL CE LOSS: 5.3711 | Topology Entropy: 0.5207 | Temp: 2.000 | GradNorm: 0.326 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (39.7% confidence)
+Epoch 489/1000 | CE Loss: 5.3200 | VAL CE LOSS: 5.3801 | Topology Entropy: 0.5180 | Temp: 2.000 | GradNorm: 0.539 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (38.8% confidence)
+Epoch 490/1000 | CE Loss: 5.3334 | VAL CE LOSS: 5.3759 | Topology Entropy: 0.5191 | Temp: 2.000 | GradNorm: 0.308 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (40.5% confidence)
+Epoch 491/1000 | CE Loss: 5.3135 | VAL CE LOSS: 5.3768 | Topology Entropy: 0.5209 | Temp: 2.000 | GradNorm: 0.361 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (53.0% confidence)
+Epoch 492/1000 | CE Loss: 5.3085 | VAL CE LOSS: 5.3738 | Topology Entropy: 0.5195 | Temp: 2.000 | GradNorm: 0.841 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (43.9% confidence)
+Epoch 493/1000 | CE Loss: 5.3386 | VAL CE LOSS: 5.3754 | Topology Entropy: 0.5200 | Temp: 2.000 | GradNorm: 0.874 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (48.5% confidence)
+Epoch 494/1000 | CE Loss: 5.3233 | VAL CE LOSS: 5.3740 | Topology Entropy: 0.5157 | Temp: 2.000 | GradNorm: 0.398 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (48.4% confidence)
+Epoch 495/1000 | CE Loss: 5.3351 | VAL CE LOSS: 5.3695 | Topology Entropy: 0.5150 | Temp: 2.000 | GradNorm: 0.720 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (54.8% confidence)
+Epoch 496/1000 | CE Loss: 5.3273 | VAL CE LOSS: 5.3748 | Topology Entropy: 0.5174 | Temp: 2.000 | GradNorm: 0.705 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (46.1% confidence)
+Epoch 497/1000 | CE Loss: 5.3236 | VAL CE LOSS: 5.3740 | Topology Entropy: 0.5194 | Temp: 2.000 | GradNorm: 0.398 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.8% confidence)
+Epoch 498/1000 | CE Loss: 5.3193 | VAL CE LOSS: 5.3715 | Topology Entropy: 0.5205 | Temp: 2.000 | GradNorm: 0.675 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (58.5% confidence)
+Epoch 499/1000 | CE Loss: 5.3072 | VAL CE LOSS: 5.3617 | Topology Entropy: 0.5203 | Temp: 2.000 | GradNorm: 0.743 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (78.0% confidence)
+Epoch 500/1000 | CE Loss: 5.3235 | VAL CE LOSS: 5.3592 | Topology Entropy: 0.5207 | Temp: 2.000 | GradNorm: 0.436 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.9% confidence)
+Epoch 501/1000 | CE Loss: 5.3191 | VAL CE LOSS: 5.3625 | Topology Entropy: 0.5144 | Temp: 2.000 | GradNorm: 0.271 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.6% confidence)
+Epoch 502/1000 | CE Loss: 5.3103 | VAL CE LOSS: 5.3745 | Topology Entropy: 0.5094 | Temp: 2.000 | GradNorm: 0.419 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (40.9% confidence)
+Epoch 503/1000 | CE Loss: 5.3095 | VAL CE LOSS: 5.3630 | Topology Entropy: 0.5172 | Temp: 2.000 | GradNorm: 0.348 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (53.8% confidence)
+Epoch 504/1000 | CE Loss: 5.3028 | VAL CE LOSS: 5.3708 | Topology Entropy: 0.5117 | Temp: 2.000 | GradNorm: 0.631 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.2% confidence)
+Epoch 505/1000 | CE Loss: 5.3118 | VAL CE LOSS: 5.3641 | Topology Entropy: 0.5091 | Temp: 2.000 | GradNorm: 0.795 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.0% confidence)
+Epoch 506/1000 | CE Loss: 5.3366 | VAL CE LOSS: 5.3639 | Topology Entropy: 0.5095 | Temp: 2.000 | GradNorm: 0.301 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.8% confidence)
+Epoch 507/1000 | CE Loss: 5.3107 | VAL CE LOSS: 5.3579 | Topology Entropy: 0.5035 | Temp: 2.000 | GradNorm: 0.397 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.6% confidence)
+Epoch 508/1000 | CE Loss: 5.3011 | VAL CE LOSS: 5.3558 | Topology Entropy: 0.5083 | Temp: 2.000 | GradNorm: 0.354 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (77.1% confidence)
+Epoch 509/1000 | CE Loss: 5.3208 | VAL CE LOSS: 5.3513 | Topology Entropy: 0.5112 | Temp: 2.000 | GradNorm: 0.734 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (57.1% confidence)
+Epoch 510/1000 | CE Loss: 5.3230 | VAL CE LOSS: 5.3510 | Topology Entropy: 0.5130 | Temp: 2.000 | GradNorm: 0.363 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.1% confidence)
+Epoch 511/1000 | CE Loss: 5.2989 | VAL CE LOSS: 5.3527 | Topology Entropy: 0.5133 | Temp: 2.000 | GradNorm: 0.686 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (47.9% confidence)
+Epoch 512/1000 | CE Loss: 5.2993 | VAL CE LOSS: 5.3493 | Topology Entropy: 0.5127 | Temp: 2.000 | GradNorm: 0.429 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.5% confidence)
+Epoch 513/1000 | CE Loss: 5.3070 | VAL CE LOSS: 5.3547 | Topology Entropy: 0.5031 | Temp: 2.000 | GradNorm: 0.278 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.1% confidence)
+Epoch 514/1000 | CE Loss: 5.3314 | VAL CE LOSS: 5.3538 | Topology Entropy: 0.5065 | Temp: 2.000 | GradNorm: 0.293 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.1% confidence)
+Epoch 515/1000 | CE Loss: 5.3057 | VAL CE LOSS: 5.3523 | Topology Entropy: 0.5082 | Temp: 2.000 | GradNorm: 0.472 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.4% confidence)
+Epoch 516/1000 | CE Loss: 5.3205 | VAL CE LOSS: 5.3521 | Topology Entropy: 0.5065 | Temp: 2.000 | GradNorm: 0.282 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.4% confidence)
+Epoch 517/1000 | CE Loss: 5.3160 | VAL CE LOSS: 5.3511 | Topology Entropy: 0.5093 | Temp: 2.000 | GradNorm: 0.440 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.2% confidence)
+Epoch 518/1000 | CE Loss: 5.3120 | VAL CE LOSS: 5.3517 | Topology Entropy: 0.5091 | Temp: 2.000 | GradNorm: 0.333 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.3% confidence)
+Epoch 519/1000 | CE Loss: 5.3032 | VAL CE LOSS: 5.3521 | Topology Entropy: 0.5095 | Temp: 2.000 | GradNorm: 0.319 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.6% confidence)
+Epoch 520/1000 | CE Loss: 5.3192 | VAL CE LOSS: 5.3653 | Topology Entropy: 0.5073 | Temp: 2.000 | GradNorm: 0.467 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.7% confidence)
+Epoch 521/1000 | CE Loss: 5.2935 | VAL CE LOSS: 5.3522 | Topology Entropy: 0.5105 | Temp: 2.000 | GradNorm: 0.327 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.0% confidence)
+Epoch 522/1000 | CE Loss: 5.2958 | VAL CE LOSS: 5.3561 | Topology Entropy: 0.5087 | Temp: 2.000 | GradNorm: 0.624 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.1% confidence)
+Epoch 523/1000 | CE Loss: 5.2920 | VAL CE LOSS: 5.3484 | Topology Entropy: 0.5087 | Temp: 2.000 | GradNorm: 0.467 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (75.9% confidence)
+Epoch 524/1000 | CE Loss: 5.3089 | VAL CE LOSS: 5.3546 | Topology Entropy: 0.5100 | Temp: 2.000 | GradNorm: 0.282 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.6% confidence)
+Epoch 525/1000 | CE Loss: 5.3019 | VAL CE LOSS: 5.3536 | Topology Entropy: 0.5120 | Temp: 2.000 | GradNorm: 0.848 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (58.3% confidence)
+Epoch 526/1000 | CE Loss: 5.3015 | VAL CE LOSS: 5.3553 | Topology Entropy: 0.5079 | Temp: 2.000 | GradNorm: 0.803 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.6% confidence)
+Epoch 527/1000 | CE Loss: 5.2914 | VAL CE LOSS: 5.3420 | Topology Entropy: 0.5080 | Temp: 2.000 | GradNorm: 0.356 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.5% confidence)
+Epoch 528/1000 | CE Loss: 5.3153 | VAL CE LOSS: 5.3476 | Topology Entropy: 0.5073 | Temp: 2.000 | GradNorm: 0.516 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (45.1% confidence)
+Epoch 529/1000 | CE Loss: 5.2918 | VAL CE LOSS: 5.3418 | Topology Entropy: 0.5079 | Temp: 2.000 | GradNorm: 0.538 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (46.1% confidence)
+Epoch 530/1000 | CE Loss: 5.3204 | VAL CE LOSS: 5.3499 | Topology Entropy: 0.5076 | Temp: 2.000 | GradNorm: 0.262 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.6% confidence)
+Epoch 531/1000 | CE Loss: 5.3099 | VAL CE LOSS: 5.3503 | Topology Entropy: 0.5086 | Temp: 2.000 | GradNorm: 0.450 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.7% confidence)
+Epoch 532/1000 | CE Loss: 5.2916 | VAL CE LOSS: 5.3486 | Topology Entropy: 0.5102 | Temp: 2.000 | GradNorm: 0.517 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (54.9% confidence)
+Epoch 533/1000 | CE Loss: 5.3135 | VAL CE LOSS: 5.3520 | Topology Entropy: 0.5069 | Temp: 2.000 | GradNorm: 0.532 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (43.0% confidence)
+Epoch 534/1000 | CE Loss: 5.3053 | VAL CE LOSS: 5.3484 | Topology Entropy: 0.5006 | Temp: 2.000 | GradNorm: 0.409 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (41.7% confidence)
+Epoch 535/1000 | CE Loss: 5.3055 | VAL CE LOSS: 5.3519 | Topology Entropy: 0.5052 | Temp: 2.000 | GradNorm: 0.397 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.5% confidence)
+Epoch 536/1000 | CE Loss: 5.3055 | VAL CE LOSS: 5.3478 | Topology Entropy: 0.5030 | Temp: 2.000 | GradNorm: 0.323 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.0% confidence)
+Epoch 537/1000 | CE Loss: 5.3114 | VAL CE LOSS: 5.3454 | Topology Entropy: 0.5082 | Temp: 2.000 | GradNorm: 0.505 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (57.5% confidence)
+Epoch 538/1000 | CE Loss: 5.2917 | VAL CE LOSS: 5.3549 | Topology Entropy: 0.5002 | Temp: 2.000 | GradNorm: 0.434 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.8% confidence)
+Epoch 539/1000 | CE Loss: 5.3033 | VAL CE LOSS: 5.3496 | Topology Entropy: 0.4956 | Temp: 2.000 | GradNorm: 0.552 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.1% confidence)
+Epoch 540/1000 | CE Loss: 5.3059 | VAL CE LOSS: 5.3662 | Topology Entropy: 0.4995 | Temp: 2.000 | GradNorm: 0.496 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.8% confidence)
+Epoch 541/1000 | CE Loss: 5.2990 | VAL CE LOSS: 5.3510 | Topology Entropy: 0.5013 | Temp: 2.000 | GradNorm: 0.261 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.7% confidence)
+Epoch 542/1000 | CE Loss: 5.3070 | VAL CE LOSS: 5.3599 | Topology Entropy: 0.5019 | Temp: 2.000 | GradNorm: 0.320 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.5% confidence)
+Epoch 543/1000 | CE Loss: 5.3058 | VAL CE LOSS: 5.3610 | Topology Entropy: 0.4984 | Temp: 2.000 | GradNorm: 0.580 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.7% confidence)
+Epoch 544/1000 | CE Loss: 5.2911 | VAL CE LOSS: 5.3465 | Topology Entropy: 0.4983 | Temp: 2.000 | GradNorm: 0.361 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (58.7% confidence)
+Epoch 545/1000 | CE Loss: 5.3083 | VAL CE LOSS: 5.3547 | Topology Entropy: 0.4958 | Temp: 2.000 | GradNorm: 0.314 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.2% confidence)
+Epoch 546/1000 | CE Loss: 5.3131 | VAL CE LOSS: 5.3508 | Topology Entropy: 0.4946 | Temp: 2.000 | GradNorm: 0.392 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (48.7% confidence)
+Epoch 547/1000 | CE Loss: 5.3045 | VAL CE LOSS: 5.3625 | Topology Entropy: 0.4917 | Temp: 2.000 | GradNorm: 0.658 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.6% confidence)
+Epoch 548/1000 | CE Loss: 5.3043 | VAL CE LOSS: 5.3530 | Topology Entropy: 0.4951 | Temp: 2.000 | GradNorm: 0.440 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (47.1% confidence)
+Epoch 549/1000 | CE Loss: 5.2979 | VAL CE LOSS: 5.3739 | Topology Entropy: 0.4971 | Temp: 2.000 | GradNorm: 0.276 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.7% confidence)
+Epoch 550/1000 | CE Loss: 5.3043 | VAL CE LOSS: 5.3518 | Topology Entropy: 0.4931 | Temp: 2.000 | GradNorm: 0.382 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (57.5% confidence)
+Epoch 551/1000 | CE Loss: 5.2915 | VAL CE LOSS: 5.3464 | Topology Entropy: 0.4918 | Temp: 2.000 | GradNorm: 0.873 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (37.5% confidence)
+Epoch 552/1000 | CE Loss: 5.3054 | VAL CE LOSS: 5.3540 | Topology Entropy: 0.4947 | Temp: 2.000 | GradNorm: 0.349 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.3% confidence)
+Epoch 553/1000 | CE Loss: 5.2775 | VAL CE LOSS: 5.3515 | Topology Entropy: 0.4955 | Temp: 2.000 | GradNorm: 0.313 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.4% confidence)
+Epoch 554/1000 | CE Loss: 5.2993 | VAL CE LOSS: 5.3509 | Topology Entropy: 0.4940 | Temp: 2.000 | GradNorm: 0.431 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (46.0% confidence)
+Epoch 555/1000 | CE Loss: 5.2989 | VAL CE LOSS: 5.3504 | Topology Entropy: 0.4946 | Temp: 2.000 | GradNorm: 0.544 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (41.5% confidence)
+Epoch 556/1000 | CE Loss: 5.2957 | VAL CE LOSS: 5.3483 | Topology Entropy: 0.4936 | Temp: 2.000 | GradNorm: 0.307 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.8% confidence)
+Epoch 557/1000 | CE Loss: 5.3001 | VAL CE LOSS: 5.3538 | Topology Entropy: 0.4914 | Temp: 2.000 | GradNorm: 0.681 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.9% confidence)
+Epoch 558/1000 | CE Loss: 5.2890 | VAL CE LOSS: 5.3488 | Topology Entropy: 0.4912 | Temp: 2.000 | GradNorm: 0.534 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.1% confidence)
+Epoch 559/1000 | CE Loss: 5.3068 | VAL CE LOSS: 5.3400 | Topology Entropy: 0.4960 | Temp: 2.000 | GradNorm: 0.331 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.0% confidence)
+Epoch 560/1000 | CE Loss: 5.3046 | VAL CE LOSS: 5.3419 | Topology Entropy: 0.4952 | Temp: 2.000 | GradNorm: 0.469 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.3% confidence)
+Epoch 561/1000 | CE Loss: 5.3030 | VAL CE LOSS: 5.3473 | Topology Entropy: 0.4917 | Temp: 2.000 | GradNorm: 0.313 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (73.7% confidence)
+Epoch 562/1000 | CE Loss: 5.2898 | VAL CE LOSS: 5.3472 | Topology Entropy: 0.4950 | Temp: 2.000 | GradNorm: 0.264 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.2% confidence)
+Epoch 563/1000 | CE Loss: 5.2897 | VAL CE LOSS: 5.3509 | Topology Entropy: 0.4873 | Temp: 2.000 | GradNorm: 4.163 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (65.7% confidence)
+Epoch 564/1000 | CE Loss: 5.3025 | VAL CE LOSS: 5.3463 | Topology Entropy: 0.4904 | Temp: 2.000 | GradNorm: 0.339 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.1% confidence)
+Epoch 565/1000 | CE Loss: 5.3141 | VAL CE LOSS: 5.3448 | Topology Entropy: 0.4939 | Temp: 2.000 | GradNorm: 0.289 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (69.9% confidence)
+Epoch 566/1000 | CE Loss: 5.2898 | VAL CE LOSS: 5.3383 | Topology Entropy: 0.4940 | Temp: 2.000 | GradNorm: 0.287 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.0% confidence)
+Epoch 567/1000 | CE Loss: 5.2990 | VAL CE LOSS: 5.3541 | Topology Entropy: 0.4926 | Temp: 2.000 | GradNorm: 0.538 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.6% confidence)
+Epoch 568/1000 | CE Loss: 5.2796 | VAL CE LOSS: 5.3526 | Topology Entropy: 0.4941 | Temp: 2.000 | GradNorm: 0.333 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.0% confidence)
+Epoch 569/1000 | CE Loss: 5.2842 | VAL CE LOSS: 5.3446 | Topology Entropy: 0.4945 | Temp: 2.000 | GradNorm: 0.694 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.8% confidence)
+Epoch 570/1000 | CE Loss: 5.3012 | VAL CE LOSS: 5.3466 | Topology Entropy: 0.4946 | Temp: 2.000 | GradNorm: 0.320 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (58.9% confidence)
+Epoch 571/1000 | CE Loss: 5.2915 | VAL CE LOSS: 5.3485 | Topology Entropy: 0.4920 | Temp: 2.000 | GradNorm: 0.424 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.0% confidence)
+Epoch 572/1000 | CE Loss: 5.2936 | VAL CE LOSS: 5.3599 | Topology Entropy: 0.4895 | Temp: 2.000 | GradNorm: 0.318 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.1% confidence)
+Epoch 573/1000 | CE Loss: 5.2838 | VAL CE LOSS: 5.3392 | Topology Entropy: 0.4935 | Temp: 2.000 | GradNorm: 0.614 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.2% confidence)
+Epoch 574/1000 | CE Loss: 5.2991 | VAL CE LOSS: 5.3460 | Topology Entropy: 0.4909 | Temp: 2.000 | GradNorm: 0.381 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.2% confidence)
+Epoch 575/1000 | CE Loss: 5.2898 | VAL CE LOSS: 5.3723 | Topology Entropy: 0.4921 | Temp: 2.000 | GradNorm: 0.343 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.6% confidence)
+Epoch 576/1000 | CE Loss: 5.2910 | VAL CE LOSS: 5.3422 | Topology Entropy: 0.4957 | Temp: 2.000 | GradNorm: 9.740 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (58.5% confidence)
+Epoch 577/1000 | CE Loss: 5.2696 | VAL CE LOSS: 5.3342 | Topology Entropy: 0.4941 | Temp: 2.000 | GradNorm: 0.483 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.0% confidence)
+Epoch 578/1000 | CE Loss: 5.2720 | VAL CE LOSS: 5.3390 | Topology Entropy: 0.4902 | Temp: 2.000 | GradNorm: 0.367 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (53.2% confidence)
+Epoch 579/1000 | CE Loss: 5.3023 | VAL CE LOSS: 5.3364 | Topology Entropy: 0.4885 | Temp: 2.000 | GradNorm: 0.468 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (38.0% confidence)
+Epoch 580/1000 | CE Loss: 5.2892 | VAL CE LOSS: 5.3332 | Topology Entropy: 0.4923 | Temp: 2.000 | GradNorm: 0.370 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.7% confidence)
+Epoch 581/1000 | CE Loss: 5.2841 | VAL CE LOSS: 5.3299 | Topology Entropy: 0.4951 | Temp: 2.000 | GradNorm: 0.583 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.3% confidence)
+Epoch 582/1000 | CE Loss: 5.2817 | VAL CE LOSS: 5.3465 | Topology Entropy: 0.4904 | Temp: 2.000 | GradNorm: 0.336 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (82.3% confidence)
+Epoch 583/1000 | CE Loss: 5.2786 | VAL CE LOSS: 5.3393 | Topology Entropy: 0.4923 | Temp: 2.000 | GradNorm: 0.405 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.6% confidence)
+Epoch 584/1000 | CE Loss: 5.2889 | VAL CE LOSS: 5.3465 | Topology Entropy: 0.4881 | Temp: 2.000 | GradNorm: 0.356 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (72.6% confidence)
+Epoch 585/1000 | CE Loss: 5.2918 | VAL CE LOSS: 5.3392 | Topology Entropy: 0.4890 | Temp: 2.000 | GradNorm: 0.506 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.9% confidence)
+Epoch 586/1000 | CE Loss: 5.2775 | VAL CE LOSS: 5.3376 | Topology Entropy: 0.4892 | Temp: 2.000 | GradNorm: 0.597 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.6% confidence)
+Epoch 587/1000 | CE Loss: 5.2865 | VAL CE LOSS: 5.3384 | Topology Entropy: 0.4904 | Temp: 2.000 | GradNorm: 0.339 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (46.7% confidence)
+Epoch 588/1000 | CE Loss: 5.2921 | VAL CE LOSS: 5.3365 | Topology Entropy: 0.4916 | Temp: 2.000 | GradNorm: 0.291 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.5% confidence)
+Epoch 589/1000 | CE Loss: 5.2913 | VAL CE LOSS: 5.3321 | Topology Entropy: 0.4890 | Temp: 2.000 | GradNorm: 0.308 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (57.0% confidence)
+Epoch 590/1000 | CE Loss: 5.2957 | VAL CE LOSS: 5.3278 | Topology Entropy: 0.4894 | Temp: 2.000 | GradNorm: 0.365 [ok]
+   -> L0_N0 Leading Path: 'affine_gelu' (32.2% confidence)
+Epoch 591/1000 | CE Loss: 5.2864 | VAL CE LOSS: 5.3305 | Topology Entropy: 0.4891 | Temp: 2.000 | GradNorm: 0.434 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (42.4% confidence)
+Epoch 592/1000 | CE Loss: 5.2914 | VAL CE LOSS: 5.3339 | Topology Entropy: 0.4866 | Temp: 2.000 | GradNorm: 0.304 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (41.7% confidence)
+Epoch 593/1000 | CE Loss: 5.2640 | VAL CE LOSS: 5.3292 | Topology Entropy: 0.4894 | Temp: 2.000 | GradNorm: 0.472 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (43.7% confidence)
+Epoch 594/1000 | CE Loss: 5.3057 | VAL CE LOSS: 5.3268 | Topology Entropy: 0.4902 | Temp: 2.000 | GradNorm: 0.366 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.9% confidence)
+Epoch 595/1000 | CE Loss: 5.2866 | VAL CE LOSS: 5.3333 | Topology Entropy: 0.4896 | Temp: 2.000 | GradNorm: 0.466 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.8% confidence)
+Epoch 596/1000 | CE Loss: 5.2898 | VAL CE LOSS: 5.3239 | Topology Entropy: 0.4904 | Temp: 2.000 | GradNorm: 0.306 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.7% confidence)
+Epoch 597/1000 | CE Loss: 5.2812 | VAL CE LOSS: 5.3320 | Topology Entropy: 0.4914 | Temp: 2.000 | GradNorm: 0.266 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.8% confidence)
+Epoch 598/1000 | CE Loss: 5.3022 | VAL CE LOSS: 5.3251 | Topology Entropy: 0.4892 | Temp: 2.000 | GradNorm: 0.418 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (54.4% confidence)
+Epoch 599/1000 | CE Loss: 5.3048 | VAL CE LOSS: 5.3419 | Topology Entropy: 0.4867 | Temp: 2.000 | GradNorm: 0.314 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (78.7% confidence)
+Epoch 600/1000 | CE Loss: 5.2977 | VAL CE LOSS: 5.3396 | Topology Entropy: 0.4830 | Temp: 2.000 | GradNorm: 0.265 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.7% confidence)
+Epoch 601/1000 | CE Loss: 5.2895 | VAL CE LOSS: 5.3315 | Topology Entropy: 0.4831 | Temp: 2.000 | GradNorm: 0.354 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.9% confidence)
+Epoch 602/1000 | CE Loss: 5.2753 | VAL CE LOSS: 5.3289 | Topology Entropy: 0.4816 | Temp: 2.000 | GradNorm: 0.589 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.3% confidence)
+Epoch 603/1000 | CE Loss: 5.2708 | VAL CE LOSS: 5.3307 | Topology Entropy: 0.4830 | Temp: 2.000 | GradNorm: 0.542 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.9% confidence)
+Epoch 604/1000 | CE Loss: 5.2735 | VAL CE LOSS: 5.3287 | Topology Entropy: 0.4855 | Temp: 2.000 | GradNorm: 0.526 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.1% confidence)
+Epoch 605/1000 | CE Loss: 5.3030 | VAL CE LOSS: 5.3256 | Topology Entropy: 0.4853 | Temp: 2.000 | GradNorm: 0.410 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.4% confidence)
+Epoch 606/1000 | CE Loss: 5.2832 | VAL CE LOSS: 5.3339 | Topology Entropy: 0.4862 | Temp: 2.000 | GradNorm: 0.327 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (77.2% confidence)
+Epoch 607/1000 | CE Loss: 5.2846 | VAL CE LOSS: 5.3225 | Topology Entropy: 0.4837 | Temp: 2.000 | GradNorm: 0.851 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.7% confidence)
+Epoch 608/1000 | CE Loss: 5.2706 | VAL CE LOSS: 5.3265 | Topology Entropy: 0.4870 | Temp: 2.000 | GradNorm: 0.627 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.6% confidence)
+Epoch 609/1000 | CE Loss: 5.2688 | VAL CE LOSS: 5.3191 | Topology Entropy: 0.4892 | Temp: 2.000 | GradNorm: 0.588 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.7% confidence)
+Epoch 610/1000 | CE Loss: 5.3005 | VAL CE LOSS: 5.3244 | Topology Entropy: 0.4874 | Temp: 2.000 | GradNorm: 0.462 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.2% confidence)
+Epoch 611/1000 | CE Loss: 5.2770 | VAL CE LOSS: 5.3225 | Topology Entropy: 0.4841 | Temp: 2.000 | GradNorm: 0.338 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (46.2% confidence)
+Epoch 612/1000 | CE Loss: 5.3029 | VAL CE LOSS: 5.3260 | Topology Entropy: 0.4863 | Temp: 2.000 | GradNorm: 0.438 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.0% confidence)
+Epoch 613/1000 | CE Loss: 5.2798 | VAL CE LOSS: 5.3260 | Topology Entropy: 0.4816 | Temp: 2.000 | GradNorm: 0.375 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.8% confidence)
+Epoch 614/1000 | CE Loss: 5.2724 | VAL CE LOSS: 5.3265 | Topology Entropy: 0.4817 | Temp: 2.000 | GradNorm: 0.374 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.8% confidence)
+Epoch 615/1000 | CE Loss: 5.2752 | VAL CE LOSS: 5.3288 | Topology Entropy: 0.4761 | Temp: 2.000 | GradNorm: 0.636 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (45.7% confidence)
+Epoch 616/1000 | CE Loss: 5.2786 | VAL CE LOSS: 5.3205 | Topology Entropy: 0.4791 | Temp: 2.000 | GradNorm: 0.380 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.9% confidence)
+Epoch 617/1000 | CE Loss: 5.2950 | VAL CE LOSS: 5.3300 | Topology Entropy: 0.4792 | Temp: 2.000 | GradNorm: 0.300 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.9% confidence)
+Epoch 618/1000 | CE Loss: 5.2722 | VAL CE LOSS: 5.3208 | Topology Entropy: 0.4801 | Temp: 2.000 | GradNorm: 0.309 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (45.1% confidence)
+Epoch 619/1000 | CE Loss: 5.2724 | VAL CE LOSS: 5.3228 | Topology Entropy: 0.4768 | Temp: 2.000 | GradNorm: 0.500 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.7% confidence)
+Epoch 620/1000 | CE Loss: 5.2850 | VAL CE LOSS: 5.3320 | Topology Entropy: 0.4820 | Temp: 2.000 | GradNorm: 0.706 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.9% confidence)
+Epoch 621/1000 | CE Loss: 5.2778 | VAL CE LOSS: 5.3283 | Topology Entropy: 0.4827 | Temp: 2.000 | GradNorm: 0.475 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.8% confidence)
+Epoch 622/1000 | CE Loss: 5.2770 | VAL CE LOSS: 5.3232 | Topology Entropy: 0.4829 | Temp: 2.000 | GradNorm: 0.726 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (54.3% confidence)
+Epoch 623/1000 | CE Loss: 5.2671 | VAL CE LOSS: 5.3254 | Topology Entropy: 0.4815 | Temp: 2.000 | GradNorm: 0.383 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (54.2% confidence)
+Epoch 624/1000 | CE Loss: 5.2683 | VAL CE LOSS: 5.3215 | Topology Entropy: 0.4803 | Temp: 2.000 | GradNorm: 0.497 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (58.6% confidence)
+Epoch 625/1000 | CE Loss: 5.2688 | VAL CE LOSS: 5.3281 | Topology Entropy: 0.4750 | Temp: 2.000 | GradNorm: 0.444 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.4% confidence)
+Epoch 626/1000 | CE Loss: 5.2595 | VAL CE LOSS: 5.3216 | Topology Entropy: 0.4722 | Temp: 2.000 | GradNorm: 0.625 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.5% confidence)
+Epoch 627/1000 | CE Loss: 5.2935 | VAL CE LOSS: 5.3193 | Topology Entropy: 0.4757 | Temp: 2.000 | GradNorm: 0.492 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.2% confidence)
+Epoch 628/1000 | CE Loss: 5.2842 | VAL CE LOSS: 5.3176 | Topology Entropy: 0.4774 | Temp: 2.000 | GradNorm: 0.461 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.3% confidence)
+Epoch 629/1000 | CE Loss: 5.2727 | VAL CE LOSS: 5.3135 | Topology Entropy: 0.4768 | Temp: 2.000 | GradNorm: 0.521 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.5% confidence)
+Epoch 630/1000 | CE Loss: 5.2864 | VAL CE LOSS: 5.3146 | Topology Entropy: 0.4702 | Temp: 2.000 | GradNorm: 0.778 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (48.6% confidence)
+Epoch 631/1000 | CE Loss: 5.2766 | VAL CE LOSS: 5.3153 | Topology Entropy: 0.4760 | Temp: 2.000 | GradNorm: 0.814 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (48.1% confidence)
+Epoch 632/1000 | CE Loss: 5.2662 | VAL CE LOSS: 5.3160 | Topology Entropy: 0.4763 | Temp: 2.000 | GradNorm: 0.638 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.8% confidence)
+Epoch 633/1000 | CE Loss: 5.2743 | VAL CE LOSS: 5.3224 | Topology Entropy: 0.4790 | Temp: 2.000 | GradNorm: 0.414 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.6% confidence)
+Epoch 634/1000 | CE Loss: 5.2615 | VAL CE LOSS: 5.3152 | Topology Entropy: 0.4794 | Temp: 2.000 | GradNorm: 0.983 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.1% confidence)
+Epoch 635/1000 | CE Loss: 5.2758 | VAL CE LOSS: 5.3204 | Topology Entropy: 0.4733 | Temp: 2.000 | GradNorm: 0.282 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.9% confidence)
+Epoch 636/1000 | CE Loss: 5.2687 | VAL CE LOSS: 5.3189 | Topology Entropy: 0.4740 | Temp: 2.000 | GradNorm: 0.740 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.6% confidence)
+Epoch 637/1000 | CE Loss: 5.2755 | VAL CE LOSS: 5.3222 | Topology Entropy: 0.4752 | Temp: 2.000 | GradNorm: 0.321 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.1% confidence)
+Epoch 638/1000 | CE Loss: 5.2854 | VAL CE LOSS: 5.3216 | Topology Entropy: 0.4790 | Temp: 2.000 | GradNorm: 0.265 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (53.9% confidence)
+Epoch 639/1000 | CE Loss: 5.2685 | VAL CE LOSS: 5.3230 | Topology Entropy: 0.4771 | Temp: 2.000 | GradNorm: 0.551 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.4% confidence)
+Epoch 640/1000 | CE Loss: 5.2676 | VAL CE LOSS: 5.3210 | Topology Entropy: 0.4769 | Temp: 2.000 | GradNorm: 0.330 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.4% confidence)
+Epoch 641/1000 | CE Loss: 5.2785 | VAL CE LOSS: 5.3252 | Topology Entropy: 0.4773 | Temp: 2.000 | GradNorm: 0.541 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.4% confidence)
+Epoch 642/1000 | CE Loss: 5.2577 | VAL CE LOSS: 5.3147 | Topology Entropy: 0.4674 | Temp: 2.000 | GradNorm: 0.746 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.5% confidence)
+Epoch 643/1000 | CE Loss: 5.2583 | VAL CE LOSS: 5.3240 | Topology Entropy: 0.4618 | Temp: 2.000 | GradNorm: 0.365 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.9% confidence)
+Epoch 644/1000 | CE Loss: 5.2844 | VAL CE LOSS: 5.3293 | Topology Entropy: 0.4650 | Temp: 2.000 | GradNorm: 0.491 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.8% confidence)
+Epoch 645/1000 | CE Loss: 5.2930 | VAL CE LOSS: 5.3225 | Topology Entropy: 0.4638 | Temp: 2.000 | GradNorm: 0.476 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (78.5% confidence)
+Epoch 646/1000 | CE Loss: 5.2736 | VAL CE LOSS: 5.3268 | Topology Entropy: 0.4618 | Temp: 2.000 | GradNorm: 0.620 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.2% confidence)
+Epoch 647/1000 | CE Loss: 5.2788 | VAL CE LOSS: 5.3209 | Topology Entropy: 0.4594 | Temp: 2.000 | GradNorm: 1.037 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (51.6% confidence)
+Epoch 648/1000 | CE Loss: 5.2969 | VAL CE LOSS: 5.3182 | Topology Entropy: 0.4591 | Temp: 2.000 | GradNorm: 0.720 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.4% confidence)
+Epoch 649/1000 | CE Loss: 5.2859 | VAL CE LOSS: 5.3138 | Topology Entropy: 0.4574 | Temp: 2.000 | GradNorm: 0.629 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.1% confidence)
+Epoch 650/1000 | CE Loss: 5.2788 | VAL CE LOSS: 5.3185 | Topology Entropy: 0.4603 | Temp: 2.000 | GradNorm: 0.469 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.8% confidence)
+Epoch 651/1000 | CE Loss: 5.2872 | VAL CE LOSS: 5.3157 | Topology Entropy: 0.4629 | Temp: 2.000 | GradNorm: 0.362 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.9% confidence)
+Epoch 652/1000 | CE Loss: 5.2834 | VAL CE LOSS: 5.3105 | Topology Entropy: 0.4626 | Temp: 2.000 | GradNorm: 0.370 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.3% confidence)
+Epoch 653/1000 | CE Loss: 5.2669 | VAL CE LOSS: 5.3125 | Topology Entropy: 0.4631 | Temp: 2.000 | GradNorm: 0.460 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.9% confidence)
+Epoch 654/1000 | CE Loss: 5.2786 | VAL CE LOSS: 5.3100 | Topology Entropy: 0.4658 | Temp: 2.000 | GradNorm: 0.306 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.0% confidence)
+Epoch 655/1000 | CE Loss: 5.2911 | VAL CE LOSS: 5.3153 | Topology Entropy: 0.4649 | Temp: 2.000 | GradNorm: 0.395 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.6% confidence)
+Epoch 656/1000 | CE Loss: 5.2626 | VAL CE LOSS: 5.3137 | Topology Entropy: 0.4639 | Temp: 2.000 | GradNorm: 0.256 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (41.4% confidence)
+Epoch 657/1000 | CE Loss: 5.2644 | VAL CE LOSS: 5.3191 | Topology Entropy: 0.4652 | Temp: 2.000 | GradNorm: 0.362 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (34.2% confidence)
+Epoch 658/1000 | CE Loss: 5.2713 | VAL CE LOSS: 5.3182 | Topology Entropy: 0.4661 | Temp: 2.000 | GradNorm: 0.283 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (39.6% confidence)
+Epoch 659/1000 | CE Loss: 5.2520 | VAL CE LOSS: 5.3152 | Topology Entropy: 0.4674 | Temp: 2.000 | GradNorm: 0.727 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.0% confidence)
+Epoch 660/1000 | CE Loss: 5.2726 | VAL CE LOSS: 5.3177 | Topology Entropy: 0.4667 | Temp: 2.000 | GradNorm: 0.308 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.5% confidence)
+Epoch 661/1000 | CE Loss: 5.2804 | VAL CE LOSS: 5.3195 | Topology Entropy: 0.4622 | Temp: 2.000 | GradNorm: 0.447 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.8% confidence)
+Epoch 662/1000 | CE Loss: 5.2874 | VAL CE LOSS: 5.3057 | Topology Entropy: 0.4651 | Temp: 2.000 | GradNorm: 0.502 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (54.2% confidence)
+Epoch 663/1000 | CE Loss: 5.2993 | VAL CE LOSS: 5.3133 | Topology Entropy: 0.4607 | Temp: 2.000 | GradNorm: 0.503 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.8% confidence)
+Epoch 664/1000 | CE Loss: 5.2791 | VAL CE LOSS: 5.3082 | Topology Entropy: 0.4652 | Temp: 2.000 | GradNorm: 0.592 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.1% confidence)
+Epoch 665/1000 | CE Loss: 5.2686 | VAL CE LOSS: 5.3171 | Topology Entropy: 0.4641 | Temp: 2.000 | GradNorm: 0.314 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.3% confidence)
+Epoch 666/1000 | CE Loss: 5.2635 | VAL CE LOSS: 5.3078 | Topology Entropy: 0.4670 | Temp: 2.000 | GradNorm: 0.257 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.3% confidence)
+Epoch 667/1000 | CE Loss: 5.2670 | VAL CE LOSS: 5.3119 | Topology Entropy: 0.4644 | Temp: 2.000 | GradNorm: 0.354 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.1% confidence)
+Epoch 668/1000 | CE Loss: 5.2555 | VAL CE LOSS: 5.3175 | Topology Entropy: 0.4656 | Temp: 2.000 | GradNorm: 0.828 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.7% confidence)
+Epoch 669/1000 | CE Loss: 5.2803 | VAL CE LOSS: 5.3196 | Topology Entropy: 0.4631 | Temp: 2.000 | GradNorm: 0.457 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (72.7% confidence)
+Epoch 670/1000 | CE Loss: 5.2793 | VAL CE LOSS: 5.3179 | Topology Entropy: 0.4636 | Temp: 2.000 | GradNorm: 0.469 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (84.3% confidence)
+Epoch 671/1000 | CE Loss: 5.2611 | VAL CE LOSS: 5.3180 | Topology Entropy: 0.4640 | Temp: 2.000 | GradNorm: 0.702 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (82.3% confidence)
+Epoch 672/1000 | CE Loss: 5.2704 | VAL CE LOSS: 5.3211 | Topology Entropy: 0.4640 | Temp: 2.000 | GradNorm: 0.244 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (77.4% confidence)
+Epoch 673/1000 | CE Loss: 5.2769 | VAL CE LOSS: 5.3204 | Topology Entropy: 0.4615 | Temp: 2.000 | GradNorm: 0.343 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (84.2% confidence)
+Epoch 674/1000 | CE Loss: 5.2977 | VAL CE LOSS: 5.3210 | Topology Entropy: 0.4640 | Temp: 2.000 | GradNorm: 0.355 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.0% confidence)
+Epoch 675/1000 | CE Loss: 5.2744 | VAL CE LOSS: 5.3362 | Topology Entropy: 0.4626 | Temp: 2.000 | GradNorm: 1.513 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (44.5% confidence)
+Epoch 676/1000 | CE Loss: 5.2766 | VAL CE LOSS: 5.3152 | Topology Entropy: 0.4571 | Temp: 2.000 | GradNorm: 0.353 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.2% confidence)
+Epoch 677/1000 | CE Loss: 5.2953 | VAL CE LOSS: 5.3137 | Topology Entropy: 0.4518 | Temp: 2.000 | GradNorm: 0.395 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (53.0% confidence)
+Epoch 678/1000 | CE Loss: 5.2841 | VAL CE LOSS: 5.3122 | Topology Entropy: 0.4573 | Temp: 2.000 | GradNorm: 0.542 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (58.1% confidence)
+Epoch 679/1000 | CE Loss: 5.2633 | VAL CE LOSS: 5.3197 | Topology Entropy: 0.4550 | Temp: 2.000 | GradNorm: 0.304 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.0% confidence)
+Epoch 680/1000 | CE Loss: 5.2612 | VAL CE LOSS: 5.3218 | Topology Entropy: 0.4562 | Temp: 2.000 | GradNorm: 0.578 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (69.9% confidence)
+Epoch 681/1000 | CE Loss: 5.2641 | VAL CE LOSS: 5.3295 | Topology Entropy: 0.4559 | Temp: 2.000 | GradNorm: 0.749 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (57.5% confidence)
+Epoch 682/1000 | CE Loss: 5.2523 | VAL CE LOSS: 5.3247 | Topology Entropy: 0.4552 | Temp: 2.000 | GradNorm: 0.367 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (72.9% confidence)
+Epoch 683/1000 | CE Loss: 5.2697 | VAL CE LOSS: 5.3403 | Topology Entropy: 0.4564 | Temp: 2.000 | GradNorm: 0.504 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.7% confidence)
+Epoch 684/1000 | CE Loss: 5.2813 | VAL CE LOSS: 5.3222 | Topology Entropy: 0.4555 | Temp: 2.000 | GradNorm: 0.427 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (84.5% confidence)
+Epoch 685/1000 | CE Loss: 5.2783 | VAL CE LOSS: 5.3174 | Topology Entropy: 0.4570 | Temp: 2.000 | GradNorm: 0.426 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (79.7% confidence)
+Epoch 686/1000 | CE Loss: 5.2946 | VAL CE LOSS: 5.3174 | Topology Entropy: 0.4427 | Temp: 2.000 | GradNorm: 0.508 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (69.2% confidence)
+Epoch 687/1000 | CE Loss: 5.2753 | VAL CE LOSS: 5.3182 | Topology Entropy: 0.4471 | Temp: 2.000 | GradNorm: 0.363 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (69.0% confidence)
+Epoch 688/1000 | CE Loss: 5.2457 | VAL CE LOSS: 5.3265 | Topology Entropy: 0.4519 | Temp: 2.000 | GradNorm: 0.492 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.5% confidence)
+Epoch 689/1000 | CE Loss: 5.2564 | VAL CE LOSS: 5.3178 | Topology Entropy: 0.4526 | Temp: 2.000 | GradNorm: 0.541 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.0% confidence)
+Epoch 690/1000 | CE Loss: 5.2488 | VAL CE LOSS: 5.3188 | Topology Entropy: 0.4552 | Temp: 2.000 | GradNorm: 0.280 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.3% confidence)
+Epoch 691/1000 | CE Loss: 5.3038 | VAL CE LOSS: 5.3128 | Topology Entropy: 0.4551 | Temp: 2.000 | GradNorm: 0.341 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.2% confidence)
+Epoch 692/1000 | CE Loss: 5.2573 | VAL CE LOSS: 5.3296 | Topology Entropy: 0.4519 | Temp: 2.000 | GradNorm: 0.416 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.5% confidence)
+Epoch 693/1000 | CE Loss: 5.2700 | VAL CE LOSS: 5.3206 | Topology Entropy: 0.4469 | Temp: 2.000 | GradNorm: 0.400 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.7% confidence)
+Epoch 694/1000 | CE Loss: 5.2756 | VAL CE LOSS: 5.3153 | Topology Entropy: 0.4490 | Temp: 2.000 | GradNorm: 0.445 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (76.2% confidence)
+Epoch 695/1000 | CE Loss: 5.2571 | VAL CE LOSS: 5.3192 | Topology Entropy: 0.4495 | Temp: 2.000 | GradNorm: 0.338 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.3% confidence)
+Epoch 696/1000 | CE Loss: 5.2714 | VAL CE LOSS: 5.3191 | Topology Entropy: 0.4485 | Temp: 2.000 | GradNorm: 0.274 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (77.1% confidence)
+Epoch 697/1000 | CE Loss: 5.2514 | VAL CE LOSS: 5.3159 | Topology Entropy: 0.4511 | Temp: 2.000 | GradNorm: 0.322 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (82.8% confidence)
+Epoch 698/1000 | CE Loss: 5.2638 | VAL CE LOSS: 5.3202 | Topology Entropy: 0.4500 | Temp: 2.000 | GradNorm: 0.299 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (75.4% confidence)
+Epoch 699/1000 | CE Loss: 5.2639 | VAL CE LOSS: 5.3231 | Topology Entropy: 0.4510 | Temp: 2.000 | GradNorm: 0.360 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (46.1% confidence)
+Epoch 700/1000 | CE Loss: 5.2775 | VAL CE LOSS: 5.3133 | Topology Entropy: 0.4501 | Temp: 2.000 | GradNorm: 0.572 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (53.8% confidence)
+Epoch 701/1000 | CE Loss: 5.2757 | VAL CE LOSS: 5.3142 | Topology Entropy: 0.4515 | Temp: 2.000 | GradNorm: 0.383 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.0% confidence)
+Epoch 702/1000 | CE Loss: 5.2655 | VAL CE LOSS: 5.3074 | Topology Entropy: 0.4457 | Temp: 2.000 | GradNorm: 0.353 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (57.8% confidence)
+Epoch 703/1000 | CE Loss: 5.2812 | VAL CE LOSS: 5.3144 | Topology Entropy: 0.4480 | Temp: 2.000 | GradNorm: 0.469 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.4% confidence)
+Epoch 704/1000 | CE Loss: 5.2529 | VAL CE LOSS: 5.3103 | Topology Entropy: 0.4510 | Temp: 2.000 | GradNorm: 0.801 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (69.7% confidence)
+Epoch 705/1000 | CE Loss: 5.2597 | VAL CE LOSS: 5.3123 | Topology Entropy: 0.4498 | Temp: 2.000 | GradNorm: 0.391 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (58.5% confidence)
+Epoch 706/1000 | CE Loss: 5.2578 | VAL CE LOSS: 5.3087 | Topology Entropy: 0.4521 | Temp: 2.000 | GradNorm: 0.508 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.2% confidence)
+Epoch 707/1000 | CE Loss: 5.2383 | VAL CE LOSS: 5.3119 | Topology Entropy: 0.4508 | Temp: 2.000 | GradNorm: 0.662 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.3% confidence)
+Epoch 708/1000 | CE Loss: 5.2449 | VAL CE LOSS: 5.3126 | Topology Entropy: 0.4487 | Temp: 2.000 | GradNorm: 0.356 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.8% confidence)
+Epoch 709/1000 | CE Loss: 5.2645 | VAL CE LOSS: 5.3130 | Topology Entropy: 0.4508 | Temp: 2.000 | GradNorm: 0.580 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.0% confidence)
+Epoch 710/1000 | CE Loss: 5.2584 | VAL CE LOSS: 5.3083 | Topology Entropy: 0.4488 | Temp: 2.000 | GradNorm: 0.336 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.5% confidence)
+Epoch 711/1000 | CE Loss: 5.2802 | VAL CE LOSS: 5.3058 | Topology Entropy: 0.4480 | Temp: 2.000 | GradNorm: 1.039 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (77.5% confidence)
+Epoch 712/1000 | CE Loss: 5.2559 | VAL CE LOSS: 5.3146 | Topology Entropy: 0.4497 | Temp: 2.000 | GradNorm: 0.501 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (73.6% confidence)
+Epoch 713/1000 | CE Loss: 5.2656 | VAL CE LOSS: 5.3068 | Topology Entropy: 0.4504 | Temp: 2.000 | GradNorm: 0.587 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (69.5% confidence)
+Epoch 714/1000 | CE Loss: 5.2479 | VAL CE LOSS: 5.3160 | Topology Entropy: 0.4463 | Temp: 2.000 | GradNorm: 0.257 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.2% confidence)
+Epoch 715/1000 | CE Loss: 5.2687 | VAL CE LOSS: 5.3056 | Topology Entropy: 0.4482 | Temp: 2.000 | GradNorm: 0.491 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (74.1% confidence)
+Epoch 716/1000 | CE Loss: 5.2687 | VAL CE LOSS: 5.3247 | Topology Entropy: 0.4472 | Temp: 2.000 | GradNorm: 0.502 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (81.0% confidence)
+Epoch 717/1000 | CE Loss: 5.2496 | VAL CE LOSS: 5.3033 | Topology Entropy: 0.4375 | Temp: 2.000 | GradNorm: 0.801 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.8% confidence)
+Epoch 718/1000 | CE Loss: 5.2696 | VAL CE LOSS: 5.3070 | Topology Entropy: 0.4350 | Temp: 2.000 | GradNorm: 1.204 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (71.3% confidence)
+Epoch 719/1000 | CE Loss: 5.2605 | VAL CE LOSS: 5.3229 | Topology Entropy: 0.4294 | Temp: 2.000 | GradNorm: 0.323 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.4% confidence)
+Epoch 720/1000 | CE Loss: 5.2585 | VAL CE LOSS: 5.3214 | Topology Entropy: 0.4358 | Temp: 2.000 | GradNorm: 0.306 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (81.2% confidence)
+Epoch 721/1000 | CE Loss: 5.2708 | VAL CE LOSS: 5.3133 | Topology Entropy: 0.4363 | Temp: 2.000 | GradNorm: 0.409 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (79.7% confidence)
+Epoch 722/1000 | CE Loss: 5.2597 | VAL CE LOSS: 5.3142 | Topology Entropy: 0.4303 | Temp: 2.000 | GradNorm: 0.832 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (74.0% confidence)
+Epoch 723/1000 | CE Loss: 5.2621 | VAL CE LOSS: 5.3111 | Topology Entropy: 0.4268 | Temp: 2.000 | GradNorm: 0.553 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.2% confidence)
+Epoch 724/1000 | CE Loss: 5.2590 | VAL CE LOSS: 5.3156 | Topology Entropy: 0.4303 | Temp: 2.000 | GradNorm: 0.335 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (77.2% confidence)
+Epoch 725/1000 | CE Loss: 5.2826 | VAL CE LOSS: 5.3212 | Topology Entropy: 0.4295 | Temp: 2.000 | GradNorm: 0.423 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (75.7% confidence)
+Epoch 726/1000 | CE Loss: 5.2697 | VAL CE LOSS: 5.3056 | Topology Entropy: 0.4332 | Temp: 2.000 | GradNorm: 0.360 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (74.0% confidence)
+Epoch 727/1000 | CE Loss: 5.2710 | VAL CE LOSS: 5.3083 | Topology Entropy: 0.4337 | Temp: 2.000 | GradNorm: 0.437 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.4% confidence)
+Epoch 728/1000 | CE Loss: 5.2741 | VAL CE LOSS: 5.3139 | Topology Entropy: 0.4348 | Temp: 2.000 | GradNorm: 0.555 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (81.8% confidence)
+Epoch 729/1000 | CE Loss: 5.2753 | VAL CE LOSS: 5.3075 | Topology Entropy: 0.4316 | Temp: 2.000 | GradNorm: 0.562 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.1% confidence)
+Epoch 730/1000 | CE Loss: 5.2629 | VAL CE LOSS: 5.3156 | Topology Entropy: 0.4327 | Temp: 2.000 | GradNorm: 0.384 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (54.0% confidence)
+Epoch 731/1000 | CE Loss: 5.2454 | VAL CE LOSS: 5.3082 | Topology Entropy: 0.4253 | Temp: 2.000 | GradNorm: 0.453 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (78.4% confidence)
+Epoch 732/1000 | CE Loss: 5.2573 | VAL CE LOSS: 5.3119 | Topology Entropy: 0.4296 | Temp: 2.000 | GradNorm: 0.301 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (84.1% confidence)
+Epoch 733/1000 | CE Loss: 5.2725 | VAL CE LOSS: 5.3089 | Topology Entropy: 0.4271 | Temp: 2.000 | GradNorm: 0.283 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (74.5% confidence)
+Epoch 734/1000 | CE Loss: 5.2534 | VAL CE LOSS: 5.3116 | Topology Entropy: 0.4268 | Temp: 2.000 | GradNorm: 0.390 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (53.1% confidence)
+Epoch 735/1000 | CE Loss: 5.2499 | VAL CE LOSS: 5.3365 | Topology Entropy: 0.4263 | Temp: 2.000 | GradNorm: 0.315 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.4% confidence)
+Epoch 736/1000 | CE Loss: 5.2414 | VAL CE LOSS: 5.3124 | Topology Entropy: 0.4259 | Temp: 2.000 | GradNorm: 0.450 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.7% confidence)
+Epoch 737/1000 | CE Loss: 5.2712 | VAL CE LOSS: 5.3093 | Topology Entropy: 0.4275 | Temp: 2.000 | GradNorm: 0.483 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (78.7% confidence)
+Epoch 738/1000 | CE Loss: 5.2710 | VAL CE LOSS: 5.3048 | Topology Entropy: 0.4283 | Temp: 2.000 | GradNorm: 0.306 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (77.8% confidence)
+Epoch 739/1000 | CE Loss: 5.2438 | VAL CE LOSS: 5.3153 | Topology Entropy: 0.4283 | Temp: 2.000 | GradNorm: 0.568 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (69.5% confidence)
+Epoch 740/1000 | CE Loss: 5.2682 | VAL CE LOSS: 5.3142 | Topology Entropy: 0.4276 | Temp: 2.000 | GradNorm: 0.472 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.6% confidence)
+Epoch 741/1000 | CE Loss: 5.2581 | VAL CE LOSS: 5.3171 | Topology Entropy: 0.4289 | Temp: 2.000 | GradNorm: 1.041 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (68.0% confidence)
+Epoch 742/1000 | CE Loss: 5.2671 | VAL CE LOSS: 5.3160 | Topology Entropy: 0.4319 | Temp: 2.000 | GradNorm: 0.304 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.3% confidence)
+Epoch 743/1000 | CE Loss: 5.2785 | VAL CE LOSS: 5.3139 | Topology Entropy: 0.4332 | Temp: 2.000 | GradNorm: 0.628 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.7% confidence)
+Epoch 744/1000 | CE Loss: 5.2834 | VAL CE LOSS: 5.3174 | Topology Entropy: 0.4283 | Temp: 2.000 | GradNorm: 0.470 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.5% confidence)
+Epoch 745/1000 | CE Loss: 5.2833 | VAL CE LOSS: 5.3265 | Topology Entropy: 0.4308 | Temp: 2.000 | GradNorm: 0.543 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (75.2% confidence)
+Epoch 746/1000 | CE Loss: 5.2551 | VAL CE LOSS: 5.3097 | Topology Entropy: 0.4326 | Temp: 2.000 | GradNorm: 0.803 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (77.5% confidence)
+Epoch 747/1000 | CE Loss: 5.2569 | VAL CE LOSS: 5.3116 | Topology Entropy: 0.4256 | Temp: 2.000 | GradNorm: 0.347 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.0% confidence)
+Epoch 748/1000 | CE Loss: 5.2725 | VAL CE LOSS: 5.3109 | Topology Entropy: 0.4218 | Temp: 2.000 | GradNorm: 0.389 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.6% confidence)
+Epoch 749/1000 | CE Loss: 5.2612 | VAL CE LOSS: 5.3129 | Topology Entropy: 0.4264 | Temp: 2.000 | GradNorm: 0.532 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.3% confidence)
+Epoch 750/1000 | CE Loss: 5.2650 | VAL CE LOSS: 5.3096 | Topology Entropy: 0.4246 | Temp: 2.000 | GradNorm: 0.355 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.8% confidence)
+Epoch 751/1000 | CE Loss: 5.2562 | VAL CE LOSS: 5.3109 | Topology Entropy: 0.4275 | Temp: 2.000 | GradNorm: 0.380 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (53.0% confidence)
+Epoch 752/1000 | CE Loss: 5.2650 | VAL CE LOSS: 5.3134 | Topology Entropy: 0.4222 | Temp: 2.000 | GradNorm: 0.359 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.6% confidence)
+Epoch 753/1000 | CE Loss: 5.2507 | VAL CE LOSS: 5.3175 | Topology Entropy: 0.4224 | Temp: 2.000 | GradNorm: 0.262 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.1% confidence)
+Epoch 754/1000 | CE Loss: 5.2569 | VAL CE LOSS: 5.3104 | Topology Entropy: 0.4234 | Temp: 2.000 | GradNorm: 0.472 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (74.3% confidence)
+Epoch 755/1000 | CE Loss: 5.2429 | VAL CE LOSS: 5.3130 | Topology Entropy: 0.4251 | Temp: 2.000 | GradNorm: 0.322 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (87.4% confidence)
+Epoch 756/1000 | CE Loss: 5.2590 | VAL CE LOSS: 5.3064 | Topology Entropy: 0.4242 | Temp: 2.000 | GradNorm: 0.356 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (89.4% confidence)
+Epoch 757/1000 | CE Loss: 5.2624 | VAL CE LOSS: 5.2991 | Topology Entropy: 0.4265 | Temp: 2.000 | GradNorm: 0.362 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (86.0% confidence)
+Epoch 758/1000 | CE Loss: 5.2666 | VAL CE LOSS: 5.2989 | Topology Entropy: 0.4242 | Temp: 2.000 | GradNorm: 0.274 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (77.2% confidence)
+Epoch 759/1000 | CE Loss: 5.2628 | VAL CE LOSS: 5.3073 | Topology Entropy: 0.4279 | Temp: 2.000 | GradNorm: 0.478 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.9% confidence)
+Epoch 760/1000 | CE Loss: 5.2502 | VAL CE LOSS: 5.3026 | Topology Entropy: 0.4261 | Temp: 2.000 | GradNorm: 0.549 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (83.2% confidence)
+Epoch 761/1000 | CE Loss: 5.2640 | VAL CE LOSS: 5.2974 | Topology Entropy: 0.4242 | Temp: 2.000 | GradNorm: 0.565 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (79.0% confidence)
+Epoch 762/1000 | CE Loss: 5.2683 | VAL CE LOSS: 5.2982 | Topology Entropy: 0.4246 | Temp: 2.000 | GradNorm: 0.378 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (58.0% confidence)
+Epoch 763/1000 | CE Loss: 5.2687 | VAL CE LOSS: 5.3032 | Topology Entropy: 0.4227 | Temp: 2.000 | GradNorm: 0.281 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (47.3% confidence)
+Epoch 764/1000 | CE Loss: 5.2540 | VAL CE LOSS: 5.3022 | Topology Entropy: 0.4228 | Temp: 2.000 | GradNorm: 0.376 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.3% confidence)
+Epoch 765/1000 | CE Loss: 5.2463 | VAL CE LOSS: 5.2971 | Topology Entropy: 0.4180 | Temp: 2.000 | GradNorm: 0.580 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (53.1% confidence)
+Epoch 766/1000 | CE Loss: 5.2752 | VAL CE LOSS: 5.2925 | Topology Entropy: 0.4218 | Temp: 2.000 | GradNorm: 0.389 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (39.9% confidence)
+Epoch 767/1000 | CE Loss: 5.2514 | VAL CE LOSS: 5.2963 | Topology Entropy: 0.4235 | Temp: 2.000 | GradNorm: 0.521 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.1% confidence)
+Epoch 768/1000 | CE Loss: 5.2548 | VAL CE LOSS: 5.2985 | Topology Entropy: 0.4212 | Temp: 2.000 | GradNorm: 0.284 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.4% confidence)
+Epoch 769/1000 | CE Loss: 5.2417 | VAL CE LOSS: 5.2936 | Topology Entropy: 0.4216 | Temp: 2.000 | GradNorm: 0.420 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (53.3% confidence)
+Epoch 770/1000 | CE Loss: 5.2538 | VAL CE LOSS: 5.2869 | Topology Entropy: 0.4214 | Temp: 2.000 | GradNorm: 0.267 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.3% confidence)
+Epoch 771/1000 | CE Loss: 5.2451 | VAL CE LOSS: 5.2989 | Topology Entropy: 0.4213 | Temp: 2.000 | GradNorm: 0.387 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.9% confidence)
+Epoch 772/1000 | CE Loss: 5.2497 | VAL CE LOSS: 5.3139 | Topology Entropy: 0.4228 | Temp: 2.000 | GradNorm: 0.395 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.1% confidence)
+Epoch 773/1000 | CE Loss: 5.2584 | VAL CE LOSS: 5.3064 | Topology Entropy: 0.4227 | Temp: 2.000 | GradNorm: 0.696 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (58.0% confidence)
+Epoch 774/1000 | CE Loss: 5.2448 | VAL CE LOSS: 5.3034 | Topology Entropy: 0.4229 | Temp: 2.000 | GradNorm: 0.988 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.1% confidence)
+Epoch 775/1000 | CE Loss: 5.2533 | VAL CE LOSS: 5.3084 | Topology Entropy: 0.4224 | Temp: 2.000 | GradNorm: 0.303 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (87.0% confidence)
+Epoch 776/1000 | CE Loss: 5.2665 | VAL CE LOSS: 5.3068 | Topology Entropy: 0.4156 | Temp: 2.000 | GradNorm: 0.306 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.0% confidence)
+Epoch 777/1000 | CE Loss: 5.2276 | VAL CE LOSS: 5.2937 | Topology Entropy: 0.4200 | Temp: 2.000 | GradNorm: 0.482 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.6% confidence)
+Epoch 778/1000 | CE Loss: 5.2614 | VAL CE LOSS: 5.3000 | Topology Entropy: 0.4171 | Temp: 2.000 | GradNorm: 0.379 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (63.8% confidence)
+Epoch 779/1000 | CE Loss: 5.2505 | VAL CE LOSS: 5.3002 | Topology Entropy: 0.4174 | Temp: 2.000 | GradNorm: 0.311 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.7% confidence)
+Epoch 780/1000 | CE Loss: 5.2475 | VAL CE LOSS: 5.3014 | Topology Entropy: 0.4130 | Temp: 2.000 | GradNorm: 0.783 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.1% confidence)
+Epoch 781/1000 | CE Loss: 5.2550 | VAL CE LOSS: 5.2966 | Topology Entropy: 0.4172 | Temp: 2.000 | GradNorm: 0.634 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.0% confidence)
+Epoch 782/1000 | CE Loss: 5.2660 | VAL CE LOSS: 5.3041 | Topology Entropy: 0.4189 | Temp: 2.000 | GradNorm: 0.371 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (72.9% confidence)
+Epoch 783/1000 | CE Loss: 5.2459 | VAL CE LOSS: 5.2935 | Topology Entropy: 0.4199 | Temp: 2.000 | GradNorm: 1.262 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (64.0% confidence)
+Epoch 784/1000 | CE Loss: 5.2547 | VAL CE LOSS: 5.2929 | Topology Entropy: 0.4222 | Temp: 2.000 | GradNorm: 0.376 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.6% confidence)
+Epoch 785/1000 | CE Loss: 5.2703 | VAL CE LOSS: 5.2928 | Topology Entropy: 0.4172 | Temp: 2.000 | GradNorm: 0.409 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (76.3% confidence)
+Epoch 786/1000 | CE Loss: 5.2462 | VAL CE LOSS: 5.2913 | Topology Entropy: 0.4172 | Temp: 2.000 | GradNorm: 0.431 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (73.9% confidence)
+Epoch 787/1000 | CE Loss: 5.2577 | VAL CE LOSS: 5.2962 | Topology Entropy: 0.4140 | Temp: 2.000 | GradNorm: 0.340 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.6% confidence)
+Epoch 788/1000 | CE Loss: 5.2581 | VAL CE LOSS: 5.2935 | Topology Entropy: 0.4121 | Temp: 2.000 | GradNorm: 0.397 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.3% confidence)
+Epoch 789/1000 | CE Loss: 5.2776 | VAL CE LOSS: 5.2988 | Topology Entropy: 0.4101 | Temp: 2.000 | GradNorm: 0.321 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.9% confidence)
+Epoch 790/1000 | CE Loss: 5.2384 | VAL CE LOSS: 5.2979 | Topology Entropy: 0.4131 | Temp: 2.000 | GradNorm: 0.422 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (44.9% confidence)
+Epoch 791/1000 | CE Loss: 5.2596 | VAL CE LOSS: 5.2963 | Topology Entropy: 0.4162 | Temp: 2.000 | GradNorm: 0.472 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (73.8% confidence)
+Epoch 792/1000 | CE Loss: 5.2479 | VAL CE LOSS: 5.3014 | Topology Entropy: 0.4126 | Temp: 2.000 | GradNorm: 0.355 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (81.2% confidence)
+Epoch 793/1000 | CE Loss: 5.2565 | VAL CE LOSS: 5.2970 | Topology Entropy: 0.4156 | Temp: 2.000 | GradNorm: 0.409 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (78.3% confidence)
+Epoch 794/1000 | CE Loss: 5.2590 | VAL CE LOSS: 5.2977 | Topology Entropy: 0.4141 | Temp: 2.000 | GradNorm: 0.520 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (74.7% confidence)
+Epoch 795/1000 | CE Loss: 5.2490 | VAL CE LOSS: 5.2920 | Topology Entropy: 0.4164 | Temp: 2.000 | GradNorm: 0.748 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.5% confidence)
+Epoch 796/1000 | CE Loss: 5.2419 | VAL CE LOSS: 5.3004 | Topology Entropy: 0.4163 | Temp: 2.000 | GradNorm: 0.521 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.2% confidence)
+Epoch 797/1000 | CE Loss: 5.2393 | VAL CE LOSS: 5.2956 | Topology Entropy: 0.4171 | Temp: 2.000 | GradNorm: 0.468 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.4% confidence)
+Epoch 798/1000 | CE Loss: 5.2373 | VAL CE LOSS: 5.2953 | Topology Entropy: 0.4164 | Temp: 2.000 | GradNorm: 0.382 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.8% confidence)
+Epoch 799/1000 | CE Loss: 5.2422 | VAL CE LOSS: 5.2910 | Topology Entropy: 0.4171 | Temp: 2.000 | GradNorm: 1.496 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (52.0% confidence)
+Epoch 800/1000 | CE Loss: 5.2338 | VAL CE LOSS: 5.2910 | Topology Entropy: 0.4173 | Temp: 2.000 | GradNorm: 0.557 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.6% confidence)
+Epoch 801/1000 | CE Loss: 5.2628 | VAL CE LOSS: 5.3046 | Topology Entropy: 0.4167 | Temp: 2.000 | GradNorm: 0.358 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (76.8% confidence)
+Epoch 802/1000 | CE Loss: 5.2329 | VAL CE LOSS: 5.2911 | Topology Entropy: 0.4191 | Temp: 2.000 | GradNorm: 0.599 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.7% confidence)
+Epoch 803/1000 | CE Loss: 5.2413 | VAL CE LOSS: 5.2925 | Topology Entropy: 0.4136 | Temp: 2.000 | GradNorm: 1.093 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (61.9% confidence)
+Epoch 804/1000 | CE Loss: 5.2383 | VAL CE LOSS: 5.2958 | Topology Entropy: 0.4142 | Temp: 2.000 | GradNorm: 0.358 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (69.2% confidence)
+Epoch 805/1000 | CE Loss: 5.2551 | VAL CE LOSS: 5.2862 | Topology Entropy: 0.4165 | Temp: 2.000 | GradNorm: 0.416 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.5% confidence)
+Epoch 806/1000 | CE Loss: 5.2298 | VAL CE LOSS: 5.2867 | Topology Entropy: 0.4178 | Temp: 2.000 | GradNorm: 0.502 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.6% confidence)
+Epoch 807/1000 | CE Loss: 5.2436 | VAL CE LOSS: 5.2905 | Topology Entropy: 0.4153 | Temp: 2.000 | GradNorm: 0.321 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.5% confidence)
+Epoch 808/1000 | CE Loss: 5.2131 | VAL CE LOSS: 5.2919 | Topology Entropy: 0.4176 | Temp: 2.000 | GradNorm: 0.536 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.4% confidence)
+Epoch 809/1000 | CE Loss: 5.2435 | VAL CE LOSS: 5.2925 | Topology Entropy: 0.4160 | Temp: 2.000 | GradNorm: 0.291 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.4% confidence)
+Epoch 810/1000 | CE Loss: 5.2441 | VAL CE LOSS: 5.2896 | Topology Entropy: 0.4180 | Temp: 2.000 | GradNorm: 0.428 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (51.7% confidence)
+Epoch 811/1000 | CE Loss: 5.2631 | VAL CE LOSS: 5.3126 | Topology Entropy: 0.4033 | Temp: 2.000 | GradNorm: 0.559 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.3% confidence)
+Epoch 812/1000 | CE Loss: 5.2392 | VAL CE LOSS: 5.2893 | Topology Entropy: 0.4076 | Temp: 2.000 | GradNorm: 0.363 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.3% confidence)
+Epoch 813/1000 | CE Loss: 5.2553 | VAL CE LOSS: 5.2911 | Topology Entropy: 0.4095 | Temp: 2.000 | GradNorm: 0.440 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.1% confidence)
+Epoch 814/1000 | CE Loss: 5.2225 | VAL CE LOSS: 5.2880 | Topology Entropy: 0.4121 | Temp: 2.000 | GradNorm: 0.332 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (73.2% confidence)
+Epoch 815/1000 | CE Loss: 5.2376 | VAL CE LOSS: 5.2940 | Topology Entropy: 0.4088 | Temp: 2.000 | GradNorm: 0.564 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.0% confidence)
+Epoch 816/1000 | CE Loss: 5.2323 | VAL CE LOSS: 5.2974 | Topology Entropy: 0.4053 | Temp: 2.000 | GradNorm: 0.823 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.2% confidence)
+Epoch 817/1000 | CE Loss: 5.2615 | VAL CE LOSS: 5.2889 | Topology Entropy: 0.4090 | Temp: 2.000 | GradNorm: 0.433 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.0% confidence)
+Epoch 818/1000 | CE Loss: 5.2576 | VAL CE LOSS: 5.2894 | Topology Entropy: 0.4088 | Temp: 2.000 | GradNorm: 0.417 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.3% confidence)
+Epoch 819/1000 | CE Loss: 5.2491 | VAL CE LOSS: 5.3032 | Topology Entropy: 0.4065 | Temp: 2.000 | GradNorm: 0.359 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (75.4% confidence)
+Epoch 820/1000 | CE Loss: 5.2503 | VAL CE LOSS: 5.2939 | Topology Entropy: 0.4068 | Temp: 2.000 | GradNorm: 0.354 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (77.0% confidence)
+Epoch 821/1000 | CE Loss: 5.2548 | VAL CE LOSS: 5.3043 | Topology Entropy: 0.4016 | Temp: 2.000 | GradNorm: 0.872 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (47.4% confidence)
+Epoch 822/1000 | CE Loss: 5.2439 | VAL CE LOSS: 5.3018 | Topology Entropy: 0.4052 | Temp: 2.000 | GradNorm: 0.371 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (44.8% confidence)
+Epoch 823/1000 | CE Loss: 5.2400 | VAL CE LOSS: 5.2955 | Topology Entropy: 0.4074 | Temp: 2.000 | GradNorm: 0.721 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (77.0% confidence)
+Epoch 824/1000 | CE Loss: 5.2485 | VAL CE LOSS: 5.2941 | Topology Entropy: 0.4061 | Temp: 2.000 | GradNorm: 0.327 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (81.2% confidence)
+Epoch 825/1000 | CE Loss: 5.2534 | VAL CE LOSS: 5.2883 | Topology Entropy: 0.4085 | Temp: 2.000 | GradNorm: 0.369 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.1% confidence)
+Epoch 826/1000 | CE Loss: 5.2258 | VAL CE LOSS: 5.2838 | Topology Entropy: 0.4100 | Temp: 2.000 | GradNorm: 0.514 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.6% confidence)
+Epoch 827/1000 | CE Loss: 5.2642 | VAL CE LOSS: 5.2929 | Topology Entropy: 0.4103 | Temp: 2.000 | GradNorm: 0.335 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (74.9% confidence)
+Epoch 828/1000 | CE Loss: 5.2252 | VAL CE LOSS: 5.2842 | Topology Entropy: 0.4119 | Temp: 2.000 | GradNorm: 0.345 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.1% confidence)
+Epoch 829/1000 | CE Loss: 5.2432 | VAL CE LOSS: 5.3012 | Topology Entropy: 0.4120 | Temp: 2.000 | GradNorm: 0.336 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.2% confidence)
+Epoch 830/1000 | CE Loss: 5.2114 | VAL CE LOSS: 5.2815 | Topology Entropy: 0.4099 | Temp: 2.000 | GradNorm: 0.372 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.8% confidence)
+Epoch 831/1000 | CE Loss: 5.2562 | VAL CE LOSS: 5.2933 | Topology Entropy: 0.4037 | Temp: 2.000 | GradNorm: 0.492 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.2% confidence)
+Epoch 832/1000 | CE Loss: 5.2397 | VAL CE LOSS: 5.2902 | Topology Entropy: 0.4084 | Temp: 2.000 | GradNorm: 0.376 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.5% confidence)
+Epoch 833/1000 | CE Loss: 5.2376 | VAL CE LOSS: 5.2851 | Topology Entropy: 0.4071 | Temp: 2.000 | GradNorm: 0.613 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.9% confidence)
+Epoch 834/1000 | CE Loss: 5.2496 | VAL CE LOSS: 5.2971 | Topology Entropy: 0.3999 | Temp: 2.000 | GradNorm: 2.192 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (67.2% confidence)
+Epoch 835/1000 | CE Loss: 5.2329 | VAL CE LOSS: 5.3002 | Topology Entropy: 0.4014 | Temp: 2.000 | GradNorm: 0.305 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.2% confidence)
+Epoch 836/1000 | CE Loss: 5.2423 | VAL CE LOSS: 5.2914 | Topology Entropy: 0.4033 | Temp: 2.000 | GradNorm: 0.877 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (51.6% confidence)
+Epoch 837/1000 | CE Loss: 5.2193 | VAL CE LOSS: 5.2952 | Topology Entropy: 0.4042 | Temp: 2.000 | GradNorm: 0.571 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (60.9% confidence)
+Epoch 838/1000 | CE Loss: 5.2300 | VAL CE LOSS: 5.2795 | Topology Entropy: 0.4054 | Temp: 2.000 | GradNorm: 0.357 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.4% confidence)
+Epoch 839/1000 | CE Loss: 5.2437 | VAL CE LOSS: 5.2976 | Topology Entropy: 0.4047 | Temp: 2.000 | GradNorm: 0.676 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.4% confidence)
+Epoch 840/1000 | CE Loss: 5.2379 | VAL CE LOSS: 5.2849 | Topology Entropy: 0.4063 | Temp: 2.000 | GradNorm: 0.590 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.0% confidence)
+Epoch 841/1000 | CE Loss: 5.2405 | VAL CE LOSS: 5.2838 | Topology Entropy: 0.4063 | Temp: 2.000 | GradNorm: 0.323 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.3% confidence)
+Epoch 842/1000 | CE Loss: 5.2279 | VAL CE LOSS: 5.2775 | Topology Entropy: 0.4055 | Temp: 2.000 | GradNorm: 0.284 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.5% confidence)
+Epoch 843/1000 | CE Loss: 5.2741 | VAL CE LOSS: 5.2876 | Topology Entropy: 0.4068 | Temp: 2.000 | GradNorm: 0.287 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (69.8% confidence)
+Epoch 844/1000 | CE Loss: 5.2351 | VAL CE LOSS: 5.2816 | Topology Entropy: 0.4077 | Temp: 2.000 | GradNorm: 0.337 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.4% confidence)
+Epoch 845/1000 | CE Loss: 5.2312 | VAL CE LOSS: 5.2781 | Topology Entropy: 0.4078 | Temp: 2.000 | GradNorm: 0.396 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (48.2% confidence)
+Epoch 846/1000 | CE Loss: 5.2318 | VAL CE LOSS: 5.2832 | Topology Entropy: 0.4096 | Temp: 2.000 | GradNorm: 0.746 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (75.7% confidence)
+Epoch 847/1000 | CE Loss: 5.2497 | VAL CE LOSS: 5.2814 | Topology Entropy: 0.4052 | Temp: 2.000 | GradNorm: 0.393 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (57.6% confidence)
+Epoch 848/1000 | CE Loss: 5.2281 | VAL CE LOSS: 5.2862 | Topology Entropy: 0.4045 | Temp: 2.000 | GradNorm: 0.653 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.1% confidence)
+Epoch 849/1000 | CE Loss: 5.2147 | VAL CE LOSS: 5.2778 | Topology Entropy: 0.4033 | Temp: 2.000 | GradNorm: 0.307 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (45.5% confidence)
+Epoch 850/1000 | CE Loss: 5.2457 | VAL CE LOSS: 5.2886 | Topology Entropy: 0.3943 | Temp: 2.000 | GradNorm: 0.428 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.9% confidence)
+Epoch 851/1000 | CE Loss: 5.2396 | VAL CE LOSS: 5.2813 | Topology Entropy: 0.3975 | Temp: 2.000 | GradNorm: 0.290 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.9% confidence)
+Epoch 852/1000 | CE Loss: 5.2461 | VAL CE LOSS: 5.2784 | Topology Entropy: 0.3998 | Temp: 2.000 | GradNorm: 0.487 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (44.2% confidence)
+Epoch 853/1000 | CE Loss: 5.2248 | VAL CE LOSS: 5.2946 | Topology Entropy: 0.3986 | Temp: 2.000 | GradNorm: 0.410 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (49.0% confidence)
+Epoch 854/1000 | CE Loss: 5.2336 | VAL CE LOSS: 5.2859 | Topology Entropy: 0.3943 | Temp: 2.000 | GradNorm: 0.569 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.5% confidence)
+Epoch 855/1000 | CE Loss: 5.2312 | VAL CE LOSS: 5.2819 | Topology Entropy: 0.3987 | Temp: 2.000 | GradNorm: 0.475 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (78.8% confidence)
+Epoch 856/1000 | CE Loss: 5.2274 | VAL CE LOSS: 5.2804 | Topology Entropy: 0.3999 | Temp: 2.000 | GradNorm: 0.410 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.4% confidence)
+Epoch 857/1000 | CE Loss: 5.2367 | VAL CE LOSS: 5.2815 | Topology Entropy: 0.3983 | Temp: 2.000 | GradNorm: 0.289 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.0% confidence)
+Epoch 858/1000 | CE Loss: 5.2078 | VAL CE LOSS: 5.2797 | Topology Entropy: 0.4005 | Temp: 2.000 | GradNorm: 0.513 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.6% confidence)
+Epoch 859/1000 | CE Loss: 5.2216 | VAL CE LOSS: 5.2761 | Topology Entropy: 0.3997 | Temp: 2.000 | GradNorm: 0.450 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (47.1% confidence)
+Epoch 860/1000 | CE Loss: 5.2352 | VAL CE LOSS: 5.2774 | Topology Entropy: 0.3988 | Temp: 2.000 | GradNorm: 0.238 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (47.4% confidence)
+Epoch 861/1000 | CE Loss: 5.2178 | VAL CE LOSS: 5.2719 | Topology Entropy: 0.4002 | Temp: 2.000 | GradNorm: 0.277 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.1% confidence)
+Epoch 862/1000 | CE Loss: 5.2296 | VAL CE LOSS: 5.2824 | Topology Entropy: 0.4013 | Temp: 2.000 | GradNorm: 0.740 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.7% confidence)
+Epoch 863/1000 | CE Loss: 5.2155 | VAL CE LOSS: 5.2736 | Topology Entropy: 0.4004 | Temp: 2.000 | GradNorm: 0.306 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.1% confidence)
+Epoch 864/1000 | CE Loss: 5.2336 | VAL CE LOSS: 5.2806 | Topology Entropy: 0.3980 | Temp: 2.000 | GradNorm: 0.512 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.9% confidence)
+Epoch 865/1000 | CE Loss: 5.2411 | VAL CE LOSS: 5.2659 | Topology Entropy: 0.3995 | Temp: 2.000 | GradNorm: 0.342 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.1% confidence)
+Epoch 866/1000 | CE Loss: 5.2222 | VAL CE LOSS: 5.2874 | Topology Entropy: 0.3987 | Temp: 2.000 | GradNorm: 0.294 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (52.4% confidence)
+Epoch 867/1000 | CE Loss: 5.2413 | VAL CE LOSS: 5.2739 | Topology Entropy: 0.4026 | Temp: 2.000 | GradNorm: 0.343 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.2% confidence)
+Epoch 868/1000 | CE Loss: 5.2273 | VAL CE LOSS: 5.2692 | Topology Entropy: 0.3997 | Temp: 2.000 | GradNorm: 0.307 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.7% confidence)
+Epoch 869/1000 | CE Loss: 5.2138 | VAL CE LOSS: 5.2659 | Topology Entropy: 0.4004 | Temp: 2.000 | GradNorm: 0.663 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.1% confidence)
+Epoch 870/1000 | CE Loss: 5.2233 | VAL CE LOSS: 5.2754 | Topology Entropy: 0.3985 | Temp: 2.000 | GradNorm: 0.389 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.9% confidence)
+Epoch 871/1000 | CE Loss: 5.2106 | VAL CE LOSS: 5.2697 | Topology Entropy: 0.3987 | Temp: 2.000 | GradNorm: 0.692 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.3% confidence)
+Epoch 872/1000 | CE Loss: 5.2269 | VAL CE LOSS: 5.2710 | Topology Entropy: 0.3972 | Temp: 2.000 | GradNorm: 0.389 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.0% confidence)
+Epoch 873/1000 | CE Loss: 5.2264 | VAL CE LOSS: 5.2724 | Topology Entropy: 0.3971 | Temp: 2.000 | GradNorm: 0.292 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.6% confidence)
+Epoch 874/1000 | CE Loss: 5.2232 | VAL CE LOSS: 5.2717 | Topology Entropy: 0.3944 | Temp: 2.000 | GradNorm: 0.306 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (75.2% confidence)
+Epoch 875/1000 | CE Loss: 5.2009 | VAL CE LOSS: 5.2765 | Topology Entropy: 0.3935 | Temp: 2.000 | GradNorm: 0.237 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.2% confidence)
+Epoch 876/1000 | CE Loss: 5.2295 | VAL CE LOSS: 5.2754 | Topology Entropy: 0.3879 | Temp: 2.000 | GradNorm: 0.722 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (78.0% confidence)
+Epoch 877/1000 | CE Loss: 5.2246 | VAL CE LOSS: 5.2819 | Topology Entropy: 0.3911 | Temp: 2.000 | GradNorm: 0.265 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.4% confidence)
+Epoch 878/1000 | CE Loss: 5.2289 | VAL CE LOSS: 5.2824 | Topology Entropy: 0.3913 | Temp: 2.000 | GradNorm: 0.286 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.5% confidence)
+Epoch 879/1000 | CE Loss: 5.2287 | VAL CE LOSS: 5.2696 | Topology Entropy: 0.3922 | Temp: 2.000 | GradNorm: 0.377 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.2% confidence)
+Epoch 880/1000 | CE Loss: 5.2219 | VAL CE LOSS: 5.2707 | Topology Entropy: 0.3898 | Temp: 2.000 | GradNorm: 0.565 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (72.1% confidence)
+Epoch 881/1000 | CE Loss: 5.2259 | VAL CE LOSS: 5.2660 | Topology Entropy: 0.3903 | Temp: 2.000 | GradNorm: 0.302 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (78.8% confidence)
+Epoch 882/1000 | CE Loss: 5.2273 | VAL CE LOSS: 5.2779 | Topology Entropy: 0.3901 | Temp: 2.000 | GradNorm: 0.262 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.6% confidence)
+Epoch 883/1000 | CE Loss: 5.2285 | VAL CE LOSS: 5.2760 | Topology Entropy: 0.3912 | Temp: 2.000 | GradNorm: 0.733 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.7% confidence)
+Epoch 884/1000 | CE Loss: 5.2374 | VAL CE LOSS: 5.2666 | Topology Entropy: 0.3840 | Temp: 2.000 | GradNorm: 0.432 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.2% confidence)
+Epoch 885/1000 | CE Loss: 5.2272 | VAL CE LOSS: 5.2766 | Topology Entropy: 0.3875 | Temp: 2.000 | GradNorm: 0.448 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.7% confidence)
+Epoch 886/1000 | CE Loss: 5.2085 | VAL CE LOSS: 5.2852 | Topology Entropy: 0.3882 | Temp: 2.000 | GradNorm: 0.544 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.1% confidence)
+Epoch 887/1000 | CE Loss: 5.2250 | VAL CE LOSS: 5.2744 | Topology Entropy: 0.3885 | Temp: 2.000 | GradNorm: 0.274 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.4% confidence)
+Epoch 888/1000 | CE Loss: 5.2175 | VAL CE LOSS: 5.2675 | Topology Entropy: 0.3870 | Temp: 2.000 | GradNorm: 0.864 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.5% confidence)
+Epoch 889/1000 | CE Loss: 5.2334 | VAL CE LOSS: 5.2693 | Topology Entropy: 0.3869 | Temp: 2.000 | GradNorm: 0.367 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.9% confidence)
+Epoch 890/1000 | CE Loss: 5.2088 | VAL CE LOSS: 5.2675 | Topology Entropy: 0.3879 | Temp: 2.000 | GradNorm: 0.742 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.5% confidence)
+Epoch 891/1000 | CE Loss: 5.2199 | VAL CE LOSS: 5.2681 | Topology Entropy: 0.3870 | Temp: 2.000 | GradNorm: 0.495 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (83.0% confidence)
+Epoch 892/1000 | CE Loss: 5.2083 | VAL CE LOSS: 5.2614 | Topology Entropy: 0.3873 | Temp: 2.000 | GradNorm: 0.350 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (80.2% confidence)
+Epoch 893/1000 | CE Loss: 5.2081 | VAL CE LOSS: 5.2691 | Topology Entropy: 0.3836 | Temp: 2.000 | GradNorm: 0.285 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (80.7% confidence)
+Epoch 894/1000 | CE Loss: 5.2387 | VAL CE LOSS: 5.2636 | Topology Entropy: 0.3799 | Temp: 2.000 | GradNorm: 0.387 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (72.4% confidence)
+Epoch 895/1000 | CE Loss: 5.2233 | VAL CE LOSS: 5.2657 | Topology Entropy: 0.3812 | Temp: 2.000 | GradNorm: 0.462 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (78.8% confidence)
+Epoch 896/1000 | CE Loss: 5.2138 | VAL CE LOSS: 5.2656 | Topology Entropy: 0.3836 | Temp: 2.000 | GradNorm: 0.500 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (78.0% confidence)
+Epoch 897/1000 | CE Loss: 5.2258 | VAL CE LOSS: 5.2653 | Topology Entropy: 0.3846 | Temp: 2.000 | GradNorm: 0.363 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (58.4% confidence)
+Epoch 898/1000 | CE Loss: 5.2142 | VAL CE LOSS: 5.2756 | Topology Entropy: 0.3842 | Temp: 2.000 | GradNorm: 0.259 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (60.2% confidence)
+Epoch 899/1000 | CE Loss: 5.2366 | VAL CE LOSS: 5.2588 | Topology Entropy: 0.3810 | Temp: 2.000 | GradNorm: 0.431 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.2% confidence)
+Epoch 900/1000 | CE Loss: 5.2161 | VAL CE LOSS: 5.2641 | Topology Entropy: 0.3832 | Temp: 2.000 | GradNorm: 0.265 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.4% confidence)
+Epoch 901/1000 | CE Loss: 5.2286 | VAL CE LOSS: 5.2758 | Topology Entropy: 0.3830 | Temp: 2.000 | GradNorm: 0.389 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.4% confidence)
+Epoch 902/1000 | CE Loss: 5.2228 | VAL CE LOSS: 5.2710 | Topology Entropy: 0.3800 | Temp: 2.000 | GradNorm: 0.429 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.1% confidence)
+Epoch 903/1000 | CE Loss: 5.2329 | VAL CE LOSS: 5.2724 | Topology Entropy: 0.3781 | Temp: 2.000 | GradNorm: 0.268 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.7% confidence)
+Epoch 904/1000 | CE Loss: 5.2119 | VAL CE LOSS: 5.2682 | Topology Entropy: 0.3801 | Temp: 2.000 | GradNorm: 0.382 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.3% confidence)
+Epoch 905/1000 | CE Loss: 5.2294 | VAL CE LOSS: 5.2714 | Topology Entropy: 0.3777 | Temp: 2.000 | GradNorm: 0.516 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (52.3% confidence)
+Epoch 906/1000 | CE Loss: 5.2179 | VAL CE LOSS: 5.2753 | Topology Entropy: 0.3765 | Temp: 2.000 | GradNorm: 1.468 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (67.8% confidence)
+Epoch 907/1000 | CE Loss: 5.2855 | VAL CE LOSS: 5.2696 | Topology Entropy: 0.3763 | Temp: 2.000 | GradNorm: 0.525 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.1% confidence)
+Epoch 908/1000 | CE Loss: 5.2232 | VAL CE LOSS: 5.2656 | Topology Entropy: 0.3743 | Temp: 2.000 | GradNorm: 0.381 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (78.2% confidence)
+Epoch 909/1000 | CE Loss: 5.2230 | VAL CE LOSS: 5.2704 | Topology Entropy: 0.3723 | Temp: 2.000 | GradNorm: 0.386 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (75.2% confidence)
+Epoch 910/1000 | CE Loss: 5.2102 | VAL CE LOSS: 5.2684 | Topology Entropy: 0.3727 | Temp: 2.000 | GradNorm: 0.327 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (80.1% confidence)
+Epoch 911/1000 | CE Loss: 5.2439 | VAL CE LOSS: 5.2657 | Topology Entropy: 0.3720 | Temp: 2.000 | GradNorm: 0.278 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (81.6% confidence)
+Epoch 912/1000 | CE Loss: 5.2200 | VAL CE LOSS: 5.2708 | Topology Entropy: 0.3684 | Temp: 2.000 | GradNorm: 0.386 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.1% confidence)
+Epoch 913/1000 | CE Loss: 5.2366 | VAL CE LOSS: 5.2676 | Topology Entropy: 0.3651 | Temp: 2.000 | GradNorm: 0.636 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.1% confidence)
+Epoch 914/1000 | CE Loss: 5.2171 | VAL CE LOSS: 5.2652 | Topology Entropy: 0.3666 | Temp: 2.000 | GradNorm: 0.471 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (80.2% confidence)
+Epoch 915/1000 | CE Loss: 5.2182 | VAL CE LOSS: 5.2686 | Topology Entropy: 0.3670 | Temp: 2.000 | GradNorm: 0.308 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (72.2% confidence)
+Epoch 916/1000 | CE Loss: 5.2189 | VAL CE LOSS: 5.2652 | Topology Entropy: 0.3625 | Temp: 2.000 | GradNorm: 0.276 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (74.5% confidence)
+Epoch 917/1000 | CE Loss: 5.2265 | VAL CE LOSS: 5.2760 | Topology Entropy: 0.3647 | Temp: 2.000 | GradNorm: 0.679 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (87.2% confidence)
+Epoch 918/1000 | CE Loss: 5.2393 | VAL CE LOSS: 5.2672 | Topology Entropy: 0.3602 | Temp: 2.000 | GradNorm: 0.293 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.8% confidence)
+Epoch 919/1000 | CE Loss: 5.2285 | VAL CE LOSS: 5.2700 | Topology Entropy: 0.3626 | Temp: 2.000 | GradNorm: 0.345 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (50.4% confidence)
+Epoch 920/1000 | CE Loss: 5.2233 | VAL CE LOSS: 5.2668 | Topology Entropy: 0.3595 | Temp: 2.000 | GradNorm: 0.728 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (52.1% confidence)
+Epoch 921/1000 | CE Loss: 5.2245 | VAL CE LOSS: 5.2689 | Topology Entropy: 0.3609 | Temp: 2.000 | GradNorm: 1.363 [CLIPPED]
+   -> L0_N0 Leading Path: 'shift_mix' (41.5% confidence)
+Epoch 922/1000 | CE Loss: 5.2082 | VAL CE LOSS: 5.2679 | Topology Entropy: 0.3635 | Temp: 2.000 | GradNorm: 0.291 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (41.9% confidence)
+Epoch 923/1000 | CE Loss: 5.2246 | VAL CE LOSS: 5.2689 | Topology Entropy: 0.3650 | Temp: 2.000 | GradNorm: 0.630 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (47.9% confidence)
+Epoch 924/1000 | CE Loss: 5.2321 | VAL CE LOSS: 5.2722 | Topology Entropy: 0.3624 | Temp: 2.000 | GradNorm: 0.570 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (47.6% confidence)
+Epoch 925/1000 | CE Loss: 5.2249 | VAL CE LOSS: 5.2838 | Topology Entropy: 0.3626 | Temp: 2.000 | GradNorm: 0.348 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.4% confidence)
+Epoch 926/1000 | CE Loss: 5.2271 | VAL CE LOSS: 5.2726 | Topology Entropy: 0.3613 | Temp: 2.000 | GradNorm: 0.352 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (50.1% confidence)
+Epoch 927/1000 | CE Loss: 5.2354 | VAL CE LOSS: 5.2733 | Topology Entropy: 0.3597 | Temp: 2.000 | GradNorm: 0.345 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (71.3% confidence)
+Epoch 928/1000 | CE Loss: 5.1897 | VAL CE LOSS: 5.2620 | Topology Entropy: 0.3593 | Temp: 2.000 | GradNorm: 0.661 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (69.6% confidence)
+Epoch 929/1000 | CE Loss: 5.2214 | VAL CE LOSS: 5.2598 | Topology Entropy: 0.3520 | Temp: 2.000 | GradNorm: 0.734 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.8% confidence)
+Epoch 930/1000 | CE Loss: 5.1990 | VAL CE LOSS: 5.2650 | Topology Entropy: 0.3530 | Temp: 2.000 | GradNorm: 0.384 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.1% confidence)
+Epoch 931/1000 | CE Loss: 5.2026 | VAL CE LOSS: 5.2707 | Topology Entropy: 0.3553 | Temp: 2.000 | GradNorm: 0.462 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.3% confidence)
+Epoch 932/1000 | CE Loss: 5.2398 | VAL CE LOSS: 5.2769 | Topology Entropy: 0.3489 | Temp: 2.000 | GradNorm: 0.531 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.4% confidence)
+Epoch 933/1000 | CE Loss: 5.2195 | VAL CE LOSS: 5.2731 | Topology Entropy: 0.3511 | Temp: 2.000 | GradNorm: 0.445 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (72.9% confidence)
+Epoch 934/1000 | CE Loss: 5.2249 | VAL CE LOSS: 5.2740 | Topology Entropy: 0.3457 | Temp: 2.000 | GradNorm: 0.309 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.8% confidence)
+Epoch 935/1000 | CE Loss: 5.2160 | VAL CE LOSS: 5.2696 | Topology Entropy: 0.3463 | Temp: 2.000 | GradNorm: 0.471 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.4% confidence)
+Epoch 936/1000 | CE Loss: 5.2092 | VAL CE LOSS: 5.2640 | Topology Entropy: 0.3466 | Temp: 2.000 | GradNorm: 0.972 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (48.7% confidence)
+Epoch 937/1000 | CE Loss: 5.2211 | VAL CE LOSS: 5.2679 | Topology Entropy: 0.3449 | Temp: 2.000 | GradNorm: 0.428 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (44.4% confidence)
+Epoch 938/1000 | CE Loss: 5.2075 | VAL CE LOSS: 5.2731 | Topology Entropy: 0.3448 | Temp: 2.000 | GradNorm: 0.564 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (40.9% confidence)
+Epoch 939/1000 | CE Loss: 5.2251 | VAL CE LOSS: 5.2652 | Topology Entropy: 0.3418 | Temp: 2.000 | GradNorm: 0.512 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (56.9% confidence)
+Epoch 940/1000 | CE Loss: 5.2186 | VAL CE LOSS: 5.2695 | Topology Entropy: 0.3432 | Temp: 2.000 | GradNorm: 0.346 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (43.7% confidence)
+Epoch 941/1000 | CE Loss: 5.2133 | VAL CE LOSS: 5.2727 | Topology Entropy: 0.3398 | Temp: 2.000 | GradNorm: 0.315 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.9% confidence)
+Epoch 942/1000 | CE Loss: 5.2269 | VAL CE LOSS: 5.2602 | Topology Entropy: 0.3378 | Temp: 2.000 | GradNorm: 0.427 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (39.4% confidence)
+Epoch 943/1000 | CE Loss: 5.2280 | VAL CE LOSS: 5.2575 | Topology Entropy: 0.3387 | Temp: 2.000 | GradNorm: 0.408 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.9% confidence)
+Epoch 944/1000 | CE Loss: 5.2140 | VAL CE LOSS: 5.2752 | Topology Entropy: 0.3400 | Temp: 2.000 | GradNorm: 0.453 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.9% confidence)
+Epoch 945/1000 | CE Loss: 5.2349 | VAL CE LOSS: 5.2751 | Topology Entropy: 0.3384 | Temp: 2.000 | GradNorm: 0.642 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.3% confidence)
+Epoch 946/1000 | CE Loss: 5.2258 | VAL CE LOSS: 5.2661 | Topology Entropy: 0.3400 | Temp: 2.000 | GradNorm: 0.376 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.7% confidence)
+Epoch 947/1000 | CE Loss: 5.2216 | VAL CE LOSS: 5.2735 | Topology Entropy: 0.3335 | Temp: 2.000 | GradNorm: 0.455 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.4% confidence)
+Epoch 948/1000 | CE Loss: 5.2097 | VAL CE LOSS: 5.2613 | Topology Entropy: 0.3354 | Temp: 2.000 | GradNorm: 0.388 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.0% confidence)
+Epoch 949/1000 | CE Loss: 5.2317 | VAL CE LOSS: 5.2657 | Topology Entropy: 0.3354 | Temp: 2.000 | GradNorm: 0.463 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (67.1% confidence)
+Epoch 950/1000 | CE Loss: 5.2204 | VAL CE LOSS: 5.2707 | Topology Entropy: 0.3374 | Temp: 2.000 | GradNorm: 0.318 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (76.5% confidence)
+Epoch 951/1000 | CE Loss: 5.2139 | VAL CE LOSS: 5.2645 | Topology Entropy: 0.3379 | Temp: 2.000 | GradNorm: 0.722 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (53.6% confidence)
+Epoch 952/1000 | CE Loss: 5.2475 | VAL CE LOSS: 5.2663 | Topology Entropy: 0.3355 | Temp: 2.000 | GradNorm: 0.373 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.0% confidence)
+Epoch 953/1000 | CE Loss: 5.2153 | VAL CE LOSS: 5.2600 | Topology Entropy: 0.3361 | Temp: 2.000 | GradNorm: 0.438 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.4% confidence)
+Epoch 954/1000 | CE Loss: 5.2129 | VAL CE LOSS: 5.2680 | Topology Entropy: 0.3340 | Temp: 2.000 | GradNorm: 0.524 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (54.3% confidence)
+Epoch 955/1000 | CE Loss: 5.2292 | VAL CE LOSS: 5.2731 | Topology Entropy: 0.3354 | Temp: 2.000 | GradNorm: 0.322 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (58.9% confidence)
+Epoch 956/1000 | CE Loss: 5.2069 | VAL CE LOSS: 5.2682 | Topology Entropy: 0.3355 | Temp: 2.000 | GradNorm: 0.343 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (78.6% confidence)
+Epoch 957/1000 | CE Loss: 5.2273 | VAL CE LOSS: 5.2752 | Topology Entropy: 0.3333 | Temp: 2.000 | GradNorm: 0.353 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.8% confidence)
+Epoch 958/1000 | CE Loss: 5.2218 | VAL CE LOSS: 5.2777 | Topology Entropy: 0.3266 | Temp: 2.000 | GradNorm: 0.536 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (72.3% confidence)
+Epoch 959/1000 | CE Loss: 5.1966 | VAL CE LOSS: 5.2629 | Topology Entropy: 0.3268 | Temp: 2.000 | GradNorm: 0.328 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (57.6% confidence)
+Epoch 960/1000 | CE Loss: 5.2161 | VAL CE LOSS: 5.2656 | Topology Entropy: 0.3254 | Temp: 2.000 | GradNorm: 0.544 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (48.0% confidence)
+Epoch 961/1000 | CE Loss: 5.2181 | VAL CE LOSS: 5.2736 | Topology Entropy: 0.3224 | Temp: 2.000 | GradNorm: 0.526 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (57.0% confidence)
+Epoch 962/1000 | CE Loss: 5.2120 | VAL CE LOSS: 5.2696 | Topology Entropy: 0.3248 | Temp: 2.000 | GradNorm: 0.277 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.0% confidence)
+Epoch 963/1000 | CE Loss: 5.2222 | VAL CE LOSS: 5.2807 | Topology Entropy: 0.3183 | Temp: 2.000 | GradNorm: 0.675 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.4% confidence)
+Epoch 964/1000 | CE Loss: 5.2299 | VAL CE LOSS: 5.2816 | Topology Entropy: 0.3164 | Temp: 2.000 | GradNorm: 0.395 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.7% confidence)
+Epoch 965/1000 | CE Loss: 5.2210 | VAL CE LOSS: 5.2748 | Topology Entropy: 0.3165 | Temp: 2.000 | GradNorm: 0.880 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (70.0% confidence)
+Epoch 966/1000 | CE Loss: 5.2141 | VAL CE LOSS: 5.2838 | Topology Entropy: 0.3165 | Temp: 2.000 | GradNorm: 0.340 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.1% confidence)
+Epoch 967/1000 | CE Loss: 5.2169 | VAL CE LOSS: 5.2749 | Topology Entropy: 0.3168 | Temp: 2.000 | GradNorm: 0.347 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (76.3% confidence)
+Epoch 968/1000 | CE Loss: 5.2272 | VAL CE LOSS: 5.2712 | Topology Entropy: 0.3189 | Temp: 2.000 | GradNorm: 1.496 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (86.4% confidence)
+Epoch 969/1000 | CE Loss: 5.2212 | VAL CE LOSS: 5.2698 | Topology Entropy: 0.3187 | Temp: 2.000 | GradNorm: 0.293 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (58.6% confidence)
+Epoch 970/1000 | CE Loss: 5.1976 | VAL CE LOSS: 5.2732 | Topology Entropy: 0.3168 | Temp: 2.000 | GradNorm: 0.326 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.3% confidence)
+Epoch 971/1000 | CE Loss: 5.2149 | VAL CE LOSS: 5.2722 | Topology Entropy: 0.3162 | Temp: 2.000 | GradNorm: 0.359 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.2% confidence)
+Epoch 972/1000 | CE Loss: 5.2221 | VAL CE LOSS: 5.2717 | Topology Entropy: 0.3149 | Temp: 2.000 | GradNorm: 0.397 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.0% confidence)
+Epoch 973/1000 | CE Loss: 5.2201 | VAL CE LOSS: 5.2760 | Topology Entropy: 0.3106 | Temp: 2.000 | GradNorm: 0.739 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (55.8% confidence)
+Epoch 974/1000 | CE Loss: 5.1974 | VAL CE LOSS: 5.2704 | Topology Entropy: 0.3083 | Temp: 2.000 | GradNorm: 0.395 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.2% confidence)
+Epoch 975/1000 | CE Loss: 5.2270 | VAL CE LOSS: 5.2704 | Topology Entropy: 0.3076 | Temp: 2.000 | GradNorm: 0.577 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (72.3% confidence)
+Epoch 976/1000 | CE Loss: 5.2248 | VAL CE LOSS: 5.2805 | Topology Entropy: 0.3082 | Temp: 2.000 | GradNorm: 0.358 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (68.6% confidence)
+Epoch 977/1000 | CE Loss: 5.2296 | VAL CE LOSS: 5.2725 | Topology Entropy: 0.3075 | Temp: 2.000 | GradNorm: 1.045 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (64.7% confidence)
+Epoch 978/1000 | CE Loss: 5.2759 | VAL CE LOSS: 5.2769 | Topology Entropy: 0.3056 | Temp: 2.000 | GradNorm: 0.661 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.8% confidence)
+Epoch 979/1000 | CE Loss: 5.2071 | VAL CE LOSS: 5.2737 | Topology Entropy: 0.3038 | Temp: 2.000 | GradNorm: 0.288 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (51.2% confidence)
+Epoch 980/1000 | CE Loss: 5.2127 | VAL CE LOSS: 5.2775 | Topology Entropy: 0.3044 | Temp: 2.000 | GradNorm: 2.154 [CLIPPED]
+   -> L0_N0 Leading Path: 'norm_affine' (59.7% confidence)
+Epoch 981/1000 | CE Loss: 5.2257 | VAL CE LOSS: 5.2716 | Topology Entropy: 0.3012 | Temp: 2.000 | GradNorm: 0.521 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (65.1% confidence)
+Epoch 982/1000 | CE Loss: 5.2306 | VAL CE LOSS: 5.2677 | Topology Entropy: 0.2998 | Temp: 2.000 | GradNorm: 0.945 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.0% confidence)
+Epoch 983/1000 | CE Loss: 5.2081 | VAL CE LOSS: 5.2835 | Topology Entropy: 0.2953 | Temp: 2.000 | GradNorm: 0.889 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (47.2% confidence)
+Epoch 984/1000 | CE Loss: 5.2034 | VAL CE LOSS: 5.2786 | Topology Entropy: 0.2941 | Temp: 2.000 | GradNorm: 0.296 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (47.1% confidence)
+Epoch 985/1000 | CE Loss: 5.2177 | VAL CE LOSS: 5.2780 | Topology Entropy: 0.2934 | Temp: 2.000 | GradNorm: 0.360 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (59.0% confidence)
+Epoch 986/1000 | CE Loss: 5.1984 | VAL CE LOSS: 5.2685 | Topology Entropy: 0.2931 | Temp: 2.000 | GradNorm: 0.424 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (62.6% confidence)
+Epoch 987/1000 | CE Loss: 5.2098 | VAL CE LOSS: 5.3052 | Topology Entropy: 0.2926 | Temp: 2.000 | GradNorm: 0.375 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (57.1% confidence)
+Epoch 988/1000 | CE Loss: 5.2011 | VAL CE LOSS: 5.2675 | Topology Entropy: 0.2894 | Temp: 2.000 | GradNorm: 0.393 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (45.0% confidence)
+Epoch 989/1000 | CE Loss: 5.2030 | VAL CE LOSS: 5.2682 | Topology Entropy: 0.2878 | Temp: 2.000 | GradNorm: 0.292 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.9% confidence)
+Epoch 990/1000 | CE Loss: 5.1999 | VAL CE LOSS: 5.2729 | Topology Entropy: 0.2870 | Temp: 2.000 | GradNorm: 0.345 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (49.4% confidence)
+Epoch 991/1000 | CE Loss: 5.2257 | VAL CE LOSS: 5.2746 | Topology Entropy: 0.2856 | Temp: 2.000 | GradNorm: 0.314 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (41.7% confidence)
+Epoch 992/1000 | CE Loss: 5.2000 | VAL CE LOSS: 5.2838 | Topology Entropy: 0.2833 | Temp: 2.000 | GradNorm: 0.346 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (73.0% confidence)
+Epoch 993/1000 | CE Loss: 5.2307 | VAL CE LOSS: 5.2772 | Topology Entropy: 0.2790 | Temp: 2.000 | GradNorm: 0.360 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (74.9% confidence)
+Epoch 994/1000 | CE Loss: 5.2052 | VAL CE LOSS: 5.2751 | Topology Entropy: 0.2775 | Temp: 2.000 | GradNorm: 0.426 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (66.1% confidence)
+Epoch 995/1000 | CE Loss: 5.2062 | VAL CE LOSS: 5.2692 | Topology Entropy: 0.2747 | Temp: 2.000 | GradNorm: 0.481 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (64.5% confidence)
+Epoch 996/1000 | CE Loss: 5.2106 | VAL CE LOSS: 5.2715 | Topology Entropy: 0.2720 | Temp: 2.000 | GradNorm: 0.713 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (48.4% confidence)
+Epoch 997/1000 | CE Loss: 5.2287 | VAL CE LOSS: 5.2734 | Topology Entropy: 0.2693 | Temp: 2.000 | GradNorm: 0.330 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (61.5% confidence)
+Epoch 998/1000 | CE Loss: 5.2210 | VAL CE LOSS: 5.2732 | Topology Entropy: 0.2631 | Temp: 2.000 | GradNorm: 0.254 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (47.8% confidence)
+Epoch 999/1000 | CE Loss: 5.2248 | VAL CE LOSS: 5.2718 | Topology Entropy: 0.2606 | Temp: 2.000 | GradNorm: 0.415 [ok]
+   -> L0_N0 Leading Path: 'norm_affine' (63.2% confidence)
+Epoch 1000/1000 | CE Loss: 5.2034 | VAL CE LOSS: 5.2575 | Topology Entropy: 0.2586 | Temp: 2.000 | GradNorm: 0.373 [ok]
+   -> L0_N0 Leading Path: 'shift_mix' (45.2% confidence)
+Checkpoint saved to 'searchgpt_checkpoint.pt'.
+Network topology saved to 'network_topology.png'.
+
+Network report written to 'network_report.txt'.
+
+==========================================================================================
+==========================================================================================
+NEURO-SYMBOLIC COMPILER — POST-TRAINING NETWORK ANALYSIS
+Generated : 2026-05-23 10:12:47
+Primitives: 24  |  Layers: 8  |  Breadth: 8  |  Spatial slots: 32  |  D: 128
+==========================================================================================
+
+------------------------------------------------------------------------------------------
+1. MODEL FOOTPRINT
+------------------------------------------------------------------------------------------
+  Total parameters     :   30,227,328
+    Embedding          :    6,449,280  (21.3%)
+    Routing weights    :       39,424  (0.1%)
+    Structural logits  :       10,496  (0.0%)
+    Compute (W/b)      :   23,728,128  (78.5%)
+  Size @ FP32          : 115.31 MB
+  Size @ BF16/FP16     : 57.65 MB
+  Vocab size           : 50,257
+  Context length       : 128
+
+  GPU inference time   : 14.263 ms / sample  (batch=1, seq=128)
+  Throughput estimate  : 70 samples/sec
+
+------------------------------------------------------------------------------------------
+2. NODE UTILIZATION BY LAYER
+------------------------------------------------------------------------------------------
+  Thresholds: dominant=>50% | committed=>35% | split=<35%
+  Layer              Nodes  Dominant  Committed  Split
+  ------------------ -----  --------  ---------  -----
+  Spatial (slot 0)      32        32         32      0
+  Deep layer 0           8         7          8      0
+  Deep layer 1           8         7          8      0
+  Deep layer 2           8         8          8      0
+  Deep layer 3           8         6          7      1
+  Deep layer 4           8         7          7      1
+  Deep layer 5           8         8          8      0
+  Deep layer 6           8         8          8      0
+  Deep layer 7           8         1          1      7
+  ------------------ -----  --------  ---------  -----
+  TOTAL                 96        84         87      9
+  Network commitment rate: 90.6%  |  dominance rate: 87.5%
+
+------------------------------------------------------------------------------------------
+3. TOP PRIMITIVES PER LAYER  (mean probability across nodes, top 5)
+------------------------------------------------------------------------------------------
+  Spatial layer:
+    pure_add              84.2%  █████████████████████████████████
+    sqrt                   3.2%  █
+    arctan                 3.1%  █
+    norm_affine            3.1%  █
+    gated_affine           3.1%  █
+
+  Deep layer 0:
+    arctan                25.0%  █████████
+    gated_affine          12.5%  █████
+    affine_sqrt           12.5%  █████
+    identity              12.5%  ████
+    gated_mul             12.3%  ████
+
+  Deep layer 1:
+    gated_affine          25.4%  ██████████
+... [409 more lines — see network_report.txt]
