@@ -20,7 +20,7 @@ This does this by letting the llm choose from a list of 24 primitives for each n
 Attention is not directly encoded into the network, rather it can be composed by search using the primitives. I am having another future version in the pipeline where I am looking at how baking in attention changes the search dynamics.
 
 So you get something like
-
+```
   [SPATIAL COMPRESSION LAYER]
   Each t_b compresses the token sequence into one D-dim vector.
 
@@ -45,6 +45,7 @@ So you get something like
   t_9 [pure_add @ 100.0%]
       = t_9 = (LN((0.93*tok_32)) + LN((0.74*tok_24 + 0.11*tok_35 + 0.05*tok_38 + 0.03*tok_48)))
 ....
+```
 and so on
 
 Now dont worry if this equation is confusing, it is for me too , I'll utilize the power of the distillation of vast centuries of human knowledge to write a guide on how you and I can read this network report at the end of this readme (using Opus 4.7 of course)
