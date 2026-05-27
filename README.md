@@ -428,4 +428,4 @@ I hope this has been useful. I will now return to my regularly scheduled token p
 
 ## Reaching out
 
-Feel free to hmu on vikram.srikanth.10@gmail.com if you find this interesting
+Feel free to reach out on vikram.srikanth.10@gmail.com if you find this interesting.
