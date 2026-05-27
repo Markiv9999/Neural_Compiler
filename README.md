@@ -9,7 +9,7 @@ Disclaimer: This was one of my hobby projects so you will find a bit of humour s
 
 This neural compiler project is my attempt to make more interpretable llms by composing llms from primitives using techniques from Symbolic Regression and Neural Architecture Search. I aim to reveal the secrets of the thoughts of the predecessors of the AI overlords of the future.
 
-# What does it give us
+## What does it give us
 
 When pointed at dataset of your choice, the neural compiler will give you a network composed from its primitives and a network report that will tell you the equation that each node in the network represents. Simple as that really. It reveals cool equations that define how a neural network bridges the gap between input params and output, but for larger networks and in a **more readable** format than just 
 
@@ -50,11 +50,11 @@ and so on
 
 Now dont worry if this equation is confusing, it is for me too , I'll utilize the power of the distillation of vast centuries of human knowledge to write a guide on how you and I can read this network report at the end of this readme (using Opus 4.7 of course)
 
-# How Does it work
+## How Does it work
 
 The network starts with a grid of a fixed no of layers and nodes per layer. Using a Gumbel softmax routing trick ( see https://sassafras13.github.io/GumbelSoftmax/ which allows for differentiable search over categorical parameters), it determins what primitive each node will use and what interconnections will exist between nodes.
 
-# What are the results
+## What are the results
 
 1. Tiny Shakespeare full dataset with approx 20M params - 1.7 val loss with much lower train loss still fitting with a summarization head, an 8 x 8 layer and 128 embedding dim. Now this is somewhere along the values achieved by MiniGPT (https://arxiv.org/html/2605.17398v1) which has the same embedding dim but 0.8M params. A lot of our additional params come from Gumbel softmax search over 24ish primitives (out of which 13 need weights, so they contribute to our massive increase in params). My **unverified** estimate is that we might land somewhere around 2-5M params if we were to trim the unused primitives after training. And the number seem to say that the embedding dimensions seem to be the important lever for this problem set.
 
@@ -313,11 +313,11 @@ Primitives: 24  |  Layers: 8  |  Breadth: 8  |  Spatial slots: 32  |  D: 128
 ```
 As you can see, we many different primitives are used, and interesting the 7th layer is even all identity - essentially unused. Pretty cool huh, the network figures out how much depth or breadth it needs.
 
-# Which part of this are AI based
+## Which part of this are AI based
 
 A large amount of the adapting of this code from a CPU based symbolic regression equation compiler (all manual) to a pytorch/Cuda based llm compiler was done by careful planning and execution with Opus4.7 and claude code. The implementation of the Gumbel softmax trick was also suggested and implemented by AI, and from the output side it seems to work, during search regularly the compiler explores a given primitive, finds that it does not work after a few epochs and backtracks to a better primitive. Before this softmax trick, I had a genetic algorithm based search for these params ( NSGA - 2 using the optuna library)
 
-# What are its limitations and next steps.
+## What are its limitations and next steps.
 
 The tokens are projected into a single summarizer head , which is then operated on by later layers. This was done so that I can scale context length on my poor Laptop 3060 GPU, god bless his soul for his valiant efforts the past couple of weeks. In practice, I expect this scales poorly for performance and summarization, by definition also includes loss of some of the incoming context from the tokens. If i was a rich guy with a big beefy GPU I would run my search directly on larger and larger token lengths directly, and each node can learn better representations by operating directly on the full context window. I guess one of you guys and gals might find it interesting to do that.
 
@@ -330,7 +330,7 @@ I feel there are massive gains to be made in this setup by just scaling context 
 As I mentioned above, attention does solve a lot of the problems faced by this cleanly, as now the architecture needs to learn relationships between the tokens and to process them in a correct way so that it can compose the right answer. Attention provides a lot of this relative information in a pre baked manner and instead of using a summary head, if we use an attention head it should work better... Ill be trying that in the coming days.
 
 
-# Why in the world would I try this:
+## Why in the world would I try this:
 When I did the Symbolic Regression version, whose focus was to find cheaper equations, I found that for the example of exp(x), the network I was composing kept stacking relus and gelus instead of multiplies. The exp(x) is just 2.718 * 2.718 ... x times, but that is an exponential needle in the haystack for the compiler to find. So i provided it with the option to do exp(x) as a primitive and it found it immediately, giving us an exact machine precision solution for a fraction of the cost. So going by that logic this gives us this image.
 
 <img width="1800" height="1120" alt="reachability_v2" src="https://github.com/user-attachments/assets/ac07c94b-3619-4918-ab9f-904b720ac95a" />
@@ -339,7 +339,7 @@ So normally, tranformers, on top of the attention primitive, scale search pressu
 So this is an effort for me to scale primitives a bit before we scale the search pressure.
 
 
-# Is this novel
+## Is this novel
 I cant say for sure, the concept popped in my head one day, where I thought, ohh if i could just know the exact equation , then I wouldnt need to worry about a network making mistakes ( which is also a deeply naive statement :) ).  However, when I started working on it, I read quite some related literature, some off the top of my head are EN4SR, PYSR, AIFeynman, Neural Architecture Search, DARTS for SR, and Understanding Deep Learning, Attention is all you need,  MiniGPT, NanoGPT and many more papers/articles on the neural network side. 
 
 I dont expect it to be, its just something I looked at and maybe it helps a couple of people somewhere.
