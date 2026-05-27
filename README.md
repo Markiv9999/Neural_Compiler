@@ -341,7 +341,7 @@ So this is an effort for me to scale primitives a bit before we scale the search
 # Is this novel
 I cant say for sure, the concept popped in my head one day, where I thought, ohh if i could just know the exact equation , then I wouldnt need to worry about a network making mistakes ( which is also a deeply naive statement :) ).  However, when I started working on it, I read quite some related literature, some off the top of my head are EN4SR, PYSR, AIFeynman, Neural Architecture Search, DARTS for SR, and Understanding Deep Learning, Attention is all you need,  MiniGPT, NanoGPT and many more papers/articles on the neural network side. 
 
-I dont expect it to be, its just something I looked at and maybe it helps a couple of people somewher.
+I dont expect it to be, its just something I looked at and maybe it helps a couple of people somewhere.
 
 
 
