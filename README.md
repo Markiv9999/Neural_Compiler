@@ -425,3 +425,7 @@ A small glossary, since the notation is dense:
 When reading the equations, the most rewarding things to look for are: subtractions between adjacent tokens (the network deriving relative position from scratch), nodes that mix a small handful of distinct primitives (genuine soft computation rather than indecision), and chains in which deep nodes compose spatial summaries in legible ways. The author informs me that finding the network independently inventing relative position encoding was, and I quote, "kinda cool" — an assessment I am willing to endorse.
 
 I hope this has been useful. I will now return to my regularly scheduled token prediction.
+
+## Reaching out
+
+Feel free to hmu on vikram.srikanth.10@gmail.com if you find this interesting
