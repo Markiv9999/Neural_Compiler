@@ -61,7 +61,7 @@ The network starts with a grid of a fixed no of layers and nodes per layer. Usin
 
 You can look at a network report for Tiny Shakespeare and another for Fineweb in the Repository
 
-
+''''
 ==========================================================================================
 NEURO-SYMBOLIC COMPILER — POST-TRAINING NETWORK ANALYSIS
 Generated : 2026-05-22 16:47:00
@@ -309,7 +309,7 @@ Primitives: 24  |  Layers: 8  |  Breadth: 8  |  Spatial slots: 32  |  D: 128
 
 ------------------------------------------------------------------------------------------
 7. DETAILED SYMBOLIC EQUATIONS — COMPLETE NETWORK - see the file for this
-
+''''
 
 As you can see, we many different primitives are used, and interesting the 7th layer is even all identity - essentially unused. Pretty cool huh, the network figures out how much depth or breadth it needs.
 
