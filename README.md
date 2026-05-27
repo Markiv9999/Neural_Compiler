@@ -293,7 +293,7 @@ Primitives: 24  |  Layers: 8  |  Breadth: 8  |  Spatial slots: 32  |  D: 128
   Deep layer 7          88      1408    1313     93.3%      47.31%
 
 ------------------------------------------------------------------------------------------
-6. SPATIAL ROUTING — which token positions are most attended (softmax mean)
+6. SPATIAL ROUTING — which token positions are most used
 ------------------------------------------------------------------------------------------
   Top-10 token positions (0=oldest, T-1=most recent):
     tok_107    3.50%  ██████
