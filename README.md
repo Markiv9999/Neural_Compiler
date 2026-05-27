@@ -51,23 +51,277 @@ Now dont worry if this equation is confusing, it is for me too , I'll utilize th
 
 # How Does it work
 
-The network starts with a grid of a fixed no of layers and nodes per layer. Using a gumbal softmax routing trick ( see https://sassafras13.github.io/GumbelSoftmax/ which allows for differentiable search over categorical parameters), it determins what primitive each node will use and what interconnections will exist between nodes.
+The network starts with a grid of a fixed no of layers and nodes per layer. Using a Gumbel softmax routing trick ( see https://sassafras13.github.io/GumbelSoftmax/ which allows for differentiable search over categorical parameters), it determins what primitive each node will use and what interconnections will exist between nodes.
 
 # What are the results
 
-1. Tiny Shakespeare full dataset with approx 20M params - 1.7 val loss with much lower train loss still fitting with a summarization head, an 8 x 8 layer and 128 embedding dim. Now this is somewhere along the values achieved by MiniGPT (https://arxiv.org/html/2605.17398v1) which has the same embedding dim but 0.8M params. A lot of our additional params come from gumbal softmax search over 24ish primitives (out of which 13 need weights, so they contribute to our massive increase in params). My **unverified** estimate is that we might land somewhere around 2-5M params if we were to trim the unused primitives after training. And the number seem to say that the embedding dimensions seem to be the important lever for this problem set.
+1. Tiny Shakespeare full dataset with approx 20M params - 1.7 val loss with much lower train loss still fitting with a summarization head, an 8 x 8 layer and 128 embedding dim. Now this is somewhere along the values achieved by MiniGPT (https://arxiv.org/html/2605.17398v1) which has the same embedding dim but 0.8M params. A lot of our additional params come from Gumbel softmax search over 24ish primitives (out of which 13 need weights, so they contribute to our massive increase in params). My **unverified** estimate is that we might land somewhere around 2-5M params if we were to trim the unused primitives after training. And the number seem to say that the embedding dimensions seem to be the important lever for this problem set.
 
 2. Fineweb - 5.2 loss and dropping (but slowly) - Invigorated by the above results and convinced of my capability to create AI history, I like any fool in history jumped headfirst into the dark depths of the abyss that is fineweb and it quickly showed my how my meagre hardware and pockets stack up to the behemoth that is a trillion tokens of data. So this test was done with similar no of parameters and the same embedding dimensions as the above, but that quickly proved foolish. Renting a cheap RTX 4000 ada on runpod, I was able to bump up dimensions to 256, but wasnt able to bump the available no of hours in day higher than 24. So at this point this is where this project is located, and I figured I could put it out in the open so more folks who know what they are doing better than me can play around with it and also see the magic of the network report revealing the equations that define the dark thoughts of AI to takeover humankind.
 
+You can look at a network report for Tiny Shakespeare and another for Fineweb in the Repository
+
+'''
+==========================================================================================
+NEURO-SYMBOLIC COMPILER — POST-TRAINING NETWORK ANALYSIS
+Generated : 2026-05-22 16:47:00
+Primitives: 24  |  Layers: 8  |  Breadth: 8  |  Spatial slots: 32  |  D: 128
+==========================================================================================
+
+------------------------------------------------------------------------------------------
+1. MODEL FOOTPRINT
+------------------------------------------------------------------------------------------
+  Total parameters     :   23,802,368
+    Embedding          :       24,320  (0.1%)
+    Routing weights    :       39,424  (0.2%)
+    Structural logits  :       10,496  (0.0%)
+    Compute (W/b)      :   23,728,128  (99.7%)
+  Size @ FP32          : 90.80 MB
+  Size @ BF16/FP16     : 45.40 MB
+  Vocab size           : 62
+  Context length       : 128
+
+  GPU inference time   : 12.342 ms / sample  (batch=1, seq=128)
+  Throughput estimate  : 81 samples/sec
+
+------------------------------------------------------------------------------------------
+2. NODE UTILIZATION BY LAYER
+------------------------------------------------------------------------------------------
+  Thresholds: dominant=>50% | committed=>35% | split=<35%
+  Layer              Nodes  Dominant  Committed  Split
+  ------------------ -----  --------  ---------  -----
+  Spatial (slot 0)      32        24         31      1
+  Deep layer 0           8         6          8      0
+  Deep layer 1           8         6          8      0
+  Deep layer 2           8         6          7      1
+  Deep layer 3           8         8          8      0
+  Deep layer 4           8         7          8      0
+  Deep layer 5           8         6          8      0
+  Deep layer 6           8         6          7      1
+  Deep layer 7           8         1          1      7
+  ------------------ -----  --------  ---------  -----
+  TOTAL                 96        70         86     10
+  Network commitment rate: 89.6%  |  dominance rate: 72.9%
+
+------------------------------------------------------------------------------------------
+3. TOP PRIMITIVES PER LAYER  (mean probability across nodes, top 5)
+------------------------------------------------------------------------------------------
+  Spatial layer:
+    affine_sqrt           36.0%  ██████████████
+    gated_affine           8.3%  ███
+    sqrt                   7.5%  ███
+    affine_relu            5.8%  ██
+    pure_add               5.3%  ██
+
+  Deep layer 0:
+    cos                   33.9%  █████████████
+    sqrt                  29.0%  ███████████
+    affine_log            16.4%  ██████
+    arctan                14.2%  █████
+    fourier_mix            2.0%  █
+
+  Deep layer 1:
+    affine_sqrt           37.3%  ██████████████
+    sqrt                  20.4%  ████████
+    sin                   12.4%  ████
+    shift_mix              6.3%  ██
+    affine_log             5.3%  ██
+
+  Deep layer 2:
+    sqrt                  18.7%  ███████
+    arctan                15.9%  ██████
+    soft_attention        11.8%  ████
+    tanh                  11.1%  ████
+    shift_mix             10.8%  ████
+
+  Deep layer 3:
+    arctan                22.5%  ████████
+    affine_tanh           12.6%  █████
+    affine_sqrt           12.5%  █████
+    sqrt                  12.1%  ████
+    gated_affine          12.0%  ████
+
+  Deep layer 4:
+    cos                   14.5%  █████
+    arctan                14.5%  █████
+    pure_sub              13.7%  █████
+    sin                   13.0%  █████
+    fourier_mix           12.6%  █████
+
+  Deep layer 5:
+    pure_add              25.3%  ██████████
+    arctan                18.6%  ███████
+    arcsin                13.3%  █████
+    log                   12.6%  █████
+    sin                   10.9%  ████
+
+  Deep layer 6:
+    pure_add              28.5%  ███████████
+    affine_tanh           24.8%  █████████
+    identity              14.8%  █████
+    cos                    7.3%  ██
+    arctan                 5.3%  ██
+
+  Deep layer 7:
+    identity              16.1%  ██████
+    affine_tanh            3.6%  █
+    affine_sqrt            3.6%  █
+    affine_gelu            3.6%  █
+    pure_add               3.6%  █
+
+  GLOBAL (all layers):
+    affine_sqrt           16.6%  ██████
+    sqrt                   9.6%  ███
+    arctan                 8.5%  ███
+    cos                    7.4%  ██
+    pure_add               7.0%  ██
+
+------------------------------------------------------------------------------------------
+4. PRIMITIVE DOMINANCE vs SPLIT — PER NODE  (rel-entropy: 0=certain, 1=uniform)
+------------------------------------------------------------------------------------------
+  Node          Top primitive           Conf%   Rel-H  Status
+  ------------- ---------------------- ------  ------  --------
+  t_0           gated_mul                99.1%   0.021  DOMINANT
+  t_1           sin                      38.1%   0.636  committed
+  t_2           cos                      84.9%   0.181  DOMINANT
+  t_3           sqrt                     47.2%   0.447  committed
+  t_4           affine_sqrt              99.9%   0.002  DOMINANT
+  t_5           norm_affine              67.8%   0.395  DOMINANT
+  t_6           sqrt                     47.5%   0.480  committed
+  t_7           affine_sqrt              93.0%   0.124  DOMINANT
+  t_8           affine_sqrt             100.0%   0.001  DOMINANT
+  t_9           sqrt                     43.4%   0.554  committed
+  t_10          sin                      68.0%   0.419  DOMINANT
+  t_11          sqrt                     79.8%   0.255  DOMINANT
+  t_12          fourier_mix              48.9%   0.507  committed
+  t_13          identity                 35.8%   0.612  committed
+  t_14          affine_tanh              20.9%   0.670  split   
+  t_15          pure_add                 37.7%   0.583  committed
+  t_16          affine_sqrt              89.1%   0.159  DOMINANT
+  t_17          affine_sqrt              99.4%   0.014  DOMINANT
+  t_18          affine_sqrt              99.5%   0.014  DOMINANT
+  t_19          pure_add                 81.7%   0.237  DOMINANT
+  t_20          gated_affine             57.5%   0.309  DOMINANT
+  t_21          gated_affine             99.9%   0.002  DOMINANT
+  t_22          affine_sqrt              99.8%   0.005  DOMINANT
+  t_23          affine_tanh              70.7%   0.366  DOMINANT
+  t_24          affine_relu              85.7%   0.206  DOMINANT
+  t_25          affine_sin               57.3%   0.389  DOMINANT
+  t_26          affine_relu              96.3%   0.051  DOMINANT
+  t_27          affine_sqrt              99.9%   0.002  DOMINANT
+  t_28          affine_sqrt              99.9%   0.003  DOMINANT
+  t_29          affine_sqrt              99.7%   0.006  DOMINANT
+  t_30          affine_sqrt             100.0%   0.000  DOMINANT
+  t_31          gated_affine            100.0%   0.000  DOMINANT
+  N_0_0         cos                      48.2%   0.388  committed
+  N_0_1         cos                      49.9%   0.337  committed
+  N_0_2         affine_log               96.7%   0.053  DOMINANT
+  N_0_3         cos                      85.8%   0.177  DOMINANT
+  N_0_4         sqrt                     82.3%   0.192  DOMINANT
+  N_0_5         sqrt                     75.8%   0.254  DOMINANT
+  N_0_6         cos                      73.6%   0.264  DOMINANT
+  N_0_7         arctan                   99.6%   0.010  DOMINANT
+  N_1_0         shift_mix                50.0%   0.437  committed
+  N_1_1         sqrt                     86.8%   0.146  DOMINANT
+  N_1_2         affine_log               42.7%   0.561  committed
+  N_1_3         affine_sqrt              98.5%   0.029  DOMINANT
+  N_1_4         affine_sqrt             100.0%   0.000  DOMINANT
+  N_1_5         sqrt                     76.5%   0.301  DOMINANT
+  N_1_6         affine_sqrt              99.9%   0.002  DOMINANT
+  N_1_7         sin                      98.8%   0.023  DOMINANT
+  N_2_0         arctan                   68.8%   0.400  DOMINANT
+  N_2_1         soft_attention           93.7%   0.075  DOMINANT
+  N_2_2         tanh                     56.1%   0.448  DOMINANT
+  N_2_3         sqrt                     34.6%   0.580  split   
+  N_2_4         affine_log               62.8%   0.394  DOMINANT
+  N_2_5         shift_mix                86.3%   0.173  DOMINANT
+  N_2_6         sqrt                     99.0%   0.021  DOMINANT
+  N_2_7         arctan                   38.3%   0.344  committed
+  N_3_0         arctan                   80.1%   0.258  DOMINANT
+  N_3_1         gated_affine             94.6%   0.078  DOMINANT
+  N_3_2         sin                      64.9%   0.309  DOMINANT
+  N_3_3         affine_gelu              75.3%   0.195  DOMINANT
+  N_3_4         sqrt                     95.5%   0.073  DOMINANT
+  N_3_5         affine_tanh             100.0%   0.001  DOMINANT
+  N_3_6         affine_sqrt             100.0%   0.001  DOMINANT
+  N_3_7         arctan                   99.6%   0.009  DOMINANT
+  N_4_0         pure_sub                100.0%   0.000  DOMINANT
+  N_4_1         gated_affine             87.3%   0.148  DOMINANT
+  N_4_2         cos                      96.9%   0.060  DOMINANT
+  N_4_3         affine_gelu              76.3%   0.253  DOMINANT
+  N_4_4         identity                 43.0%   0.419  committed
+  N_4_5         fourier_mix              96.9%   0.057  DOMINANT
+  N_4_6         arctan                   82.4%   0.240  DOMINANT
+  N_4_7         sin                     100.0%   0.000  DOMINANT
+  N_5_0         fourier_mix              42.9%   0.417  committed
+  N_5_1         arcsin                   95.6%   0.070  DOMINANT
+  N_5_2         log                     100.0%   0.002  DOMINANT
+  N_5_3         pure_add                100.0%   0.001  DOMINANT
+  N_5_4         arctan                   46.4%   0.476  committed
+  N_5_5         pure_add                100.0%   0.000  DOMINANT
+  N_5_6         sin                      85.6%   0.223  DOMINANT
+  N_5_7         arctan                   99.2%   0.015  DOMINANT
+  N_6_0         affine_cos               31.2%   0.619  split   
+  N_6_1         cos                      55.9%   0.398  DOMINANT
+  N_6_2         identity                 94.0%   0.099  DOMINANT
+  N_6_3         pure_add                 99.9%   0.002  DOMINANT
+  N_6_4         pure_add                 99.9%   0.003  DOMINANT
+  N_6_5         affine_tanh              97.5%   0.045  DOMINANT
+  N_6_6         arctan                   35.4%   0.520  committed
+  N_6_7         affine_tanh             100.0%   0.000  DOMINANT
+  N_7_0         identity                  4.2%   1.000  split   
+  N_7_1         identity                  4.2%   1.000  split   
+  N_7_2         identity                  4.2%   1.000  split   
+  N_7_3         identity                  4.2%   1.000  split   
+  N_7_4         identity                  4.2%   1.000  split   
+  N_7_5         identity                  4.2%   1.000  split   
+  N_7_6         identity                  4.2%   1.000  split   
+  N_7_7         identity                100.0%   0.000  DOMINANT
+
+------------------------------------------------------------------------------------------
+5. ROUTING UTILIZATION — active history slots per layer  (threshold 10%)
+------------------------------------------------------------------------------------------
+  Layer          Pool size  Possible  Active  Active%  Mean prob
+  -------------- ---------  --------  ------  -------  ---------
+  Deep layer 0          32       512     394     77.0%      55.49%
+  Deep layer 1          40       640     465     72.7%      48.46%
+  Deep layer 2          48       768     572     74.5%      49.65%
+  Deep layer 3          56       896     609     68.0%      42.50%
+  Deep layer 4          64      1024     819     80.0%      45.13%
+  Deep layer 5          72      1152    1041     90.4%      48.87%
+  Deep layer 6          80      1280    1169     91.3%      47.35%
+  Deep layer 7          88      1408    1313     93.3%      47.31%
+
+------------------------------------------------------------------------------------------
+6. SPATIAL ROUTING — which token positions are most attended (softmax mean)
+------------------------------------------------------------------------------------------
+  Top-10 token positions (0=oldest, T-1=most recent):
+    tok_107    3.50%  ██████
+    tok_28     3.28%  ██████
+    tok_63     2.96%  █████
+    tok_71     2.39%  ████
+    tok_15     2.35%  ████
+    tok_13     2.20%  ████
+    tok_69     2.02%  ████
+    tok_105    1.94%  ███
+    tok_55     1.86%  ███
+    tok_81     1.83%  ███
+
+------------------------------------------------------------------------------------------
+7. DETAILED SYMBOLIC EQUATIONS — COMPLETE NETWORK - see the file for this
+'''
+
+As you can see, we many different primitives are used, and interesting the 7th layer is even all identity - essentially unused. Pretty cool huh, the network figures out how much depth or breadth it needs.
+
 # Which part of this are AI based
 
-A large amount of the adapting of this code from a CPU based symbolic regression equation compiler (all manual) to a pytorch/Cuda based llm compiler was done by careful planning and execution with Opus4.7 and claude code. The implementation of the Gumbal softmax trick was also suggested and implemented by AI, and from the output side it seems to work, during search regularly the compiler explores a given primitive, finds that it does not work after a few epochs and backtracks to a better primitive. Before this softmax trick, I had a genetic algorithm based search for these params ( NSGA - 2 using the optuna library)
+A large amount of the adapting of this code from a CPU based symbolic regression equation compiler (all manual) to a pytorch/Cuda based llm compiler was done by careful planning and execution with Opus4.7 and claude code. The implementation of the Gumbel softmax trick was also suggested and implemented by AI, and from the output side it seems to work, during search regularly the compiler explores a given primitive, finds that it does not work after a few epochs and backtracks to a better primitive. Before this softmax trick, I had a genetic algorithm based search for these params ( NSGA - 2 using the optuna library)
 
 # What are its limitations and next steps.
 
 The tokens are projected into a single summarizer head , which is then operated on by later layers. This was done so that I can scale context length on my poor Laptop 3060 GPU, god bless his soul for his valiant efforts the past couple of weeks. In practice, I expect this scales poorly for performance and summarization, by definition also includes loss of some of the incoming context from the tokens. If i was a rich guy with a big beefy GPU I would run my search directly on larger and larger token lengths directly, and each node can learn better representations by operating directly on the full context window. I guess one of you guys and gals might find it interesting to do that.
 
-Since the compiler runs a gumbal softmax calculation for each primitive that the network searches through, this massively increases the memory footprint of the weights by 10x , 15x during training and also during inference if the node requires a soft mixture at that node. In practice, a lot of the nodes do converge to single primitives, so this memory footprint can be lower. I think having each primitive is important for the expressibility of the program
+Since the compiler runs a Gumbel softmax calculation for each primitive that the network searches through, this massively increases the memory footprint of the weights by 10x , 15x during training and also during inference if the node requires a soft mixture at that node. In practice, a lot of the nodes do converge to single primitives, so this memory footprint can be lower. I think having each primitive is important for the expressibility of the program
 
 This compiler is a single objective search unlike my SR version which was a multi objective one. This is on purpose becuase my goal was to see how good we can get regardless of cost for these language models.
 
@@ -92,4 +346,3 @@ I dont expect it to be, its just something I looked at and maybe it helps a coup
 
 
 
-Ohh btw did I say the 7th layer is almost unused in both tests... free depth ablation baby ... wooo!!!!
