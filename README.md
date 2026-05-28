@@ -311,7 +311,6 @@ Primitives: 24  |  Layers: 8  |  Breadth: 8  |  Spatial slots: 32  |  D: 128
 ------------------------------------------------------------------------------------------
 7. DETAILED SYMBOLIC EQUATIONS — COMPLETE NETWORK - see the file for this
 ```
-As you can see, we many different primitives are used, and interesting the 7th layer is even all identity - essentially unused. Pretty cool huh, the network figures out how much depth or breadth it needs.
 
 ## Which part of this are AI based
 
